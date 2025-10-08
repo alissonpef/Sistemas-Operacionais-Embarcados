@@ -53,6 +53,7 @@ void set_port(port_conf_t port);
 void config_adc(tad_t tad, conversion_clock_t cclk);
 void adc_go(int go_done);
 int adc_read();
+
 // --- Funções de PWM (usando CCP1 no pino RC2) ---
 void pwm_init(void);
 void pwm_set_duty_cycle(uint16_t duty_cycle);
@@ -62,4 +63,3 @@ void external_interrupt_init(void);
 
 
 #endif	/* IO_H */
-

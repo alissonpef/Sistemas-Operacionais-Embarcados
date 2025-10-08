@@ -32,6 +32,15 @@ int adc_read()
     return ADRES;
 }
 
+// --- Implementação do PWM (usando CCP1 no pino RC2) ---
+
+/**
+ * @brief Inicializa o PWM no pino RC2 (CCP1).
+ * * Configura o Timer2 para ser a base de tempo do PWM e 
+ * habilita o módulo CCP1 em modo PWM.
+ * Frequência do PWM = Fosc / (4 * (PR2 + 1) * TMR2_Prescale)
+ * Ex: Fosc=8MHz, Prescale=16, PR2=124 => F_pwm = 1kHz
+ */
 void pwm_init(void)
 {
     TRISCbits.RC2 = 0;      // Configura o pino RC2 (CCP1) como saída
@@ -87,4 +96,3 @@ void external_interrupt_init(void)
     INTCONbits.GIEH = 1;        // Habilita interrupções globais de alta prioridade
     INTCONbits.GIEL = 1;        // Habilita interrupções globais de baixa prioridade
 }
-
