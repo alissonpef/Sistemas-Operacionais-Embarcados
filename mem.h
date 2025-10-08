@@ -1,7 +1,7 @@
 #ifndef MEM_H
 #define	MEM_H
 
-#include "types.h"
+#include "types.h" // Adicionado
 
 #define NEAR
 
@@ -12,4 +12,3 @@ NEAR unsigned char _SRAMmerge(SALLOC * NEAR pSegA);
 
 
 #endif	/* MEM_H */
-

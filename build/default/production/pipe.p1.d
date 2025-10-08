@@ -3,4 +3,5 @@ pipe.c  \
 pipe.h  \
 types.h  \
 os_config.h  \
-sync.h 
+sync.h  \
+mem.h 

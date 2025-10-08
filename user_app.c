@@ -7,13 +7,11 @@
 #include "mem.h"
 #include "io.h"
 
-// --- Objetos de Sincronização e Comunicação ---
+// --- Objetos de Sincroniza��o e Comunica��o ---
 
-// Pipes para comunicação entre tarefas
 pipe_t pipe_sensores;
 pipe_t pipe_bateria;
 
-// Variável compartilhada para velocidade dos motores e seu mutex de proteção
 motor_speeds_t velocidade_motores;
 mutex_t mutex_motores;
 
@@ -49,35 +47,28 @@ TASK tarefa_controle_central(void)
     int nivel_bateria;
 
     while (1) {
-        // Espera por novos dados dos sensores
-        read_pipe(&pipe_sensores, (char*)&dados_sensores);
-        // Lê o nível da bateria
-        read_pipe(&pipe_bateria, (char*)&nivel_bateria);
+        // Chamada de read_pipe corrigida
+        read_pipe(&pipe_sensores, &dados_sensores, sizeof(sensor_data_t));
+        read_pipe(&pipe_bateria, &nivel_bateria, sizeof(int));
 
-        // Lógica de controle (SIMULAÇÃO)
-        // Se a bateria estiver baixa, planeja o pouso (ex: reduz a velocidade)
-        if (nivel_bateria < 200) { // Valor de exemplo para bateria baixa
+        if (nivel_bateria < 200) {
             velocidade_motores.motor1_speed = 50;
             velocidade_motores.motor2_speed = 50;
             velocidade_motores.motor3_speed = 50;
             velocidade_motores.motor4_speed = 50;
         } else {
-            // "Calcula" a velocidade dos motores com base nos sensores
-            // Ex: usa o acelerômetro para definir a velocidade base
-            uint16_t base_speed = dados_sensores.acelerometro / 4; // Converte de 10-bit para 8-bit
+            // Adicionado um type cast (uint16_t) para remover o aviso
+            uint16_t base_speed = (uint16_t)dados_sensores.acelerometro / 4;
             velocidade_motores.motor1_speed = base_speed;
             velocidade_motores.motor2_speed = base_speed;
             velocidade_motores.motor3_speed = base_speed;
             velocidade_motores.motor4_speed = base_speed;
         }
 
-        // Bloqueia o mutex para escrever na variável compartilhada de forma segura
         mutex_lock(&mutex_motores);
-        // A lógica acima já alterou a variável, aqui apenas simularia a escrita
-        // (Em um caso real, a cópia para a variável global seria aqui dentro)
         mutex_unlock(&mutex_motores);
         
-        os_delay(100); // Executa a lógica de controle a cada 100 ticks
+        os_delay(100);
     }
 }
 
@@ -113,36 +104,32 @@ TASK tarefa_leitura_sensores(void)
     sensor_data_t dados_sensores;
 
     while (1) {
-        // Simula a leitura do giroscópio e acelerômetro lendo canais ADC
-        set_channel(CHANNEL_0); // AN0 para giroscópio
+        set_channel(CHANNEL_0);
         dados_sensores.giroscopio = adc_read();
         
-        set_channel(CHANNEL_1); // AN1 para acelerômetro
+        set_channel(CHANNEL_1);
         dados_sensores.acelerometro = adc_read();
 
-        // Envia os dados lidos para o pipe de sensores
-        write_pipe(&pipe_sensores, (char*)&dados_sensores);
+        // Chamada de write_pipe corrigida
+        write_pipe(&pipe_sensores, &dados_sensores, sizeof(sensor_data_t));
         
-        os_delay(150); // Lê os sensores a cada 150 ticks
+        os_delay(150);
     }
 }
 
-/**
- * @brief Tarefa de baixa prioridade que monitora o nível da bateria
- * (simulado por um potenciômetro).
- */
 TASK tarefa_monitoramento_bateria(void)
 {
     int nivel_bateria;
 
     while (1) {
-        // Simula a leitura da bateria lendo um canal ADC
-        set_channel(CHANNEL_2); // AN2 para bateria
+        set_channel(CHANNEL_2);
         nivel_bateria = adc_read();
 
-        // Envia o dado para o pipe da bateria
-        write_pipe(&pipe_bateria, (char*)&nivel_bateria);
+        // Chamada de write_pipe corrigida
+        write_pipe(&pipe_bateria, &nivel_bateria, sizeof(int));
         
-        os_delay(500); // Verifica a bateria a cada 500 ticks
+        // CORRIGIDO: O valor de delay n�o pode ser maior que 255
+        // O valor 500 estava causando um overflow (virando 244).
+        os_delay(250); // Valor m�ximo � 255
     }
 }

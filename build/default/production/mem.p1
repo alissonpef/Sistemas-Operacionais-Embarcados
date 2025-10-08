@@ -1,10 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"64 ./types.h
-[; ;./types.h: 64:  {
+"67 ./types.h
+[; ;./types.h: 67:  {
 [s S6 :7 `uc 1 :1 `uc 1 ]
 [n S6 _BITS count alloc ]
-"61
-[; ;./types.h: 61: {
+"64
+[; ;./types.h: 64: {
 [u S5 `uc 1 `S6 1 ]
 [n S5 _SALLOC byte bits ]
 "11 ./mem.h

@@ -4,4 +4,6 @@ syscall.h  \
 types.h  \
 os_config.h  \
 kernel.h  \
-user_app.h 
+user_app.h  \
+hardware.h  \
+mem.h 

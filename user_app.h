@@ -1,8 +1,13 @@
 #ifndef USER_APP_H
 #define	USER_APP_H
 
-#include "os_config.h"
 #include "types.h"
+#include "syscall.h"
+#include "kernel.h"
+#include "hardware.h"
+#include "user_app.h" // Adicionado
+#include "mem.h"
+#include <xc.h>
 
 // Estrutura para os dados dos sensores
 typedef struct {

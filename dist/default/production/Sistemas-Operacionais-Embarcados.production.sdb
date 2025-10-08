@@ -1,0 +1,1231 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+[e E39 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+[e E3346 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"23
+[e E3461 . `uc
+CHANNEL_0 0
+CHANNEL_1 1
+CHANNEL_2 2
+CHANNEL_3 3
+CHANNEL_4 4
+CHANNEL_5 5
+CHANNEL_6 6
+CHANNEL_7 7
+CHANNEL_8 8
+CHANNEL_9 9
+CHANNEL_10 10
+CHANNEL_11 11
+CHANNEL_12 12
+]
+"24
+[e E3476 . `uc
+AN12 0
+AN11 3
+AN10 4
+AN09 5
+AN08 6
+AN07 7
+AN06 8
+AN05 9
+AN04 10
+AN03 11
+AN02 12
+AN01 13
+AN00 14
+DISABLE 15
+]
+"25
+[e E3492 . `uc
+TAD20 7
+TAD16 6
+TAD12 5
+TAD8 4
+TAD6 3
+TAD4 2
+TAD2 1
+TAD0 0
+]
+[e E3502 . `uc
+FRC1 7
+FOSC64 6
+FOSC16 5
+FOSC4 4
+FRC2 3
+FOSC32 2
+FOSC8 1
+FOSC2 0
+]
+"11 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\syscall.c
+[e E3346 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\scheduler.c
+[e E39 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"35 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\hardware.c
+[e E3349 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+[e E39 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+[e E39 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"6 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+[e E3343 . `uc
+CHANNEL_0 0
+CHANNEL_1 1
+CHANNEL_2 2
+CHANNEL_3 3
+CHANNEL_4 4
+CHANNEL_5 5
+CHANNEL_6 6
+CHANNEL_7 7
+CHANNEL_8 8
+CHANNEL_9 9
+CHANNEL_10 10
+CHANNEL_11 11
+CHANNEL_12 12
+]
+"11
+[e E3358 . `uc
+AN12 0
+AN11 3
+AN10 4
+AN09 5
+AN08 6
+AN07 7
+AN06 8
+AN05 9
+AN04 10
+AN03 11
+AN02 12
+AN01 13
+AN00 14
+DISABLE 15
+]
+"16
+[e E3374 . `uc
+TAD20 7
+TAD16 6
+TAD12 5
+TAD8 4
+TAD6 3
+TAD4 2
+TAD2 1
+TAD0 0
+]
+[e E3384 . `uc
+FRC1 7
+FOSC64 6
+FOSC16 5
+FOSC4 4
+FRC2 3
+FOSC32 2
+FOSC8 1
+FOSC2 0
+]
+"364 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+[s S1028 _BITS 1 `uc 1 count 1 0 :7:0 
+`uc 1 alloc 1 0 :1:7 
+]
+"322
+[u S1031 _SALLOC 1 `uc 1 byte 1 0 `S1028 1 bits 1 0 ]
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"329
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"332
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"333
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"336
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"342
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"345
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"351
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"353
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"364
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"354
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"355
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"356
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"329
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"332
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"333
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"336
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"339
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"339
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"342
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"345
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"351
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"353
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"354
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"355
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"356
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"329
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"332
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"333
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"336
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"342
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"345
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"351
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"353
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"354
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"355
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"356
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"364
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"329
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"332
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"333
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"336
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"342
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"345
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"351
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"353
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"354
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"355
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"356
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"364
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"329
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"332
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"333
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"336
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"342
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"345
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"351
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"353
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"354
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"355
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"356
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"329
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"332
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"333
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"336
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"342
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"345
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"351
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"353
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"354
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"355
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"356
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"329
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"332
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"333
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"336
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"339
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"342
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"345
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"351
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"353
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"354
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"355
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"324
+[v _pSegB pSegB `*.39S1031  1 a 2 2 ]
+"358
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `R(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `R(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\almod.c
+[v ___almod __almod `R(l  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `R(o  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `R(o  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atdiv.c
+[v ___atdiv __atdiv `R(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atmod.c
+[v ___atmod __atmod `R(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `R(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `R(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `R(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `R(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `R(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `R(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `R(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `R(f  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `R(ul  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `R(uo  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `R(uo  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltdiv.c
+[v ___ltdiv __ltdiv `R(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltmod.c
+[v ___ltmod __ltmod `R(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `R(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `R(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `R(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `R(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `R(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `R(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `R(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul24.c
+[v ___tmul __tmul `R(um  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `R(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `R(uo  1 e 8 0 ]
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\hardware.c
+[v _conf_timer_0 conf_timer_0 `R(v  1 e 1 0 ]
+"19
+[v _conf_interrupts conf_interrupts `R(v  1 e 1 0 ]
+"25
+[v _ISR_TIMER_0 ISR_TIMER_0 `IIH(v  1 e 1 0 ]
+"6 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+[v _set_channel set_channel `R(v  1 e 1 0 ]
+"11
+[v _set_port set_port `R(v  1 e 1 0 ]
+"16
+[v _config_adc config_adc `R(v  1 e 1 0 ]
+"23
+[v _adc_go adc_go `R(v  1 e 1 0 ]
+"28
+[v _adc_read adc_read `R(i  1 e 2 0 ]
+"44
+[v _pwm_init pwm_init `R(v  1 e 1 0 ]
+"69
+[v _pwm_set_duty_cycle pwm_set_duty_cycle `R(v  1 e 1 0 ]
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+[v _os_config os_config `R(v  1 e 1 0 ]
+"23
+[v _os_start os_start `R(v  1 e 1 0 ]
+"43
+[v _os_idle_task os_idle_task `R(v  1 e 1 0 ]
+"53
+[v _os_task_pos os_task_pos `R(uc  1 e 1 0 ]
+"62
+[v _os_task_time_decrease os_task_time_decrease `R(v  1 e 1 0 ]
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\main.c
+[v _main main `R(i  1 e 2 0 ]
+"154 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+[v _SRAMalloc SRAMalloc `R(*.39uc  1 e 2 0 ]
+"276
+[v _SRAMInitHeap SRAMInitHeap `R(v  1 e 1 0 ]
+"322
+[v __SRAMmerge _SRAMmerge `R(uc  1 e 1 0 ]
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+[v _create_pipe create_pipe `R(v  1 e 1 0 ]
+"20
+[v _read_pipe read_pipe `R(v  1 e 1 0 ]
+"34
+[v _write_pipe write_pipe `R(v  1 e 1 0 ]
+"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados/types.h
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+"30 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\scheduler.c
+[v _priority_scheduler priority_scheduler `R(*.39S67  1 e 2 0 ]
+"50
+[v _scheduler scheduler `R(v  1 e 1 0 ]
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+[v _sem_init sem_init `R(v  1 e 1 0 ]
+"17
+[v _sem_wait sem_wait `R(v  1 e 1 0 ]
+"37
+[v _sem_post sem_post `R(v  1 e 1 0 ]
+"53
+[v _mutex_init mutex_init `R(v  1 e 1 0 ]
+"59
+[v _mutex_lock mutex_lock `R(v  1 e 1 0 ]
+"65
+[v _mutex_unlock mutex_unlock `R(v  1 e 1 0 ]
+"9 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\syscall.c
+[v _os_create_task os_create_task `R(v  1 e 1 0 ]
+"27
+[v _os_delay os_delay `R(v  1 e 1 0 ]
+"19 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+[v _config_app config_app `R(v  1 e 1 0 ]
+"44
+[v _tarefa_controle_central tarefa_controle_central `R(v  1 e 1 0 ]
+"79
+[v _tarefa_controle_motores tarefa_controle_motores `R(v  1 e 1 0 ]
+"102
+[v _tarefa_leitura_sensores tarefa_leitura_sensores `R(v  1 e 1 0 ]
+"120
+[v _tarefa_monitoramento_bateria tarefa_monitoramento_bateria `R(v  1 e 1 0 ]
+[s S162 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"2734 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
+[s S242 . 1 `uc 1 SPP0 1 0 :1:0 
+`uc 1 SPP1 1 0 :1:1 
+`uc 1 SPP2 1 0 :1:2 
+`uc 1 SPP3 1 0 :1:3 
+`uc 1 SPP4 1 0 :1:4 
+`uc 1 SPP5 1 0 :1:5 
+`uc 1 SPP6 1 0 :1:6 
+`uc 1 SPP7 1 0 :1:7 
+]
+[s S251 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SS2 1 0 :1:7 
+]
+[u S254 . 1 `S162 1 . 1 0 `S242 1 . 1 0 `S251 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES254  1 e 1 @3971 ]
+[s S193 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"3288
+[s S202 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S211 . 1 `S193 1 . 1 0 `S202 1 . 1 0 ]
+[v _LATDbits LATDbits `VES211  1 e 1 @3980 ]
+[s S1272 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"3873
+[s S1279 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S1286 . 1 `S1272 1 . 1 0 `S1279 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1286  1 e 1 @3988 ]
+[s S153 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"4031
+[u S171 . 1 `S153 1 . 1 0 `S162 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES171  1 e 1 @3989 ]
+[s S1306 . 1 `uc 1 CCP1M 1 0 :4:0 
+`uc 1 DC1B 1 0 :2:4 
+`uc 1 P1M 1 0 :2:6 
+]
+"6352
+[s S1310 . 1 `uc 1 CCP1M0 1 0 :1:0 
+`uc 1 CCP1M1 1 0 :1:1 
+`uc 1 CCP1M2 1 0 :1:2 
+`uc 1 CCP1M3 1 0 :1:3 
+`uc 1 DC1B0 1 0 :1:4 
+`uc 1 DC1B1 1 0 :1:5 
+`uc 1 P1M0 1 0 :1:6 
+`uc 1 P1M1 1 0 :1:7 
+]
+[u S1319 . 1 `S1306 1 . 1 0 `S1310 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES1319  1 e 1 @4029 ]
+"6494
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
+[s S1243 . 1 `uc 1 ADCS 1 0 :3:0 
+`uc 1 ACQT 1 0 :3:3 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"6529
+[s S1248 . 1 `uc 1 ADCS0 1 0 :1:0 
+`uc 1 ADCS1 1 0 :1:1 
+`uc 1 ADCS2 1 0 :1:2 
+`uc 1 ACQT0 1 0 :1:3 
+`uc 1 ACQT1 1 0 :1:4 
+`uc 1 ACQT2 1 0 :1:5 
+]
+[u S1255 . 1 `S1243 1 . 1 0 `S1248 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES1255  1 e 1 @4032 ]
+[s S1190 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 VCFG 1 0 :2:4 
+]
+"6604
+[s S1193 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+]
+[s S1200 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CHSN3 1 0 :1:3 
+`uc 1 VCFG01 1 0 :1:4 
+`uc 1 VCFG11 1 0 :1:5 
+]
+[u S1205 . 1 `S1190 1 . 1 0 `S1193 1 . 1 0 `S1200 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES1205  1 e 1 @4033 ]
+[s S1107 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"6708
+[s S1110 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S1114 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S1121 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S1124 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S1127 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S1130 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S1133 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S1136 . 1 `S1107 1 . 1 0 `S1110 1 . 1 0 `S1114 1 . 1 0 `S1121 1 . 1 0 `S1124 1 . 1 0 `S1127 1 . 1 0 `S1130 1 . 1 0 `S1133 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1136  1 e 1 @4034 ]
+"6783
+[v _ADRES ADRES `VEus  1 e 2 @4035 ]
+[s S1336 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 TOUTPS 1 0 :4:3 
+]
+"7226
+[s S1340 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[s S1348 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 TOUTPS0 1 0 :1:3 
+`uc 1 TOUTPS1 1 0 :1:4 
+`uc 1 TOUTPS2 1 0 :1:5 
+`uc 1 TOUTPS3 1 0 :1:6 
+]
+[u S1354 . 1 `S1336 1 . 1 0 `S1340 1 . 1 0 `S1348 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1354  1 e 1 @4042 ]
+"7296
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+[s S694 . 1 `uc 1 T0PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 T08BIT 1 0 :1:6 
+`uc 1 TMR0ON 1 0 :1:7 
+]
+"8087
+[s S701 . 1 `uc 1 T0PS0 1 0 :1:0 
+`uc 1 T0PS1 1 0 :1:1 
+`uc 1 T0PS2 1 0 :1:2 
+]
+[u S705 . 1 `S694 1 . 1 0 `S701 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES705  1 e 1 @4053 ]
+"8137
+[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
+"8158
+[v _STATUS STATUS `VEuc  1 e 1 @4056 ]
+"8285
+[v _BSR BSR `VEuc  1 e 1 @4064 ]
+"8348
+[v _WREG WREG `VEuc  1 e 1 @4072 ]
+[s S104 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"8612
+[s S113 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S122 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S126 . 1 `S104 1 . 1 0 `S113 1 . 1 0 `S122 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES126  1 e 1 @4082 ]
+"8792
+[v _STKPTR STKPTR `VEuc  1 e 1 @4092 ]
+"8867
+[v _TOS TOS `VEum  1 e 3 @4093 ]
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+[s S78 f_aptos 533 `[5]S67 1 readyQueue 530 0 `uc 1 readyQueueSize 1 530 `*.39S67 1 taskRunning 2 531 ]
+[v _readyQueue readyQueue `S78  1 e 533 0 ]
+"120 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+[v __uDynamicHeap _uDynamicHeap `[512]uc  1 e 512 0 ]
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[s S359 pipe 33 `uc 1 pipe_pos_read 1 0 `uc 1 pipe_pos_write 1 1 `*.39uc 1 pipe_data 2 2 `uc 1 pipe_size 1 4 `S354 1 pipe_sem_read 14 5 `S354 1 pipe_sem_write 14 19 ]
+[v _pipe_sensores pipe_sensores `S359  1 e 33 0 ]
+"13
+[v _pipe_bateria pipe_bateria `S359  1 e 33 0 ]
+[s S366 . 8 `us 1 motor1_speed 2 0 `us 1 motor2_speed 2 2 `us 1 motor3_speed 2 4 `us 1 motor4_speed 2 6 ]
+"15
+[v _velocidade_motores velocidade_motores `S366  1 e 8 0 ]
+"16
+[v _mutex_motores mutex_motores `S354  1 e 14 0 ]
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\main.c
+[v _main main `R(i  1 e 2 0 ]
+{
+"31
+} 0
+"23 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+[v _os_start os_start `R(v  1 e 1 0 ]
+{
+"40
+} 0
+"19 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+[v _config_app config_app `R(v  1 e 1 0 ]
+{
+"38
+} 0
+"11 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+[v _set_port set_port `R(v  1 e 1 0 ]
+{
+[v _port port `E3358  1 p 1 btemp28 ]
+"14
+} 0
+"6
+[v _set_channel set_channel `R(v  1 e 1 0 ]
+{
+[v _channel channel `E3343  1 p 1 btemp28 ]
+"9
+} 0
+"44
+[v _pwm_init pwm_init `R(v  1 e 1 0 ]
+{
+"61
+} 0
+"53 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+[v _mutex_init mutex_init `R(v  1 e 1 0 ]
+{
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[v _m m `*.30S354  1 p 1 btemp28 ]
+"57
+} 0
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+[v _create_pipe create_pipe `R(v  1 e 1 0 ]
+{
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[s S359 pipe 33 `uc 1 pipe_pos_read 1 0 `uc 1 pipe_pos_write 1 1 `*.39uc 1 pipe_data 2 2 `uc 1 pipe_size 1 4 `S354 1 pipe_sem_read 14 5 `S354 1 pipe_sem_write 14 19 ]
+[v _p p `*.30S359  1 p 1 btemp28 ]
+[v _size size `uc  1 p 1 btemp29 ]
+"17
+} 0
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+[v _sem_init sem_init `R(v  1 e 1 0 ]
+{
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[v _s s `*.30S354  1 p 1 btemp36 ]
+[v _init_value init_value `uc  1 p 1 btemp37 ]
+"15
+} 0
+"154 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+[v _SRAMalloc SRAMalloc `R(*.39uc  1 e 2 0 ]
+{
+[s S1028 _BITS 1 `uc 1 count 1 0 :7:0 
+`uc 1 alloc 1 0 :1:7 
+]
+"156
+[u S1031 _SALLOC 1 `uc 1 byte 1 0 `S1028 1 bits 1 0 ]
+[v _pHeap pHeap `*.39S1031  1 a 2 0 ]
+"158
+[v _segHeader segHeader `S1031  1 a 1 2 ]
+"154
+[v _nBytes nBytes `uc  1 p 1 btemp36 ]
+"170
+"156
+[v _pHeap pHeap `*.39S1031  1 a 2 0 ]
+"176
+"156
+[v _pHeap pHeap `*.39S1031  1 a 2 wtemp2 ]
+"191
+"226
+} 3
+"322
+[v __SRAMmerge _SRAMmerge `R(uc  1 e 1 0 ]
+{
+[s S1028 _BITS 1 `uc 1 count 1 0 :7:0 
+`uc 1 alloc 1 0 :1:7 
+]
+"325
+[u S1031 _SALLOC 1 `uc 1 byte 1 0 `S1028 1 bits 1 0 ]
+[v _uSegB uSegB `S1031  1 a 1 0 ]
+[v _uSegA uSegA `S1031  1 a 1 1 ]
+[v _uSum uSum `S1031  1 a 1 2 ]
+"322
+[v _pSegA pSegA `*.39S1031  1 p 2 wtemp22 ]
+"366
+} 3
+"16 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+[v _config_adc config_adc `R(v  1 e 1 0 ]
+{
+[v _tad tad `E3374  1 p 1 btemp28 ]
+[v _cclk cclk `E3384  1 p 1 btemp29 ]
+"21
+} 0
+"23
+[v _adc_go adc_go `R(v  1 e 1 0 ]
+{
+[v _go_done go_done `i  1 p 2 wtemp14 ]
+"26
+} 0
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\hardware.c
+[v _conf_timer_0 conf_timer_0 `R(v  1 e 1 0 ]
+{
+"17
+} 0
+"19
+[v _conf_interrupts conf_interrupts `R(v  1 e 1 0 ]
+{
+"22
+} 0
+"276 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+[v _SRAMInitHeap SRAMInitHeap `R(v  1 e 1 0 ]
+{
+"278
+[v _pHeap pHeap `*.39uc  1 a 2 0 ]
+"286
+[v _pHeap pHeap `*.39uc  1 a 2 0 ]
+"289
+"299
+} 2
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+[v _os_config os_config `R(v  1 e 1 0 ]
+{
+"21
+} 0
+"9 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\syscall.c
+[v _os_create_task os_create_task `R(v  1 e 1 0 ]
+{
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+"11
+[v _new_task new_task `S67  1 a 106 0 ]
+"9
+[v _id id `uc  1 p 1 btemp20 ]
+[v _task_f task_f `*.37R(v  1 p 2 wtemp11 ]
+[v _prior prior `uc  1 p 1 btemp21 ]
+"25
+} 106
+"43 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+[v _os_idle_task os_idle_task `R(v  1 e 1 0 ]
+{
+"51
+} 0
+"44 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+[v _tarefa_controle_central tarefa_controle_central `R(v  1 e 1 0 ]
+{
+[s S454 . 4 `i 1 giroscopio 2 0 `i 1 acelerometro 2 2 ]
+"46
+[v _dados_sensores dados_sensores `S454  1 a 4 0 ]
+"47
+[v _nivel_bateria nivel_bateria `i  1 a 2 4 ]
+"73
+} 6
+"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+[v _read_pipe read_pipe `R(v  1 e 1 0 ]
+{
+[v _size size `uc  1 p 1 btemp13 ]
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[s S359 pipe 33 `uc 1 pipe_pos_read 1 0 `uc 1 pipe_pos_write 1 1 `*.39uc 1 pipe_data 2 2 `uc 1 pipe_size 1 4 `S354 1 pipe_sem_read 14 5 `S354 1 pipe_sem_write 14 19 ]
+[v _p p `*.30S359  1 p 1 btemp12 ]
+"23
+[v _i i `uc  1 a 1 0 ]
+"22
+[v _data_buffer data_buffer `*.39uc  1 a 2 1 ]
+"20
+[v _p p `*.30S359  1 p 1 btemp12 ]
+[v _buffer buffer `*.39v  1 p 2 wtemp7 ]
+[v _size size `uc  1 p 1 btemp13 ]
+"24
+"30
+"31
+} 3
+"27 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\syscall.c
+[v _os_delay os_delay `R(v  1 e 1 0 ]
+{
+[v _time time `uc  1 p 1 btemp12 ]
+"38
+} 0
+"65 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+[v _mutex_unlock mutex_unlock `R(v  1 e 1 0 ]
+{
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[v _m m `*.30S354  1 p 1 btemp12 ]
+"69
+} 0
+"37
+[v _sem_post sem_post `R(v  1 e 1 0 ]
+{
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[v _s s `*.30S354  1 p 1 btemp20 ]
+"49
+} 0
+"59
+[v _mutex_lock mutex_lock `R(v  1 e 1 0 ]
+{
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[v _m m `*.30S354  1 p 1 btemp12 ]
+[v _m m `*.30S354  1 p 1 btemp12 ]
+"63
+} 0
+"17
+[v _sem_wait sem_wait `R(v  1 e 1 0 ]
+{
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[v _s s `*.30S354  1 p 1 btemp20 ]
+"35
+} 0
+"50 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\scheduler.c
+[v _scheduler scheduler `R(v  1 e 1 0 ]
+{
+"57
+} 0
+"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados/types.h
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+"30 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\scheduler.c
+[v _priority_scheduler priority_scheduler `R(*.39S67  1 e 2 0 ]
+{
+"32
+[v _next_task next_task `*.39S67  1 a 2 0 ]
+"33
+[v _highest_priority highest_priority `uc  1 a 1 2 ]
+"48
+} 3
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `R(i  1 e 2 0 ]
+{
+"10
+[v _sign sign `uc  1 a 1 0 ]
+"7
+[v _dividend dividend `i  1 p 2 wtemp14 ]
+[v _divisor divisor `i  1 p 2 wtemp15 ]
+"19
+"10
+[v _sign sign `uc  1 a 1 btemp4 ]
+"31
+"34
+} 1
+"79 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+[v _tarefa_controle_motores tarefa_controle_motores `R(v  1 e 1 0 ]
+{
+[s S366 . 8 `us 1 motor1_speed 2 0 `us 1 motor2_speed 2 2 `us 1 motor3_speed 2 4 `us 1 motor4_speed 2 6 ]
+"81
+[v _velocidades_locais velocidades_locais `S366  1 a 8 0 ]
+"96
+} 8
+"69 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+[v _pwm_set_duty_cycle pwm_set_duty_cycle `R(v  1 e 1 0 ]
+{
+[v _duty_cycle duty_cycle `us  1 p 2 wtemp6 ]
+"76
+} 0
+"102 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+[v _tarefa_leitura_sensores tarefa_leitura_sensores `R(v  1 e 1 0 ]
+{
+[s S454 . 4 `i 1 giroscopio 2 0 `i 1 acelerometro 2 2 ]
+"104
+[v _dados_sensores dados_sensores `S454  1 a 4 0 ]
+"118
+} 4
+"34 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+[v _write_pipe write_pipe `R(v  1 e 1 0 ]
+{
+[v _size size `uc  1 p 1 btemp13 ]
+[s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+[s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
+[s S359 pipe 33 `uc 1 pipe_pos_read 1 0 `uc 1 pipe_pos_write 1 1 `*.39uc 1 pipe_data 2 2 `uc 1 pipe_size 1 4 `S354 1 pipe_sem_read 14 5 `S354 1 pipe_sem_write 14 19 ]
+[v _p p `*.30S359  1 p 1 btemp12 ]
+"37
+[v _i i `uc  1 a 1 0 ]
+"36
+[v _data_buffer data_buffer `*.39uc  1 a 2 1 ]
+"34
+[v _p p `*.30S359  1 p 1 btemp12 ]
+[v _buffer buffer `*.39v  1 p 2 wtemp7 ]
+[v _size size `uc  1 p 1 btemp13 ]
+"38
+"44
+"45
+} 3
+"28 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+[v _adc_read adc_read `R(i  1 e 2 0 ]
+{
+"33
+} 0
+"120 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+[v _tarefa_monitoramento_bateria tarefa_monitoramento_bateria `R(v  1 e 1 0 ]
+{
+"122
+[v _nivel_bateria nivel_bateria `i  1 a 2 0 ]
+"135
+} 2
+"25 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\hardware.c
+[v _ISR_TIMER_0 ISR_TIMER_0 `IIH(v  1 e 1 0 ]
+{
+"41
+} 0
+"62 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+[v _os_task_time_decrease os_task_time_decrease `R(v  1 e 1 0 ]
+{
+"64
+[v _i i `uc  1 a 1 btemp4 ]
+"73
+} 0

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=BF161RTOS.X
+PROJECTNAME=Sistemas-Operacionais-Embarcados
 
 # Active Configuration
 DEFAULTCONF=default

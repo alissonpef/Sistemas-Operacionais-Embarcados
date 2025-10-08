@@ -10,10 +10,10 @@
 // Define o tipo tarefa
 typedef void TASK;
 
-// Define o ponteiro para a funÃ§Ã£o
+// Define o ponteiro para a função
 typedef void (*f_ptr)(void);
 
-// Define os estados possÃ­veis
+// Define os estados possíveis
 typedef enum {READY = 0, RUNNING, WAITING, WAITING_SEM} state_t;
 
 // Define a TCB 
@@ -27,7 +27,7 @@ typedef struct tcb {
     uint8_t     BSR_reg;
     uint8_t     WORK_reg;
     uint8_t     STATUS_reg;
-    uint24_t     STACK[32];
+    uint24_t    STACK[32];
     uint8_t     task_sp;    
 } tcb_t;
 
@@ -51,8 +51,8 @@ typedef sem_t mutex_t;
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
-    char* pipe_data; // Alterado de array para ponteiro
-    uint8_t pipe_size; // Novo campo para armazenar o tamanho
+    char* pipe_data;
+    uint8_t pipe_size;
     sem_t pipe_sem_read;
     sem_t pipe_sem_write;
 } pipe_t;

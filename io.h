@@ -1,6 +1,9 @@
 #ifndef IO_H
 #define	IO_H
 
+#include <xc.h>
+#include <stdint.h>
+
 typedef enum {CHANNEL_0     = 0b0000, 
               CHANNEL_1     = 0b0001,
               CHANNEL_2     = 0b0010,
@@ -54,11 +57,10 @@ void config_adc(tad_t tad, conversion_clock_t cclk);
 void adc_go(int go_done);
 int adc_read();
 
-// --- FunÃ§Ãµes de PWM (usando CCP1 no pino RC2) ---
 void pwm_init(void);
 void pwm_set_duty_cycle(uint16_t duty_cycle);
 
-// --- FunÃ§Ãµes de InterrupÃ§Ã£o Externa (usando INT0 no pino RB0) ---
+// --- Funções de Interrupção Externa (usando INT0 no pino RB0) ---
 void external_interrupt_init(void);
 
 
