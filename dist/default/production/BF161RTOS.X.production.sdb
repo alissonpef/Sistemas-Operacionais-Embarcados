@@ -1,0 +1,599 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"10 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\kernel.c
+[e E39 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"80 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\user_app.c
+[e E3425 . `uc
+CHANNEL_0 0
+CHANNEL_1 1
+CHANNEL_2 2
+CHANNEL_3 3
+CHANNEL_4 4
+CHANNEL_5 5
+CHANNEL_6 6
+CHANNEL_7 7
+CHANNEL_8 8
+CHANNEL_9 9
+CHANNEL_10 10
+CHANNEL_11 11
+CHANNEL_12 12
+]
+"81
+[e E3440 . `uc
+AN12 0
+AN11 3
+AN10 4
+AN09 5
+AN08 6
+AN07 7
+AN06 8
+AN05 9
+AN04 10
+AN03 11
+AN02 12
+AN01 13
+AN00 14
+DISABLE 15
+]
+"82
+[e E3456 . `uc
+TAD20 7
+TAD16 6
+TAD12 5
+TAD8 4
+TAD6 3
+TAD4 2
+TAD2 1
+TAD0 0
+]
+[e E3466 . `uc
+FRC1 7
+FOSC64 6
+FOSC16 5
+FOSC4 4
+FRC2 3
+FOSC32 2
+FOSC8 1
+FOSC2 0
+]
+"11 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\syscall.c
+[e E3346 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"12 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\scheduler.c
+[e E39 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"35 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\hardware.c
+[e E3349 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"10 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\sync.c
+[e E39 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"5 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\pipe.c
+[e E39 . `uc
+READY 0
+RUNNING 1
+WAITING 2
+WAITING_SEM 3
+]
+"5 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\io.c
+[e E3117 . `uc
+CHANNEL_0 0
+CHANNEL_1 1
+CHANNEL_2 2
+CHANNEL_3 3
+CHANNEL_4 4
+CHANNEL_5 5
+CHANNEL_6 6
+CHANNEL_7 7
+CHANNEL_8 8
+CHANNEL_9 9
+CHANNEL_10 10
+CHANNEL_11 11
+CHANNEL_12 12
+]
+"10
+[e E3132 . `uc
+AN12 0
+AN11 3
+AN10 4
+AN09 5
+AN08 6
+AN07 7
+AN06 8
+AN05 9
+AN04 10
+AN03 11
+AN02 12
+AN01 13
+AN00 14
+DISABLE 15
+]
+"15
+[e E3148 . `uc
+TAD20 7
+TAD16 6
+TAD12 5
+TAD8 4
+TAD6 3
+TAD4 2
+TAD2 1
+TAD0 0
+]
+[e E3158 . `uc
+FRC1 7
+FOSC64 6
+FOSC16 5
+FOSC4 4
+FRC2 3
+FOSC32 2
+FOSC8 1
+FOSC2 0
+]
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"7 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\hardware.c
+[v _conf_timer_0 conf_timer_0 `(v  1 e 1 0 ]
+"19
+[v _conf_interrupts conf_interrupts `(v  1 e 1 0 ]
+"25
+[v _ISR_TIMER_0 ISR_TIMER_0 `IIH(v  1 e 1 0 ]
+"5 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\io.c
+[v _set_channel set_channel `(v  1 e 1 0 ]
+"10
+[v _set_port set_port `(v  1 e 1 0 ]
+"15
+[v _config_adc config_adc `(v  1 e 1 0 ]
+"22
+[v _adc_go adc_go `(v  1 e 1 0 ]
+"27
+[v _adc_read adc_read `(i  1 e 2 0 ]
+"12 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\kernel.c
+[v _os_config os_config `(v  1 e 1 0 ]
+"23
+[v _os_start os_start `(v  1 e 1 0 ]
+"43
+[v _os_idle_task os_idle_task `(v  1 e 1 0 ]
+"53
+[v _os_task_pos os_task_pos `(uc  1 e 1 0 ]
+"62
+[v _os_task_time_decrease os_task_time_decrease `(v  1 e 1 0 ]
+"7 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\main.c
+[v _main main `(i  1 e 2 0 ]
+"276 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\mem.c
+[v _SRAMInitHeap SRAMInitHeap `(v  1 e 1 0 ]
+"322
+[v __SRAMmerge _SRAMmerge `(uc  1 e 1 0 ]
+"20 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X/types.h
+[s S55 tcb 106 `uc 1 task_id 1 0 `*.37(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+"12 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\scheduler.c
+[v _rr_scheduler rr_scheduler `(*.39S55  1 e 2 0 ]
+"37
+[v _scheduler scheduler `(v  1 e 1 0 ]
+"10 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\sync.c
+[v _sem_init sem_init `(v  1 e 1 0 ]
+"17
+[v _sem_wait sem_wait `(v  1 e 1 0 ]
+"37
+[v _sem_post sem_post `(v  1 e 1 0 ]
+"9 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\syscall.c
+[v _os_create_task os_create_task `(v  1 e 1 0 ]
+"78 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\user_app.c
+[v _config_app config_app `(v  1 e 1 0 ]
+"90
+[v _tarefa_1 tarefa_1 `(v  1 e 1 0 ]
+[s S150 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"2734 C:/Users/Anderson L. F. Perez/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
+[s S230 . 1 `uc 1 SPP0 1 0 :1:0 
+`uc 1 SPP1 1 0 :1:1 
+`uc 1 SPP2 1 0 :1:2 
+`uc 1 SPP3 1 0 :1:3 
+`uc 1 SPP4 1 0 :1:4 
+`uc 1 SPP5 1 0 :1:5 
+`uc 1 SPP6 1 0 :1:6 
+`uc 1 SPP7 1 0 :1:7 
+]
+[s S239 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SS2 1 0 :1:7 
+]
+[u S242 . 1 `S150 1 . 1 0 `S230 1 . 1 0 `S239 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES242  1 e 1 @3971 ]
+[s S499 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"3206
+[s S506 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S513 . 1 `S499 1 . 1 0 `S506 1 . 1 0 ]
+[v _LATCbits LATCbits `VES513  1 e 1 @3979 ]
+[s S181 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"3288
+[s S190 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S199 . 1 `S181 1 . 1 0 `S190 1 . 1 0 ]
+[v _LATDbits LATDbits `VES199  1 e 1 @3980 ]
+[s S388 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"3873
+[s S395 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S402 . 1 `S388 1 . 1 0 `S395 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES402  1 e 1 @3988 ]
+[s S141 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"4031
+[u S159 . 1 `S141 1 . 1 0 `S150 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES159  1 e 1 @3989 ]
+[s S1214 . 1 `uc 1 ADCS 1 0 :3:0 
+`uc 1 ACQT 1 0 :3:3 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"6529
+[s S1219 . 1 `uc 1 ADCS0 1 0 :1:0 
+`uc 1 ADCS1 1 0 :1:1 
+`uc 1 ADCS2 1 0 :1:2 
+`uc 1 ACQT0 1 0 :1:3 
+`uc 1 ACQT1 1 0 :1:4 
+`uc 1 ACQT2 1 0 :1:5 
+]
+[u S1226 . 1 `S1214 1 . 1 0 `S1219 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES1226  1 e 1 @4032 ]
+[s S1161 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 VCFG 1 0 :2:4 
+]
+"6604
+[s S1164 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+]
+[s S1171 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CHSN3 1 0 :1:3 
+`uc 1 VCFG01 1 0 :1:4 
+`uc 1 VCFG11 1 0 :1:5 
+]
+[u S1176 . 1 `S1161 1 . 1 0 `S1164 1 . 1 0 `S1171 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES1176  1 e 1 @4033 ]
+[s S1078 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"6708
+[s S1081 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S1085 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S1092 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S1095 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S1098 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S1101 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S1104 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S1107 . 1 `S1078 1 . 1 0 `S1081 1 . 1 0 `S1085 1 . 1 0 `S1092 1 . 1 0 `S1095 1 . 1 0 `S1098 1 . 1 0 `S1101 1 . 1 0 `S1104 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1107  1 e 1 @4034 ]
+"6783
+[v _ADRES ADRES `VEus  1 e 2 @4035 ]
+[s S684 . 1 `uc 1 T0PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 T08BIT 1 0 :1:6 
+`uc 1 TMR0ON 1 0 :1:7 
+]
+"8087
+[s S691 . 1 `uc 1 T0PS0 1 0 :1:0 
+`uc 1 T0PS1 1 0 :1:1 
+`uc 1 T0PS2 1 0 :1:2 
+]
+[u S695 . 1 `S684 1 . 1 0 `S691 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES695  1 e 1 @4053 ]
+"8137
+[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
+"8158
+[v _STATUS STATUS `VEuc  1 e 1 @4056 ]
+"8285
+[v _BSR BSR `VEuc  1 e 1 @4064 ]
+"8348
+[v _WREG WREG `VEuc  1 e 1 @4072 ]
+[s S92 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"8612
+[s S101 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S110 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S114 . 1 `S92 1 . 1 0 `S101 1 . 1 0 `S110 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES114  1 e 1 @4082 ]
+"8792
+[v _STKPTR STKPTR `VEuc  1 e 1 @4092 ]
+"8867
+[v _TOS TOS `VEum  1 e 3 @4093 ]
+[s S55 tcb 106 `uc 1 task_id 1 0 `*.37(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+"10 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\kernel.c
+[s S66 f_aptos 533 `[5]S55 1 readyQueue 530 0 `uc 1 readyQueueSize 1 530 `*.39S55 1 taskRunning 2 531 ]
+[v _readyQueue readyQueue `S66  1 e 533 0 ]
+"120 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\mem.c
+[v __uDynamicHeap _uDynamicHeap `[512]uc  1 e 512 0 ]
+"7 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"29
+} 0
+"23 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\kernel.c
+[v _os_start os_start `(v  1 e 1 0 ]
+{
+"40
+} 0
+"78 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\user_app.c
+[v _config_app config_app `(v  1 e 1 0 ]
+{
+"88
+} 0
+"10 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\io.c
+[v _set_port set_port `(v  1 e 1 0 ]
+{
+[v set_port@port port `E3132  1 p 1 wreg ]
+[v set_port@port port `E3132  1 p 1 wreg ]
+"12
+[v set_port@port port `E3132  1 p 1 5 ]
+"13
+} 0
+"5
+[v _set_channel set_channel `(v  1 e 1 0 ]
+{
+[v set_channel@channel channel `E3117  1 p 1 wreg ]
+[v set_channel@channel channel `E3117  1 p 1 wreg ]
+"7
+[v set_channel@channel channel `E3117  1 p 1 6 ]
+"8
+} 0
+"15
+[v _config_adc config_adc `(v  1 e 1 0 ]
+{
+[v config_adc@tad tad `E3148  1 p 1 wreg ]
+[v config_adc@tad tad `E3148  1 p 1 wreg ]
+[v config_adc@cclk cclk `E3158  1 p 1 5 ]
+"17
+[v config_adc@tad tad `E3148  1 p 1 7 ]
+"20
+} 0
+"7 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\hardware.c
+[v _conf_timer_0 conf_timer_0 `(v  1 e 1 0 ]
+{
+"17
+} 0
+"19
+[v _conf_interrupts conf_interrupts `(v  1 e 1 0 ]
+{
+"22
+} 0
+"276 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\mem.c
+[v _SRAMInitHeap SRAMInitHeap `(v  1 e 1 0 ]
+{
+"279
+[v SRAMInitHeap@count count `ui  1 a 2 7 ]
+"278
+[v SRAMInitHeap@pHeap pHeap `*.39uc  1 a 2 5 ]
+"299
+} 0
+"12 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\kernel.c
+[v _os_config os_config `(v  1 e 1 0 ]
+{
+"21
+} 0
+"9 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\syscall.c
+[v _os_create_task os_create_task `(v  1 e 1 0 ]
+{
+[v os_create_task@id id `uc  1 p 1 wreg ]
+[s S55 tcb 106 `uc 1 task_id 1 0 `*.37(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+"11
+[v os_create_task@new_task new_task `S55  1 a 106 1 ]
+"9
+[v os_create_task@id id `uc  1 p 1 wreg ]
+[v os_create_task@task_f task_f `*.37(v  1 p 2 5 ]
+[v os_create_task@prior prior `uc  1 p 1 7 ]
+"13
+[v os_create_task@id id `uc  1 p 1 0 ]
+"25
+} 0
+"43 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\kernel.c
+[v _os_idle_task os_idle_task `(v  1 e 1 0 ]
+{
+"51
+} 0
+"90 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\user_app.c
+[v _tarefa_1 tarefa_1 `(v  1 e 1 0 ]
+{
+"92
+[v tarefa_1@pot pot `i  1 a 2 3 ]
+"110
+} 0
+"27 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\io.c
+[v _adc_read adc_read `(i  1 e 2 0 ]
+{
+"32
+} 0
+"22
+[v _adc_go adc_go `(v  1 e 1 0 ]
+{
+[v adc_go@go_done go_done `i  1 p 2 0 ]
+"25
+} 0
+"25 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\hardware.c
+[v _ISR_TIMER_0 ISR_TIMER_0 `IIH(v  1 e 1 0 ]
+{
+"41
+} 0
+"37 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\scheduler.c
+[v _scheduler scheduler `(v  1 e 1 0 ]
+{
+"44
+} 0
+"20 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X/types.h
+[s S55 tcb 106 `uc 1 task_id 1 0 `*.37(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
+"12 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\scheduler.c
+[v _rr_scheduler rr_scheduler `(*.39S55  1 e 2 0 ]
+{
+"14
+[v rr_scheduler@pos_task_running pos_task_running `uc  1 a 1 11 ]
+"15
+[v rr_scheduler@idle_selected idle_selected `uc  1 a 1 10 ]
+"28
+} 0
+"53 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\kernel.c
+[v _os_task_pos os_task_pos `(uc  1 e 1 0 ]
+{
+"55
+[v os_task_pos@i i `uc  1 a 1 4 ]
+"53
+[v os_task_pos@task task `*.37(v  1 p 2 0 ]
+"60
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"62 C:\Anderson\Aulas\Ensino\Graduação\Sistemas Operacionais Embarcados\Atividades Aulas\2025-2\BF161RTOS.X\kernel.c
+[v _os_task_time_decrease os_task_time_decrease `(v  1 e 1 0 ]
+{
+"64
+[v os_task_time_decrease@i i `uc  1 a 1 1 ]
+"73
+} 0
