@@ -3,11 +3,12 @@
 
 #include "types.h"
 
+// --- Funções de Semáforo ---
 void sem_init(sem_t *s, uint8_t init_value);
 void sem_wait(sem_t *s);
 void sem_post(sem_t *s);
 
-// Funções de Mutex
+// --- Funções de Mutex ---
 void mutex_init(mutex_t *m);
 void mutex_lock(mutex_t *m);
 void mutex_unlock(mutex_t *m);

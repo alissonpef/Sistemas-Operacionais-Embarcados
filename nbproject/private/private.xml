@@ -3,16 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/syscall.h</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/user_app.c</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/syscall.c</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/user_app.h</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/io.h</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/pipe.c</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/mem.h</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/types.h</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/pipe.h</file>
-            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Distribuídos/Sistemas-Operacionais-Embarcados/io.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/kernel.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/hardware.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/scheduler.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/sync.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/kernel.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/io.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/sync.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/syscall.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/io.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/hardware.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/syscall.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/pipe.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/types.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/user_app.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/main.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/scheduler.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/mem.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/user_app.h</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/pipe.c</file>
+            <file>file:/C:/Users/Alisson/Desktop/Alisson/Materias/2025.2%20Sistemas%20Operacionais%20Embarcados/Sistemas-Operacionais-Embarcados/mem.h</file>
         </group>
     </open-files>
 </project-private>

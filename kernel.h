@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include "types.h"
 
-// Declara��o da fila de aptos
+// Declaração da fila de aptos (visível para outros arquivos)
 extern f_aptos_t readyQueue;
 
 void os_config(void);
@@ -14,16 +14,15 @@ void os_idle_task(void);
 uint8_t os_task_pos(f_ptr task);
 void os_task_time_decrease(void);
 
-// Salvar e restaurar o contexto
-
-
+// Macro para salvar o contexto da CPU na TCB da tarefa atual
 #define SAVE_CONTEXT(new_state) \
 do { \
     if (readyQueue.taskRunning->task_state == RUNNING) { \
+        /* Salva os registradores principais */ \
         readyQueue.taskRunning->BSR_reg     = BSR; \
         readyQueue.taskRunning->STATUS_reg  = STATUS; \
         readyQueue.taskRunning->WORK_reg    = WREG; \
-        /* Piha */ \
+        /* Salva a pilha de hardware (stack) */ \
         readyQueue.taskRunning->task_sp     = 0; \
         while (STKPTR) { \
             readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; \
@@ -32,23 +31,26 @@ do { \
         } \
         readyQueue.taskRunning->task_state  = new_state; \
     } \
-} while (0);\
+} while (0);
 
 
+// Macro para restaurar o contexto da CPU a partir da TCB da próxima tarefa
 #define RESTORE_CONTEXT() \
 do { \
     if (readyQueue.taskRunning->task_state == READY) { \
+        /* Restaura os registradores principais */ \
         BSR     = readyQueue.taskRunning->BSR_reg; \
         STATUS  = readyQueue.taskRunning->STATUS_reg; \
         WREG    = readyQueue.taskRunning->WORK_reg; \
-        /* Piha */ \
+        /* Restaura a pilha de hardware (stack) */ \
         STKPTR = 0; \
-        /* Primeira execu��o */ \
+        /* Se for a primeira execução da tarefa, empilha o endereço da função */ \
         if (readyQueue.taskRunning->task_sp == 0) { \
             asm("PUSH"); \
             TOS = (uint24_t)readyQueue.taskRunning->task_func; \
         } \
-        else { /* J� executou alguma vez */ \
+        /* Se a tarefa já executou antes, restaura a pilha salva */ \
+        else { \
             do { \
                 asm("PUSH"); \
                 readyQueue.taskRunning->task_sp--; \
@@ -57,7 +59,6 @@ do { \
         } \
         readyQueue.taskRunning->task_state  = RUNNING; \
     } \
-} while (0);\
+} while (0);
 
 #endif	/* KERNEL_H */
-

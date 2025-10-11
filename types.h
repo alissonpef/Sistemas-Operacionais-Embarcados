@@ -7,16 +7,16 @@
 #define RR_SCHEDULER            1
 #define PRIORITY_SCHEDULER      2
 
-// Define o tipo tarefa
+// Define o tipo genérico de uma tarefa
 typedef void TASK;
 
-// Define o ponteiro para a fun��o
+// Define um ponteiro para uma função de tarefa
 typedef void (*f_ptr)(void);
 
-// Define os estados poss�veis
+// Define os estados possíveis de uma tarefa
 typedef enum {READY = 0, RUNNING, WAITING, WAITING_SEM} state_t;
 
-// Define a TCB 
+// Define o Bloco de Controle de Tarefa (TCB - Task Control Block)
 typedef struct tcb {
     uint8_t     task_id;
     f_ptr       task_func;
@@ -31,13 +31,14 @@ typedef struct tcb {
     uint8_t     task_sp;    
 } tcb_t;
 
-// Fila de aptos
+// Define a estrutura da Fila de Aptos
 typedef struct f_aptos {
     tcb_t readyQueue[MAX_TASKS_ON_READY_QUEUE];
     uint8_t readyQueueSize;
     tcb_t *taskRunning;
 } f_aptos_t;
 
+// Define a estrutura do Semáforo
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[MAX_TASKS_ON_READY_QUEUE];
@@ -45,21 +46,20 @@ typedef struct semaphore {
     uint8_t sem_queue_out;
 } sem_t;
 
-// Define a estrutura do Mutex
+// Define a estrutura do Mutex (baseado em semáforo)
 typedef sem_t mutex_t;
 
+// Define a estrutura do Pipe (fila de mensagens)
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
-    char* pipe_data;
+    char*   pipe_data;
     uint8_t pipe_size;
-    sem_t pipe_sem_read;
-    sem_t pipe_sem_write;
+    sem_t   pipe_sem_read;
+    sem_t   pipe_sem_write;
 } pipe_t;
 
-/*********************************************************************
- * Segment header data type
- ********************************************************************/
+// Estrutura para o cabeçalho de segmento da alocação de memória
 typedef union _SALLOC
 {
 	unsigned char byte;

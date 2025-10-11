@@ -3,19 +3,16 @@
 #include "syscall.h"
 #include "kernel.h"
 
-#include <stdio.h>
-
-// Declaração da fila de aptos
-extern f_aptos_t readyQueue;
-
-
+// Escalonador Round-Robin: seleciona a próxima tarefa pronta na fila
 tcb_t *rr_scheduler()
 {
     uint8_t pos_task_running = os_task_pos(readyQueue.taskRunning->task_func);
     uint8_t idle_selected = 0;
     
     do {
-        pos_task_running = (pos_task_running+1) % readyQueue.readyQueueSize;
+        pos_task_running = (pos_task_running + 1) % readyQueue.readyQueueSize;
+        
+        // Garante que a tarefa idle só seja escolhida se não houver outra opção
         if (readyQueue.readyQueue[pos_task_running].task_func == os_idle_task) {
             idle_selected++;
             if (idle_selected > 1) return &readyQueue.readyQueue[0];            
@@ -27,16 +24,16 @@ tcb_t *rr_scheduler()
     return &readyQueue.readyQueue[pos_task_running];
 }
 
+// Escalonador por Prioridade: seleciona a tarefa pronta de maior prioridade
 tcb_t *priority_scheduler()
 {
-    tcb_t *next_task = &readyQueue.readyQueue[0]; // Começa com a idle task como padrão
-    uint8_t highest_priority = 0; // A idle task tem a menor prioridade
+    // Inicia com a idle task como candidata padrão
+    tcb_t *next_task = &readyQueue.readyQueue[0];
+    uint8_t highest_priority = 0; // Prioridade da idle task
     
-    // Varre a fila de aptos para encontrar a tarefa de maior prioridade
+    // Procura na fila de aptos pela tarefa de maior prioridade que está pronta
     for (uint8_t i = 1; i < readyQueue.readyQueueSize; i++) {
-        // Verifica se a tarefa está pronta para executar
         if (readyQueue.readyQueue[i].task_state == READY) {
-            // Se a prioridade da tarefa atual for maior que a maior encontrada até agora
             if (readyQueue.readyQueue[i].task_priority > highest_priority) {
                 highest_priority = readyQueue.readyQueue[i].task_priority;
                 next_task = &readyQueue.readyQueue[i];
@@ -47,11 +44,13 @@ tcb_t *priority_scheduler()
     return next_task;
 }
 
+// Função principal do escalonador, chamada pelo tick do sistema
 void scheduler()
 {
-#if DEFAULT_SCHEDULER == RR_SCHEDULER
-    readyQueue.taskRunning = rr_scheduler();
-#elif DEFAULT_SCHEDULER == PRIORITY_SCHEDULER
-    readyQueue.taskRunning = priority_scheduler();
-#endif    
+    // Seleciona o algoritmo de escalonamento definido em os_config.h
+    #if DEFAULT_SCHEDULER == RR_SCHEDULER
+        readyQueue.taskRunning = rr_scheduler();
+    #elif DEFAULT_SCHEDULER == PRIORITY_SCHEDULER
+        readyQueue.taskRunning = priority_scheduler();
+    #endif    
 }

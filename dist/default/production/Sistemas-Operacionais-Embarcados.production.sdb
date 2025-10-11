@@ -3,14 +3,14 @@
 [d edition pro ]
 [d chip 18F4550 ]
 [d frameptr 4065 ]
-"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\kernel.c
 [e E39 . `uc
 READY 0
 RUNNING 1
 WAITING 2
 WAITING_SEM 3
 ]
-"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [e E3346 . `uc
 READY 0
 RUNNING 1
@@ -71,42 +71,42 @@ FOSC32 2
 FOSC8 1
 FOSC2 0
 ]
-"11 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\syscall.c
+"11 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\syscall.c
 [e E3346 . `uc
 READY 0
 RUNNING 1
 WAITING 2
 WAITING_SEM 3
 ]
-"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\scheduler.c
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\scheduler.c
 [e E39 . `uc
 READY 0
 RUNNING 1
 WAITING 2
 WAITING_SEM 3
 ]
-"35 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\hardware.c
+"35 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\hardware.c
 [e E3349 . `uc
 READY 0
 RUNNING 1
 WAITING 2
 WAITING_SEM 3
 ]
-"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\sync.c
 [e E39 . `uc
 READY 0
 RUNNING 1
 WAITING 2
 WAITING_SEM 3
 ]
-"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\pipe.c
 [e E39 . `uc
 READY 0
 RUNNING 1
 WAITING 2
 WAITING_SEM 3
 ]
-"6 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+"6 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\io.c
 [e E3343 . `uc
 CHANNEL_0 0
 CHANNEL_1 1
@@ -160,7 +160,7 @@ FOSC32 2
 FOSC8 1
 FOSC2 0
 ]
-"364 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+"364 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\mem.c
 [s S1028 _BITS 1 `uc 1 count 1 0 :7:0 
 `uc 1 alloc 1 0 :1:7 
 ]
@@ -587,13 +587,13 @@ FOSC2 0
 [v ___lmul __lmul `R(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `R(uo  1 e 8 0 ]
-"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\hardware.c
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\hardware.c
 [v _conf_timer_0 conf_timer_0 `R(v  1 e 1 0 ]
 "19
 [v _conf_interrupts conf_interrupts `R(v  1 e 1 0 ]
 "25
 [v _ISR_TIMER_0 ISR_TIMER_0 `IIH(v  1 e 1 0 ]
-"6 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+"6 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\io.c
 [v _set_channel set_channel `R(v  1 e 1 0 ]
 "11
 [v _set_port set_port `R(v  1 e 1 0 ]
@@ -607,7 +607,7 @@ FOSC2 0
 [v _pwm_init pwm_init `R(v  1 e 1 0 ]
 "69
 [v _pwm_set_duty_cycle pwm_set_duty_cycle `R(v  1 e 1 0 ]
-"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\kernel.c
 [v _os_config os_config `R(v  1 e 1 0 ]
 "23
 [v _os_start os_start `R(v  1 e 1 0 ]
@@ -617,27 +617,27 @@ FOSC2 0
 [v _os_task_pos os_task_pos `R(uc  1 e 1 0 ]
 "62
 [v _os_task_time_decrease os_task_time_decrease `R(v  1 e 1 0 ]
-"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\main.c
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\main.c
 [v _main main `R(i  1 e 2 0 ]
-"154 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+"154 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\mem.c
 [v _SRAMalloc SRAMalloc `R(*.39uc  1 e 2 0 ]
 "276
 [v _SRAMInitHeap SRAMInitHeap `R(v  1 e 1 0 ]
 "322
 [v __SRAMmerge _SRAMmerge `R(uc  1 e 1 0 ]
-"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\pipe.c
 [v _create_pipe create_pipe `R(v  1 e 1 0 ]
 "20
 [v _read_pipe read_pipe `R(v  1 e 1 0 ]
 "34
 [v _write_pipe write_pipe `R(v  1 e 1 0 ]
-"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados/types.h
+"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados/types.h
 [s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
-"30 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\scheduler.c
+"30 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\scheduler.c
 [v _priority_scheduler priority_scheduler `R(*.39S67  1 e 2 0 ]
 "50
 [v _scheduler scheduler `R(v  1 e 1 0 ]
-"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\sync.c
 [v _sem_init sem_init `R(v  1 e 1 0 ]
 "17
 [v _sem_wait sem_wait `R(v  1 e 1 0 ]
@@ -649,11 +649,11 @@ FOSC2 0
 [v _mutex_lock mutex_lock `R(v  1 e 1 0 ]
 "65
 [v _mutex_unlock mutex_unlock `R(v  1 e 1 0 ]
-"9 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\syscall.c
+"9 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\syscall.c
 [v _os_create_task os_create_task `R(v  1 e 1 0 ]
 "27
 [v _os_delay os_delay `R(v  1 e 1 0 ]
-"19 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+"19 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _config_app config_app `R(v  1 e 1 0 ]
 "44
 [v _tarefa_controle_central tarefa_controle_central `R(v  1 e 1 0 ]
@@ -897,12 +897,12 @@ FOSC2 0
 "8867
 [v _TOS TOS `VEum  1 e 3 @4093 ]
 [s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
-"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\kernel.c
 [s S78 f_aptos 533 `[5]S67 1 readyQueue 530 0 `uc 1 readyQueueSize 1 530 `*.39S67 1 taskRunning 2 531 ]
 [v _readyQueue readyQueue `S78  1 e 533 0 ]
-"120 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+"120 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\mem.c
 [v __uDynamicHeap _uDynamicHeap `[512]uc  1 e 512 0 ]
-"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [s S354 semaphore 14 `i 1 contador 2 0 `[5]*.39S67 1 sem_queue 10 2 `uc 1 sem_queue_in 1 12 `uc 1 sem_queue_out 1 13 ]
 [s S359 pipe 33 `uc 1 pipe_pos_read 1 0 `uc 1 pipe_pos_write 1 1 `*.39uc 1 pipe_data 2 2 `uc 1 pipe_size 1 4 `S354 1 pipe_sem_read 14 5 `S354 1 pipe_sem_write 14 19 ]
 [v _pipe_sensores pipe_sensores `S359  1 e 33 0 ]
@@ -913,22 +913,22 @@ FOSC2 0
 [v _velocidade_motores velocidade_motores `S366  1 e 8 0 ]
 "16
 [v _mutex_motores mutex_motores `S354  1 e 14 0 ]
-"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\main.c
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\main.c
 [v _main main `R(i  1 e 2 0 ]
 {
 "31
 } 0
-"23 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+"23 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\kernel.c
 [v _os_start os_start `R(v  1 e 1 0 ]
 {
 "40
 } 0
-"19 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+"19 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _config_app config_app `R(v  1 e 1 0 ]
 {
 "38
 } 0
-"11 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+"11 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\io.c
 [v _set_port set_port `R(v  1 e 1 0 ]
 {
 [v _port port `E3358  1 p 1 btemp28 ]
@@ -945,7 +945,7 @@ FOSC2 0
 {
 "61
 } 0
-"53 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+"53 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\sync.c
 [v _mutex_init mutex_init `R(v  1 e 1 0 ]
 {
 [s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
@@ -953,7 +953,7 @@ FOSC2 0
 [v _m m `*.30S354  1 p 1 btemp28 ]
 "57
 } 0
-"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\pipe.c
 [v _create_pipe create_pipe `R(v  1 e 1 0 ]
 {
 [s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
@@ -963,7 +963,7 @@ FOSC2 0
 [v _size size `uc  1 p 1 btemp29 ]
 "17
 } 0
-"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+"10 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\sync.c
 [v _sem_init sem_init `R(v  1 e 1 0 ]
 {
 [s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
@@ -972,7 +972,7 @@ FOSC2 0
 [v _init_value init_value `uc  1 p 1 btemp37 ]
 "15
 } 0
-"154 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+"154 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\mem.c
 [v _SRAMalloc SRAMalloc `R(*.39uc  1 e 2 0 ]
 {
 [s S1028 _BITS 1 `uc 1 count 1 0 :7:0 
@@ -1009,7 +1009,7 @@ FOSC2 0
 [v _pSegA pSegA `*.39S1031  1 p 2 wtemp22 ]
 "366
 } 3
-"16 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+"16 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\io.c
 [v _config_adc config_adc `R(v  1 e 1 0 ]
 {
 [v _tad tad `E3374  1 p 1 btemp28 ]
@@ -1022,7 +1022,7 @@ FOSC2 0
 [v _go_done go_done `i  1 p 2 wtemp14 ]
 "26
 } 0
-"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\hardware.c
+"7 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\hardware.c
 [v _conf_timer_0 conf_timer_0 `R(v  1 e 1 0 ]
 {
 "17
@@ -1032,7 +1032,7 @@ FOSC2 0
 {
 "22
 } 0
-"276 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\mem.c
+"276 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\mem.c
 [v _SRAMInitHeap SRAMInitHeap `R(v  1 e 1 0 ]
 {
 "278
@@ -1042,12 +1042,12 @@ FOSC2 0
 "289
 "299
 } 2
-"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+"12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\kernel.c
 [v _os_config os_config `R(v  1 e 1 0 ]
 {
 "21
 } 0
-"9 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\syscall.c
+"9 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\syscall.c
 [v _os_create_task os_create_task `R(v  1 e 1 0 ]
 {
 [s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
@@ -1059,12 +1059,12 @@ FOSC2 0
 [v _prior prior `uc  1 p 1 btemp21 ]
 "25
 } 106
-"43 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+"43 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\kernel.c
 [v _os_idle_task os_idle_task `R(v  1 e 1 0 ]
 {
 "51
 } 0
-"44 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+"44 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _tarefa_controle_central tarefa_controle_central `R(v  1 e 1 0 ]
 {
 [s S454 . 4 `i 1 giroscopio 2 0 `i 1 acelerometro 2 2 ]
@@ -1074,7 +1074,7 @@ FOSC2 0
 [v _nivel_bateria nivel_bateria `i  1 a 2 4 ]
 "73
 } 6
-"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\pipe.c
 [v _read_pipe read_pipe `R(v  1 e 1 0 ]
 {
 [v _size size `uc  1 p 1 btemp13 ]
@@ -1094,13 +1094,13 @@ FOSC2 0
 "30
 "31
 } 3
-"27 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\syscall.c
+"27 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\syscall.c
 [v _os_delay os_delay `R(v  1 e 1 0 ]
 {
 [v _time time `uc  1 p 1 btemp12 ]
 "38
 } 0
-"65 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\sync.c
+"65 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\sync.c
 [v _mutex_unlock mutex_unlock `R(v  1 e 1 0 ]
 {
 [s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
@@ -1133,14 +1133,14 @@ FOSC2 0
 [v _s s `*.30S354  1 p 1 btemp20 ]
 "35
 } 0
-"50 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\scheduler.c
+"50 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\scheduler.c
 [v _scheduler scheduler `R(v  1 e 1 0 ]
 {
 "57
 } 0
-"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados/types.h
+"20 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados/types.h
 [s S67 tcb 106 `uc 1 task_id 1 0 `*.37R(v 1 task_func 2 1 `E39 1 task_state 1 3 `uc 1 task_priority 1 4 `uc 1 task_time_to_waiting 1 5 `uc 1 BSR_reg 1 6 `uc 1 WORK_reg 1 7 `uc 1 STATUS_reg 1 8 `[32]um 1 STACK 96 9 `uc 1 task_sp 1 105 ]
-"30 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\scheduler.c
+"30 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\scheduler.c
 [v _priority_scheduler priority_scheduler `R(*.39S67  1 e 2 0 ]
 {
 "32
@@ -1163,7 +1163,7 @@ FOSC2 0
 "31
 "34
 } 1
-"79 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+"79 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _tarefa_controle_motores tarefa_controle_motores `R(v  1 e 1 0 ]
 {
 [s S366 . 8 `us 1 motor1_speed 2 0 `us 1 motor2_speed 2 2 `us 1 motor3_speed 2 4 `us 1 motor4_speed 2 6 ]
@@ -1171,13 +1171,13 @@ FOSC2 0
 [v _velocidades_locais velocidades_locais `S366  1 a 8 0 ]
 "96
 } 8
-"69 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+"69 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\io.c
 [v _pwm_set_duty_cycle pwm_set_duty_cycle `R(v  1 e 1 0 ]
 {
 [v _duty_cycle duty_cycle `us  1 p 2 wtemp6 ]
 "76
 } 0
-"102 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+"102 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _tarefa_leitura_sensores tarefa_leitura_sensores `R(v  1 e 1 0 ]
 {
 [s S454 . 4 `i 1 giroscopio 2 0 `i 1 acelerometro 2 2 ]
@@ -1185,7 +1185,7 @@ FOSC2 0
 [v _dados_sensores dados_sensores `S454  1 a 4 0 ]
 "118
 } 4
-"34 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\pipe.c
+"34 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\pipe.c
 [v _write_pipe write_pipe `R(v  1 e 1 0 ]
 {
 [v _size size `uc  1 p 1 btemp13 ]
@@ -1205,24 +1205,24 @@ FOSC2 0
 "44
 "45
 } 3
-"28 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\io.c
+"28 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\io.c
 [v _adc_read adc_read `R(i  1 e 2 0 ]
 {
 "33
 } 0
-"120 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\user_app.c
+"120 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _tarefa_monitoramento_bateria tarefa_monitoramento_bateria `R(v  1 e 1 0 ]
 {
 "122
 [v _nivel_bateria nivel_bateria `i  1 a 2 0 ]
 "135
 } 2
-"25 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\hardware.c
+"25 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\hardware.c
 [v _ISR_TIMER_0 ISR_TIMER_0 `IIH(v  1 e 1 0 ]
 {
 "41
 } 0
-"62 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Distribuídos\Sistemas-Operacionais-Embarcados\kernel.c
+"62 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\kernel.c
 [v _os_task_time_decrease os_task_time_decrease `R(v  1 e 1 0 ]
 {
 "64

@@ -2,12 +2,9 @@
 #define	USER_APP_H
 
 #include "types.h"
-#include "syscall.h"
-#include "kernel.h"
-#include "hardware.h"
-#include "user_app.h" // Adicionado
-#include "mem.h"
 #include <xc.h>
+
+// --- Estruturas de Dados da Aplicação ---
 
 // Estrutura para os dados dos sensores
 typedef struct {
@@ -23,6 +20,8 @@ typedef struct {
     uint16_t motor4_speed;
 } motor_speeds_t;
 
+
+// --- Protótipos das Funções ---
 
 // Função de configuração da aplicação
 void config_app(void);
