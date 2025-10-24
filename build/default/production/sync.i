@@ -158,6 +158,7 @@ typedef struct f_aptos {
     tcb_t *taskRunning;
 } f_aptos_t;
 
+
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[5];
@@ -168,6 +169,7 @@ typedef struct semaphore {
 
 typedef sem_t mutex_t;
 
+
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
@@ -176,8 +178,6 @@ typedef struct pipe {
     sem_t pipe_sem_read;
     sem_t pipe_sem_write;
 } pipe_t;
-
-
 
 
 typedef union _SALLOC
@@ -190,6 +190,7 @@ typedef union _SALLOC
  } bits;
 }SALLOC;
 # 5 "./sync.h" 2
+
 
 void sem_init(sem_t *s, uint8_t init_value);
 void sem_wait(sem_t *s);
@@ -6020,15 +6021,23 @@ uint8_t os_task_pos(f_ptr task);
 void os_task_time_decrease(void);
 # 3 "sync.c" 2
 # 1 "./scheduler.h" 1
-# 13 "./scheduler.h"
+
+
+
+
+
+
 tcb_t *rr_scheduler(void);
+
+
 tcb_t *priority_scheduler(void);
+
+
 void scheduler(void);
 # 4 "sync.c" 2
 
 
 
-extern f_aptos_t readyQueue;
 
 
 void sem_init(sem_t *s, uint8_t init_value)
@@ -6038,10 +6047,10 @@ void sem_init(sem_t *s, uint8_t init_value)
     s->sem_queue_out = 0;
 }
 
+
 void sem_wait(sem_t *s)
 {
     (INTCONbits.GIE = 0);
-
 
     s->contador--;
 
@@ -6049,6 +6058,7 @@ void sem_wait(sem_t *s)
 
         s->sem_queue[s->sem_queue_in] = readyQueue.taskRunning;
         s->sem_queue_in = (s->sem_queue_in + 1) % 5;
+
 
         do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = WAITING_SEM; } } while (0);;
         scheduler();
@@ -6058,11 +6068,13 @@ void sem_wait(sem_t *s)
     (INTCONbits.GIE = 1);
 }
 
+
 void sem_post(sem_t *s)
 {
     (INTCONbits.GIE = 0);
 
     s->contador++;
+
 
     if (s->contador <= 0) {
         s->sem_queue[s->sem_queue_out]->task_state = READY;
@@ -6074,20 +6086,20 @@ void sem_post(sem_t *s)
 
 
 
+
 void mutex_init(mutex_t *m)
 {
-
     sem_init(m, 1);
 }
 
+
 void mutex_lock(mutex_t *m)
 {
-
     sem_wait(m);
 }
 
+
 void mutex_unlock(mutex_t *m)
 {
-
     sem_post(m);
 }

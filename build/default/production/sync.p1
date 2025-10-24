@@ -1,15 +1,15 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F48 `(v ~T0 @X0 0 tf ]
-"10 sync.c
-[; ;sync.c: 10: void sem_init(sem_t *s, uint8_t init_value)
+"9 sync.c
+[; ;sync.c: 9: void sem_init(sem_t *s, uint8_t init_value)
 [c E39 0 1 2 3 .. ]
 [n E39 . READY RUNNING WAITING WAITING_SEM  ]
 "20 ./types.h
 [; ;./types.h: 20: typedef struct tcb {
 [s S1 `uc 1 `*F48 1 `E39 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `um -> 32 `i `uc 1 ]
 [n S1 tcb task_id task_func task_state task_priority task_time_to_waiting BSR_reg WORK_reg STATUS_reg STACK task_sp ]
-"41
-[; ;./types.h: 41: typedef struct semaphore {
+"42
+[; ;./types.h: 42: typedef struct semaphore {
 [s S3 `i 1 `*S1 -> 5 `i `uc 1 `uc 1 ]
 [n S3 semaphore contador sem_queue sem_queue_in sem_queue_out ]
 "8586 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
@@ -35,8 +35,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./types.h: 35: typedef struct f_aptos {
 [s S2 `S1 -> 5 `i `uc 1 `*S1 1 ]
 [n S2 f_aptos readyQueue readyQueueSize taskRunning ]
-"7 sync.c
-[; ;sync.c: 7: extern f_aptos_t readyQueue;
+"9 ./kernel.h
+[; ;./kernel.h: 9: extern f_aptos_t readyQueue;
 [v _readyQueue `S2 ~T0 @X0 0 e ]
 "8285 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8285: extern volatile unsigned char BSR __attribute__((address(0xFE0)));
@@ -53,8 +53,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8792
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8792: extern volatile unsigned char STKPTR __attribute__((address(0xFFC)));
 [v _STKPTR `Vuc ~T0 @X0 0 e@4092 ]
-"15 ./scheduler.h
-[; ;./scheduler.h: 15: void scheduler(void);
+"13 ./scheduler.h
+[; ;./scheduler.h: 13: void scheduler(void);
 [v _scheduler `(v ~T0 @X0 0 ef ]
 "52 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 52: __asm("SPPDATA equ 0F62h");
@@ -566,31 +566,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8891
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8891: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 sync.c
-[; ;sync.c: 10: void sem_init(sem_t *s, uint8_t init_value)
+"9 sync.c
+[; ;sync.c: 9: void sem_init(sem_t *s, uint8_t init_value)
 [v _sem_init `(v ~T0 @X0 1 ef2`*S3`uc ]
-"11
-[; ;sync.c: 11: {
+"10
+[; ;sync.c: 10: {
 {
 [e :U _sem_init ]
-"10
-[; ;sync.c: 10: void sem_init(sem_t *s, uint8_t init_value)
+"9
+[; ;sync.c: 9: void sem_init(sem_t *s, uint8_t init_value)
 [v _s `*S3 ~T0 @X0 1 r1 ]
 [v _init_value `uc ~T0 @X0 1 r2 ]
-"11
-[; ;sync.c: 11: {
+"10
+[; ;sync.c: 10: {
 [f ]
-"12
-[; ;sync.c: 12:     s->contador = init_value;
+"11
+[; ;sync.c: 11:     s->contador = init_value;
 [e = . *U _s 0 -> _init_value `i ]
-"13
-[; ;sync.c: 13:     s->sem_queue_in = 0;
+"12
+[; ;sync.c: 12:     s->sem_queue_in = 0;
 [e = . *U _s 2 -> -> 0 `i `uc ]
-"14
-[; ;sync.c: 14:     s->sem_queue_out = 0;
+"13
+[; ;sync.c: 13:     s->sem_queue_out = 0;
 [e = . *U _s 3 -> -> 0 `i `uc ]
-"15
-[; ;sync.c: 15: }
+"14
+[; ;sync.c: 14: }
 [e :UE 397 ]
 }
 "17
@@ -609,18 +609,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19
 [; ;sync.c: 19:     (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"22
-[; ;sync.c: 22:     s->contador--;
+"21
+[; ;sync.c: 21:     s->contador--;
 [e -- . *U _s 0 -> 1 `i ]
-"24
-[; ;sync.c: 24:     if (s->contador < 0) {
+"23
+[; ;sync.c: 23:     if (s->contador < 0) {
 [e $ ! < . *U _s 0 -> 0 `i 399  ]
 {
-"26
-[; ;sync.c: 26:         s->sem_queue[s->sem_queue_in] = readyQueue.taskRunning;
+"25
+[; ;sync.c: 25:         s->sem_queue[s->sem_queue_in] = readyQueue.taskRunning;
 [e = *U + &U . *U _s 1 * -> . *U _s 2 `ux -> -> # *U &U . *U _s 1 `ui `ux . _readyQueue 2 ]
-"27
-[; ;sync.c: 27:         s->sem_queue_in = (s->sem_queue_in + 1) % 5;
+"26
+[; ;sync.c: 26:         s->sem_queue_in = (s->sem_queue_in + 1) % 5;
 [e = . *U _s 2 -> % + -> . *U _s 2 `i -> 1 `i -> 5 `i `uc ]
 "29
 [; ;sync.c: 29:         do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = WAITING_SEM; } } while (0);;
@@ -694,103 +694,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;sync.c: 35: }
 [e :UE 398 ]
 }
-"37
-[; ;sync.c: 37: void sem_post(sem_t *s)
-[v _sem_post `(v ~T0 @X0 1 ef1`*S3 ]
 "38
-[; ;sync.c: 38: {
+[; ;sync.c: 38: void sem_post(sem_t *s)
+[v _sem_post `(v ~T0 @X0 1 ef1`*S3 ]
+"39
+[; ;sync.c: 39: {
 {
 [e :U _sem_post ]
-"37
-[; ;sync.c: 37: void sem_post(sem_t *s)
-[v _s `*S3 ~T0 @X0 1 r1 ]
 "38
-[; ;sync.c: 38: {
-[f ]
+[; ;sync.c: 38: void sem_post(sem_t *s)
+[v _s `*S3 ~T0 @X0 1 r1 ]
 "39
-[; ;sync.c: 39:     (INTCONbits.GIE = 0);
+[; ;sync.c: 39: {
+[f ]
+"40
+[; ;sync.c: 40:     (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"41
-[; ;sync.c: 41:     s->contador++;
+"42
+[; ;sync.c: 42:     s->contador++;
 [e ++ . *U _s 0 -> 1 `i ]
-"43
-[; ;sync.c: 43:     if (s->contador <= 0) {
+"45
+[; ;sync.c: 45:     if (s->contador <= 0) {
 [e $ ! <= . *U _s 0 -> 0 `i 417  ]
 {
-"44
-[; ;sync.c: 44:         s->sem_queue[s->sem_queue_out]->task_state = READY;
-[e = . *U *U + &U . *U _s 1 * -> . *U _s 3 `ux -> -> # *U &U . *U _s 1 `ui `ux 2 . `E39 0 ]
-"45
-[; ;sync.c: 45:         s->sem_queue_out = (s->sem_queue_out + 1) % 5;
-[e = . *U _s 3 -> % + -> . *U _s 3 `i -> 1 `i -> 5 `i `uc ]
 "46
-[; ;sync.c: 46:     }
+[; ;sync.c: 46:         s->sem_queue[s->sem_queue_out]->task_state = READY;
+[e = . *U *U + &U . *U _s 1 * -> . *U _s 3 `ux -> -> # *U &U . *U _s 1 `ui `ux 2 . `E39 0 ]
+"47
+[; ;sync.c: 47:         s->sem_queue_out = (s->sem_queue_out + 1) % 5;
+[e = . *U _s 3 -> % + -> . *U _s 3 `i -> 1 `i -> 5 `i `uc ]
+"48
+[; ;sync.c: 48:     }
 }
 [e :U 417 ]
-"48
-[; ;sync.c: 48:     (INTCONbits.GIE = 1);
+"50
+[; ;sync.c: 50:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"49
-[; ;sync.c: 49: }
+"51
+[; ;sync.c: 51: }
 [e :UE 416 ]
 }
-"53
-[; ;sync.c: 53: void mutex_init(mutex_t *m)
+"56
+[; ;sync.c: 56: void mutex_init(mutex_t *m)
 [v _mutex_init `(v ~T0 @X0 1 ef1`*S3 ]
-"54
-[; ;sync.c: 54: {
+"57
+[; ;sync.c: 57: {
 {
 [e :U _mutex_init ]
-"53
-[; ;sync.c: 53: void mutex_init(mutex_t *m)
-[v _m `*S3 ~T0 @X0 1 r1 ]
-"54
-[; ;sync.c: 54: {
-[f ]
 "56
-[; ;sync.c: 56:     sem_init(m, 1);
-[e ( _sem_init (2 , _m -> -> 1 `i `uc ]
+[; ;sync.c: 56: void mutex_init(mutex_t *m)
+[v _m `*S3 ~T0 @X0 1 r1 ]
 "57
-[; ;sync.c: 57: }
+[; ;sync.c: 57: {
+[f ]
+"58
+[; ;sync.c: 58:     sem_init(m, 1);
+[e ( _sem_init (2 , _m -> -> 1 `i `uc ]
+"59
+[; ;sync.c: 59: }
 [e :UE 418 ]
 }
-"59
-[; ;sync.c: 59: void mutex_lock(mutex_t *m)
+"62
+[; ;sync.c: 62: void mutex_lock(mutex_t *m)
 [v _mutex_lock `(v ~T0 @X0 1 ef1`*S3 ]
-"60
-[; ;sync.c: 60: {
+"63
+[; ;sync.c: 63: {
 {
 [e :U _mutex_lock ]
-"59
-[; ;sync.c: 59: void mutex_lock(mutex_t *m)
-[v _m `*S3 ~T0 @X0 1 r1 ]
-"60
-[; ;sync.c: 60: {
-[f ]
 "62
-[; ;sync.c: 62:     sem_wait(m);
-[e ( _sem_wait (1 _m ]
+[; ;sync.c: 62: void mutex_lock(mutex_t *m)
+[v _m `*S3 ~T0 @X0 1 r1 ]
 "63
-[; ;sync.c: 63: }
+[; ;sync.c: 63: {
+[f ]
+"64
+[; ;sync.c: 64:     sem_wait(m);
+[e ( _sem_wait (1 _m ]
+"65
+[; ;sync.c: 65: }
 [e :UE 419 ]
 }
-"65
-[; ;sync.c: 65: void mutex_unlock(mutex_t *m)
+"68
+[; ;sync.c: 68: void mutex_unlock(mutex_t *m)
 [v _mutex_unlock `(v ~T0 @X0 1 ef1`*S3 ]
-"66
-[; ;sync.c: 66: {
+"69
+[; ;sync.c: 69: {
 {
 [e :U _mutex_unlock ]
-"65
-[; ;sync.c: 65: void mutex_unlock(mutex_t *m)
-[v _m `*S3 ~T0 @X0 1 r1 ]
-"66
-[; ;sync.c: 66: {
-[f ]
 "68
-[; ;sync.c: 68:     sem_post(m);
-[e ( _sem_post (1 _m ]
+[; ;sync.c: 68: void mutex_unlock(mutex_t *m)
+[v _m `*S3 ~T0 @X0 1 r1 ]
 "69
-[; ;sync.c: 69: }
+[; ;sync.c: 69: {
+[f ]
+"70
+[; ;sync.c: 70:     sem_post(m);
+[e ( _sem_post (1 _m ]
+"71
+[; ;sync.c: 71: }
 [e :UE 420 ]
 }

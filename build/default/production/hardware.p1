@@ -38,12 +38,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS359 ~T0 @X0 0 e@4082 ]
 [t ~ __interrupt . k ]
 [t T37 __interrupt ]
+"4472
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 4472:     struct {
+[s S178 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S178 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF SPPIF ]
+"4482
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 4482:     struct {
+[s S179 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S179 . . TX1IF RC1IF . PSPIF ]
+"4471
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 4471: typedef union {
+[u S177 `S178 1 `S179 1 ]
+[n S177 . . . ]
+"4490
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 4490: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS177 ~T0 @X0 0 e@3998 ]
+"7516
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 7516: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
+[v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
+"3267
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 3267:     struct {
+[s S136 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S136 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"3277
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 3277:     struct {
+[s S137 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S137 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
+"3266
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 3266: typedef union {
+[u S135 `S136 1 `S137 1 ]
+[n S135 . . . ]
+"3288
+[; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 3288: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
+[v _LATDbits `VS135 ~T0 @X0 0 e@3980 ]
+"8 hardware.c
+[; ;hardware.c: 8: extern uint16_t motor_a_duty, motor_b_duty, motor_c_duty, motor_d_duty;
+[v _motor_a_duty `us ~T0 @X0 0 e ]
+[v _motor_b_duty `us ~T0 @X0 0 e ]
+[v _motor_c_duty `us ~T0 @X0 0 e ]
+[v _motor_d_duty `us ~T0 @X0 0 e ]
 "15 ./kernel.h
 [; ;./kernel.h: 15: void os_task_time_decrease(void);
 [v _os_task_time_decrease `(v ~T0 @X0 0 ef ]
 [v F3358 `(v ~T0 @X0 0 tf ]
-"35 hardware.c
-[; ;hardware.c: 35:         do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = READY; } } while (0);;
+"55 hardware.c
+[; ;hardware.c: 55:         do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = READY; } } while (0);;
 [c E3349 0 1 2 3 .. ]
 [n E3349 . READY RUNNING WAITING WAITING_SEM  ]
 "20 ./types.h
@@ -72,8 +111,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8792
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8792: extern volatile unsigned char STKPTR __attribute__((address(0xFFC)));
 [v _STKPTR `Vuc ~T0 @X0 0 e@4092 ]
-"15 ./scheduler.h
-[; ;./scheduler.h: 15: void scheduler(void);
+"13 ./scheduler.h
+[; ;./scheduler.h: 13: void scheduler(void);
 [v _scheduler `(v ~T0 @X0 0 ef ]
 "52 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 52: __asm("SPPDATA equ 0F62h");
@@ -585,145 +624,185 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8891
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8891: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"7 hardware.c
-[; ;hardware.c: 7: void conf_timer_0(void)
+"10 hardware.c
+[; ;hardware.c: 10: void conf_timer_0(void)
 [v _conf_timer_0 `(v ~T0 @X0 1 ef ]
-"8
-[; ;hardware.c: 8: {
+"11
+[; ;hardware.c: 11: {
 {
 [e :U _conf_timer_0 ]
 [f ]
-"10
-[; ;hardware.c: 10:     T0CONbits.T0CS = 0;
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
-"11
-[; ;hardware.c: 11:     T0CONbits.PSA = 0;
-[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
-"12
-[; ;hardware.c: 12:     T0CONbits.T0PS = 0b110;
-[e = . . _T0CONbits 0 0 -> -> 6 `i `uc ]
 "13
-[; ;hardware.c: 13:     TMR0 = 128;
-[e = _TMR0 -> -> 128 `i `us ]
+[; ;hardware.c: 13:     T0CONbits.T0CS = 0;
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
 "14
-[; ;hardware.c: 14:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;hardware.c: 14:     T0CONbits.PSA = 0;
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
 "15
-[; ;hardware.c: 15:     INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;hardware.c: 15:     T0CONbits.T0PS = 0b110;
+[e = . . _T0CONbits 0 0 -> -> 6 `i `uc ]
 "16
-[; ;hardware.c: 16:     T0CONbits.TMR0ON = 1;
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;hardware.c: 16:     TMR0 = 128;
+[e = _TMR0 -> -> 128 `i `us ]
 "17
-[; ;hardware.c: 17: }
+[; ;hardware.c: 17:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"18
+[; ;hardware.c: 18:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"19
+[; ;hardware.c: 19:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"20
+[; ;hardware.c: 20: }
 [e :UE 397 ]
 }
-"19
-[; ;hardware.c: 19: void conf_interrupts(void)
+"22
+[; ;hardware.c: 22: void conf_interrupts(void)
 [v _conf_interrupts `(v ~T0 @X0 1 ef ]
-"20
-[; ;hardware.c: 20: {
+"23
+[; ;hardware.c: 23: {
 {
 [e :U _conf_interrupts ]
 [f ]
-"21
-[; ;hardware.c: 21:     INTCONbits.PEIE = 1;
+"24
+[; ;hardware.c: 24:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"22
-[; ;hardware.c: 22: }
+"25
+[; ;hardware.c: 25: }
 [e :UE 398 ]
 }
 [v $root$_ISR_TIMER_0 `(v ~T0 @X0 0 e ]
-"25
-[; ;hardware.c: 25: void __attribute__((picinterrupt(("")))) ISR_TIMER_0(void)
+"28
+[; ;hardware.c: 28: void __attribute__((picinterrupt(("")))) ISR_TIMER_0(void)
 [v _ISR_TIMER_0 `(v ~T37 @X0 1 ef ]
-"26
-[; ;hardware.c: 26: {
+"29
+[; ;hardware.c: 29: {
 {
 [e :U _ISR_TIMER_0 ]
 [f ]
-"27
-[; ;hardware.c: 27:     (INTCONbits.GIE = 0);
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"29
-[; ;hardware.c: 29:     if (INTCONbits.TMR0IF == 1) {
-[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 400  ]
+"32
+[; ;hardware.c: 32:     if (PIR1bits.TMR1IF == 1) {
+[e $ ! == -> . . _PIR1bits 0 0 `i -> 1 `i 400  ]
 {
-"30
-[; ;hardware.c: 30:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "33
-[; ;hardware.c: 33:         os_task_time_decrease();
-[e ( _os_task_time_decrease ..  ]
-"35
-[; ;hardware.c: 35:         do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = READY; } } while (0);;
-[e :U 403 ]
+[; ;hardware.c: 33:         PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"34
+[; ;hardware.c: 34:         TMR1 = 65535 - 500;
+[e = _TMR1 -> - -> 65535 `l -> -> 500 `i `l `us ]
+"36
+[; ;hardware.c: 36:         static uint16_t pwm_cnt = 0;
+[v F3486 `us ~T0 @X0 1 s pwm_cnt ]
+[i F3486
+-> -> 0 `i `us
+]
+"37
+[; ;hardware.c: 37:         pwm_cnt++;
+[e ++ F3486 -> -> 1 `i `us ]
+"38
+[; ;hardware.c: 38:         if (pwm_cnt >= 1024) pwm_cnt = 0;
+[e $ ! >= -> F3486 `ui -> -> 1024 `i `ui 401  ]
+[e = F3486 -> -> 0 `i `us ]
+[e :U 401 ]
+"41
+[; ;hardware.c: 41:         LATDbits.LATD0 = (pwm_cnt < motor_a_duty) ? 1 : 0;
+[e = . . _LATDbits 0 0 -> ? < -> F3486 `ui -> _motor_a_duty `ui : -> 1 `i -> 0 `i `uc ]
+"42
+[; ;hardware.c: 42:         LATDbits.LATD1 = (pwm_cnt < motor_b_duty) ? 1 : 0;
+[e = . . _LATDbits 0 1 -> ? < -> F3486 `ui -> _motor_b_duty `ui : -> 1 `i -> 0 `i `uc ]
+"43
+[; ;hardware.c: 43:         LATDbits.LATD2 = (pwm_cnt < motor_c_duty) ? 1 : 0;
+[e = . . _LATDbits 0 2 -> ? < -> F3486 `ui -> _motor_c_duty `ui : -> 1 `i -> 0 `i `uc ]
+"44
+[; ;hardware.c: 44:         LATDbits.LATD3 = (pwm_cnt < motor_d_duty) ? 1 : 0;
+[e = . . _LATDbits 0 3 -> ? < -> F3486 `ui -> _motor_d_duty `ui : -> 1 `i -> 0 `i `uc ]
+"45
+[; ;hardware.c: 45:     }
+}
+[e :U 400 ]
+"48
+[; ;hardware.c: 48:     if (INTCONbits.TMR0IF == 1) {
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 402  ]
 {
-[e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3349 1 `ui 404  ]
+"49
+[; ;hardware.c: 49:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"51
+[; ;hardware.c: 51:         (INTCONbits.GIE = 0);
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+"53
+[; ;hardware.c: 53:         os_task_time_decrease();
+[e ( _os_task_time_decrease ..  ]
+"55
+[; ;hardware.c: 55:         do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = READY; } } while (0);;
+[e :U 405 ]
+{
+[e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3349 1 `ui 406  ]
 {
 [e = . *U . _readyQueue 2 5 _BSR ]
 [e = . *U . _readyQueue 2 7 _STATUS ]
 [e = . *U . _readyQueue 2 6 _WREG ]
 [e = . *U . _readyQueue 2 9 -> -> 0 `i `uc ]
-[e $U 405  ]
-[e :U 406 ]
+[e $U 407  ]
+[e :U 408 ]
 {
 [e = *U + &U . *U . _readyQueue 2 8 * -> . *U . _readyQueue 2 9 `ux -> -> # *U &U . *U . _readyQueue 2 8 `ui `ux _TOS ]
 [e ++ . *U . _readyQueue 2 9 -> -> 1 `i `uc ]
 [; <" POP ;# ">
 }
-[e :U 405 ]
-[e $ != -> _STKPTR `i -> 0 `i 406  ]
 [e :U 407 ]
+[e $ != -> _STKPTR `i -> 0 `i 408  ]
+[e :U 409 ]
 [e = . *U . _readyQueue 2 2 . `E3349 0 ]
 }
-[e :U 404 ]
+[e :U 406 ]
 }
-[e :U 402 ]
-"36
-[; ;hardware.c: 36:         scheduler();
+[e :U 404 ]
+"56
+[; ;hardware.c: 56:         scheduler();
 [e ( _scheduler ..  ]
-"37
-[; ;hardware.c: 37:         do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
-[e :U 410 ]
+"57
+[; ;hardware.c: 57:         do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
+[e :U 412 ]
 {
-[e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3349 0 `ui 411  ]
+[e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3349 0 `ui 413  ]
 {
 [e = _BSR . *U . _readyQueue 2 5 ]
 [e = _STATUS . *U . _readyQueue 2 7 ]
 [e = _WREG . *U . _readyQueue 2 6 ]
 [e = _STKPTR -> -> 0 `i `uc ]
-[e $ ! == -> . *U . _readyQueue 2 9 `i -> 0 `i 412  ]
+[e $ ! == -> . *U . _readyQueue 2 9 `i -> 0 `i 414  ]
 {
 [; <" PUSH ;# ">
 [e = _TOS -> . *U . _readyQueue 2 1 `um ]
 }
-[e $U 413  ]
-[e :U 412 ]
+[e $U 415  ]
+[e :U 414 ]
 {
-[e :U 416 ]
+[e :U 418 ]
 {
 [; <" PUSH ;# ">
 [e -- . *U . _readyQueue 2 9 -> -> 1 `i `uc ]
 [e = _TOS *U + &U . *U . _readyQueue 2 8 * -> . *U . _readyQueue 2 9 `ux -> -> # *U &U . *U . _readyQueue 2 8 `ui `ux ]
 }
-[e $ != -> . *U . _readyQueue 2 9 `i -> 0 `i 416  ]
-[e :U 415 ]
+[e $ != -> . *U . _readyQueue 2 9 `i -> 0 `i 418  ]
+[e :U 417 ]
 }
-[e :U 413 ]
+[e :U 415 ]
 [e = . *U . _readyQueue 2 2 . `E3349 1 ]
 }
+[e :U 413 ]
+}
 [e :U 411 ]
-}
-[e :U 409 ]
-"38
-[; ;hardware.c: 38:     }
-}
-[e :U 400 ]
-"40
-[; ;hardware.c: 40:     (INTCONbits.GIE = 1);
+"59
+[; ;hardware.c: 59:         (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"41
-[; ;hardware.c: 41: }
+"60
+[; ;hardware.c: 60:     }
+}
+[e :U 402 ]
+"61
+[; ;hardware.c: 61: }
 [e :UE 399 ]
 }

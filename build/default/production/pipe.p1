@@ -1,26 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F48 `(v ~T0 @X0 0 tf ]
-"7 pipe.c
-[; ;pipe.c: 7: void create_pipe(pipe_t *p, uint8_t size)
+"8 pipe.c
+[; ;pipe.c: 8: void create_pipe(pipe_t *p, uint8_t size)
 [c E39 0 1 2 3 .. ]
 [n E39 . READY RUNNING WAITING WAITING_SEM  ]
 "20 ./types.h
 [; ;./types.h: 20: typedef struct tcb {
 [s S1 `uc 1 `*F48 1 `E39 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `um -> 32 `i `uc 1 ]
 [n S1 tcb task_id task_func task_state task_priority task_time_to_waiting BSR_reg WORK_reg STATUS_reg STACK task_sp ]
-"41
-[; ;./types.h: 41: typedef struct semaphore {
+"42
+[; ;./types.h: 42: typedef struct semaphore {
 [s S3 `i 1 `*S1 -> 5 `i `uc 1 `uc 1 ]
 [n S3 semaphore contador sem_queue sem_queue_in sem_queue_out ]
-"51
-[; ;./types.h: 51: typedef struct pipe {
+"53
+[; ;./types.h: 53: typedef struct pipe {
 [s S4 `uc 1 `uc 1 `*uc 1 `uc 1 `S3 1 `S3 1 ]
 [n S4 pipe pipe_pos_read pipe_pos_write pipe_data pipe_size pipe_sem_read pipe_sem_write ]
-"8 ./mem.h
-[; ;./mem.h: 8: unsigned char * SRAMalloc(unsigned char nBytes);
+"7 ./mem.h
+[; ;./mem.h: 7: unsigned char * SRAMalloc(unsigned char nBytes);
 [v _SRAMalloc `(*uc ~T0 @X0 0 ef1`uc ]
-"6 ./sync.h
-[; ;./sync.h: 6: void sem_init(sem_t *s, uint8_t init_value);
+"7 ./sync.h
+[; ;./sync.h: 7: void sem_init(sem_t *s, uint8_t init_value);
 [v _sem_init `(v ~T0 @X0 0 ef2`*S3`uc ]
 "8586 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8586:     struct {
@@ -41,11 +41,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8612
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8612: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS365 ~T0 @X0 0 e@4082 ]
-"7 ./sync.h
-[; ;./sync.h: 7: void sem_wait(sem_t *s);
+"8 ./sync.h
+[; ;./sync.h: 8: void sem_wait(sem_t *s);
 [v _sem_wait `(v ~T0 @X0 0 ef1`*S3 ]
-"8
-[; ;./sync.h: 8: void sem_post(sem_t *s);
+"9
+[; ;./sync.h: 9: void sem_post(sem_t *s);
 [v _sem_post `(v ~T0 @X0 0 ef1`*S3 ]
 "52 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 52: __asm("SPPDATA equ 0F62h");
@@ -557,153 +557,153 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8891
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8891: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"7 pipe.c
-[; ;pipe.c: 7: void create_pipe(pipe_t *p, uint8_t size)
+"8 pipe.c
+[; ;pipe.c: 8: void create_pipe(pipe_t *p, uint8_t size)
 [v _create_pipe `(v ~T0 @X0 1 ef2`*S4`uc ]
-"8
-[; ;pipe.c: 8: {
+"9
+[; ;pipe.c: 9: {
 {
 [e :U _create_pipe ]
-"7
-[; ;pipe.c: 7: void create_pipe(pipe_t *p, uint8_t size)
+"8
+[; ;pipe.c: 8: void create_pipe(pipe_t *p, uint8_t size)
 [v _p `*S4 ~T0 @X0 1 r1 ]
 [v _size `uc ~T0 @X0 1 r2 ]
-"8
-[; ;pipe.c: 8: {
-[f ]
 "9
-[; ;pipe.c: 9:     p->pipe_pos_read = 0;
-[e = . *U _p 0 -> -> 0 `i `uc ]
+[; ;pipe.c: 9: {
+[f ]
 "10
-[; ;pipe.c: 10:     p->pipe_pos_write = 0;
-[e = . *U _p 1 -> -> 0 `i `uc ]
+[; ;pipe.c: 10:     p->pipe_pos_read = 0;
+[e = . *U _p 0 -> -> 0 `i `uc ]
 "11
-[; ;pipe.c: 11:     p->pipe_size = size;
-[e = . *U _p 3 _size ]
+[; ;pipe.c: 11:     p->pipe_pos_write = 0;
+[e = . *U _p 1 -> -> 0 `i `uc ]
 "12
-[; ;pipe.c: 12:     p->pipe_data = (char*)SRAMalloc(size);
+[; ;pipe.c: 12:     p->pipe_size = size;
+[e = . *U _p 3 _size ]
+"13
+[; ;pipe.c: 13:     p->pipe_data = (char*)SRAMalloc(size);
 [e = . *U _p 2 -> ( _SRAMalloc (1 _size `*uc ]
-"15
-[; ;pipe.c: 15:     sem_init(&p->pipe_sem_read, 0);
-[e ( _sem_init (2 , &U . *U _p 4 -> -> 0 `i `uc ]
 "16
-[; ;pipe.c: 16:     sem_init(&p->pipe_sem_write, size);
-[e ( _sem_init (2 , &U . *U _p 5 _size ]
+[; ;pipe.c: 16:     sem_init(&p->pipe_sem_read, 0);
+[e ( _sem_init (2 , &U . *U _p 4 -> -> 0 `i `uc ]
 "17
-[; ;pipe.c: 17: }
+[; ;pipe.c: 17:     sem_init(&p->pipe_sem_write, size);
+[e ( _sem_init (2 , &U . *U _p 5 _size ]
+"18
+[; ;pipe.c: 18: }
 [e :UE 397 ]
 }
-"20
-[; ;pipe.c: 20: void read_pipe(pipe_t *p, void *buffer, uint8_t size)
-[v _read_pipe `(v ~T0 @X0 1 ef3`*S4`*v`uc ]
 "21
-[; ;pipe.c: 21: {
+[; ;pipe.c: 21: void read_pipe(pipe_t *p, void *buffer, uint8_t size)
+[v _read_pipe `(v ~T0 @X0 1 ef3`*S4`*v`uc ]
+"22
+[; ;pipe.c: 22: {
 {
 [e :U _read_pipe ]
-"20
-[; ;pipe.c: 20: void read_pipe(pipe_t *p, void *buffer, uint8_t size)
+"21
+[; ;pipe.c: 21: void read_pipe(pipe_t *p, void *buffer, uint8_t size)
 [v _p `*S4 ~T0 @X0 1 r1 ]
 [v _buffer `*v ~T0 @X0 1 r2 ]
 [v _size `uc ~T0 @X0 1 r3 ]
-"21
-[; ;pipe.c: 21: {
-[f ]
 "22
-[; ;pipe.c: 22:     char *data_buffer = (char*)buffer;
+[; ;pipe.c: 22: {
+[f ]
+"23
+[; ;pipe.c: 23:     char *data_buffer = (char*)buffer;
 [v _data_buffer `*uc ~T0 @X0 1 a ]
 [e = _data_buffer -> _buffer `*uc ]
-"23
-[; ;pipe.c: 23:     for (uint8_t i = 0; i < size; i++) {
+"24
+[; ;pipe.c: 24:     for (uint8_t i = 0; i < size; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $U 402  ]
 [e :U 399 ]
 {
-"24
-[; ;pipe.c: 24:         (INTCONbits.GIE = 0);
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
 "25
-[; ;pipe.c: 25:         sem_wait(&p->pipe_sem_read);
-[e ( _sem_wait (1 &U . *U _p 4 ]
+[; ;pipe.c: 25:         (INTCONbits.GIE = 0);
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
 "26
-[; ;pipe.c: 26:         data_buffer[i] = p->pipe_data[p->pipe_pos_read];
-[e = *U + _data_buffer * -> _i `ux -> -> # *U _data_buffer `ui `ux *U + . *U _p 2 * -> . *U _p 0 `ux -> -> # *U . *U _p 2 `ui `ux ]
+[; ;pipe.c: 26:         sem_wait(&p->pipe_sem_read);
+[e ( _sem_wait (1 &U . *U _p 4 ]
 "27
-[; ;pipe.c: 27:         p->pipe_pos_read = (p->pipe_pos_read + 1) % p->pipe_size;
-[e = . *U _p 0 -> % + -> . *U _p 0 `i -> 1 `i -> . *U _p 3 `i `uc ]
+[; ;pipe.c: 27:         data_buffer[i] = p->pipe_data[p->pipe_pos_read];
+[e = *U + _data_buffer * -> _i `ux -> -> # *U _data_buffer `ui `ux *U + . *U _p 2 * -> . *U _p 0 `ux -> -> # *U . *U _p 2 `ui `ux ]
 "28
-[; ;pipe.c: 28:         sem_post(&p->pipe_sem_write);
-[e ( _sem_post (1 &U . *U _p 5 ]
+[; ;pipe.c: 28:         p->pipe_pos_read = (p->pipe_pos_read + 1) % p->pipe_size;
+[e = . *U _p 0 -> % + -> . *U _p 0 `i -> 1 `i -> . *U _p 3 `i `uc ]
 "29
-[; ;pipe.c: 29:         (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;pipe.c: 29:         sem_post(&p->pipe_sem_write);
+[e ( _sem_post (1 &U . *U _p 5 ]
 "30
-[; ;pipe.c: 30:     }
+[; ;pipe.c: 30:         (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"31
+[; ;pipe.c: 31:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 402 ]
 [e $ < -> _i `i -> _size `i 399  ]
 [e :U 400 ]
 }
-"31
-[; ;pipe.c: 31: }
+"32
+[; ;pipe.c: 32: }
 [e :UE 398 ]
 }
-"34
-[; ;pipe.c: 34: void write_pipe(pipe_t *p, void *buffer, uint8_t size)
-[v _write_pipe `(v ~T0 @X0 1 ef3`*S4`*v`uc ]
 "35
-[; ;pipe.c: 35: {
+[; ;pipe.c: 35: void write_pipe(pipe_t *p, void *buffer, uint8_t size)
+[v _write_pipe `(v ~T0 @X0 1 ef3`*S4`*v`uc ]
+"36
+[; ;pipe.c: 36: {
 {
 [e :U _write_pipe ]
-"34
-[; ;pipe.c: 34: void write_pipe(pipe_t *p, void *buffer, uint8_t size)
+"35
+[; ;pipe.c: 35: void write_pipe(pipe_t *p, void *buffer, uint8_t size)
 [v _p `*S4 ~T0 @X0 1 r1 ]
 [v _buffer `*v ~T0 @X0 1 r2 ]
 [v _size `uc ~T0 @X0 1 r3 ]
-"35
-[; ;pipe.c: 35: {
-[f ]
 "36
-[; ;pipe.c: 36:     char *data_buffer = (char*)buffer;
+[; ;pipe.c: 36: {
+[f ]
+"37
+[; ;pipe.c: 37:     char *data_buffer = (char*)buffer;
 [v _data_buffer `*uc ~T0 @X0 1 a ]
 [e = _data_buffer -> _buffer `*uc ]
-"37
-[; ;pipe.c: 37:     for (uint8_t i = 0; i < size; i++) {
+"38
+[; ;pipe.c: 38:     for (uint8_t i = 0; i < size; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $U 407  ]
 [e :U 404 ]
 {
-"38
-[; ;pipe.c: 38:         (INTCONbits.GIE = 0);
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
 "39
-[; ;pipe.c: 39:         sem_wait(&p->pipe_sem_write);
-[e ( _sem_wait (1 &U . *U _p 5 ]
+[; ;pipe.c: 39:         (INTCONbits.GIE = 0);
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
 "40
-[; ;pipe.c: 40:         p->pipe_data[p->pipe_pos_write] = data_buffer[i];
-[e = *U + . *U _p 2 * -> . *U _p 1 `ux -> -> # *U . *U _p 2 `ui `ux *U + _data_buffer * -> _i `ux -> -> # *U _data_buffer `ui `ux ]
+[; ;pipe.c: 40:         sem_wait(&p->pipe_sem_write);
+[e ( _sem_wait (1 &U . *U _p 5 ]
 "41
-[; ;pipe.c: 41:         p->pipe_pos_write = (p->pipe_pos_write + 1) % p->pipe_size;
-[e = . *U _p 1 -> % + -> . *U _p 1 `i -> 1 `i -> . *U _p 3 `i `uc ]
+[; ;pipe.c: 41:         p->pipe_data[p->pipe_pos_write] = data_buffer[i];
+[e = *U + . *U _p 2 * -> . *U _p 1 `ux -> -> # *U . *U _p 2 `ui `ux *U + _data_buffer * -> _i `ux -> -> # *U _data_buffer `ui `ux ]
 "42
-[; ;pipe.c: 42:         sem_post(&p->pipe_sem_read);
-[e ( _sem_post (1 &U . *U _p 4 ]
+[; ;pipe.c: 42:         p->pipe_pos_write = (p->pipe_pos_write + 1) % p->pipe_size;
+[e = . *U _p 1 -> % + -> . *U _p 1 `i -> 1 `i -> . *U _p 3 `i `uc ]
 "43
-[; ;pipe.c: 43:         (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;pipe.c: 43:         sem_post(&p->pipe_sem_read);
+[e ( _sem_post (1 &U . *U _p 4 ]
 "44
-[; ;pipe.c: 44:     }
+[; ;pipe.c: 44:         (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"45
+[; ;pipe.c: 45:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 407 ]
 [e $ < -> _i `i -> _size `i 404  ]
 [e :U 405 ]
 }
-"45
-[; ;pipe.c: 45: }
+"46
+[; ;pipe.c: 46: }
 [e :UE 403 ]
 }

@@ -5954,6 +5954,7 @@ typedef struct f_aptos {
     tcb_t *taskRunning;
 } f_aptos_t;
 
+
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[5];
@@ -5964,6 +5965,7 @@ typedef struct semaphore {
 
 typedef sem_t mutex_t;
 
+
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
@@ -5972,8 +5974,6 @@ typedef struct pipe {
     sem_t pipe_sem_read;
     sem_t pipe_sem_write;
 } pipe_t;
-
-
 
 
 typedef union _SALLOC
@@ -5987,9 +5987,16 @@ typedef union _SALLOC
 }SALLOC;
 # 6 "./syscall.h" 2
 
+
 void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
+
+
 void os_delay(uint8_t time);
+
+
 void os_yield();
+
+
 void os_change_state(state_t new_state);
 # 3 "main.c" 2
 # 1 "./kernel.h" 1
@@ -6010,42 +6017,7 @@ uint8_t os_task_pos(f_ptr task);
 void os_task_time_decrease(void);
 # 4 "main.c" 2
 # 1 "./user_app.h" 1
-
-
-
-
-
-
-# 1 "./hardware.h" 1
-
-
-
-
-
-void conf_timer_0(void);
-void conf_interrupts(void);
-
-
-void __attribute__((picinterrupt(("")))) ISR_TIMER_0(void);
-# 8 "./user_app.h" 2
-# 1 "./user_app.h" 1
-# 9 "./user_app.h" 2
-# 1 "./mem.h" 1
-
-
-
-
-
-
-
-unsigned char * SRAMalloc(unsigned char nBytes);
-void SRAMfree(unsigned char *pSRAM);
-void SRAMInitHeap(void);
-     unsigned char _SRAMmerge(SALLOC * pSegA);
-# 10 "./user_app.h" 2
-
-
-
+# 10 "./user_app.h"
 typedef struct {
     int giroscopio;
     int acelerometro;
@@ -6061,6 +6033,8 @@ typedef struct {
 
 
 
+
+
 void config_app(void);
 
 
@@ -6073,7 +6047,9 @@ TASK tarefa_monitoramento_bateria(void);
 
 int main()
 {
+
     os_config();
+
 
 
 
@@ -6090,7 +6066,9 @@ int main()
 
 
 
+
     os_start();
+
 
     while (1);
 

@@ -6,10 +6,10 @@
 #include "mem.h"
 #include <xc.h>
 
-// Declaração da fila de aptos
+// Declara??o da fila de aptos
 f_aptos_t readyQueue;
 
-// Inicializa as variáveis do kernel e cria a tarefa idle
+// Inicializa as vari?veis do kernel e cria a tarefa idle
 void os_config(void)
 {
     readyQueue.readyQueueSize   = 0;
@@ -18,43 +18,45 @@ void os_config(void)
     // Cria a tarefa idle (ociosa) com a menor prioridade
     os_create_task(0, os_idle_task, 1);
     
-    // Torna a idle task visível para o linker
+    // Torna a idle task vis?vel para o linker
     asm("GLOBAL _os_idle_task");
 }
 
-// Inicia a execução do sistema operacional
+// Inicia a execu??o do sistema operacional
 void os_start(void)
 {
-    // Habilita as interrupções de periféricos
+    // Habilita as interrup??es de perif?ricos
     conf_interrupts();
     
-    // Configuração de memória dinâmica
+    // Configura??o de mem?ria din?mica
     #if DYNAMIC_MEM_ALLOC == YES
     SRAMInitHeap();
     #endif    
 
-    // Chama as configurações da aplicação do usuário
+    // Chama as configura??es da aplica??o do usu?rio
     config_app();
     
     // Inicia o timer do sistema (tick)
     conf_timer_0();
    
-    // Habilita interrupções globais para iniciar o escalonamento
+    // Habilita interrup??es globais para iniciar o escalonamento
     ei();
 }
 
-// Tarefa ociosa (idle): executada quando nenhuma outra tarefa está pronta
+// Tarefa ociosa (idle): executada quando nenhuma outra tarefa est? pronta
 void os_idle_task(void)
 {
-    TRISDbits.RD3 = 0; // Configura RD3 como saída para o LED de status
+    // NOTA: RD3 n?o pode mais ser usado para LED pois est? controlando o Motor D
+    // Usando RD4 para indicar sistema funcionando
+    TRISDbits.RD4 = 0; // Configura RD4 como sa?da para o LED de status
     
     while (1) {
-        // Pisca o LED para indicar que o sistema está funcionando
-        LATDbits.LD3 = ~PORTDbits.RD3;
+        // Pisca o LED para indicar que o sistema est? funcionando
+        LATDbits.LATD4 = ~PORTDbits.RD4;
     }
 }
 
-// Retorna a posição de uma tarefa na fila de aptos
+// Retorna a posi??o de uma tarefa na fila de aptos
 uint8_t os_task_pos(f_ptr task)
 {
     for (uint8_t i = 0; i < readyQueue.readyQueueSize; i++) {

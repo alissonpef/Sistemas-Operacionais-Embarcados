@@ -2,7 +2,7 @@
 #include "io.h"
 
 
-// --- Funções do ADC ---
+// --- Fun??es do ADC ---
 
 void set_channel(channel_t channel)
 {
@@ -18,7 +18,7 @@ void config_adc(tad_t tad, conversion_clock_t cclk)
 {
     ADCON2bits.ACQT = tad;
     ADCON2bits.ADCS = cclk;
-    ADCON2bits.ADFM = 1; // Justificação à direita
+    ADCON2bits.ADFM = 1; // Justifica??o ? direita
 }
 
 void adc_go(int go_done)
@@ -33,45 +33,97 @@ int adc_read()
     return ADRES;
 }
 
-// --- Funções do PWM ---
+// --- Fun??es do PWM ---
 
-// Inicializa o PWM no pino RC2 (CCP1)
+// Vari?veis globais para controle de PWM por software (N?O static - usadas em hardware.c)
+uint16_t motor_a_duty = 0;  // RD0
+uint16_t motor_b_duty = 0;  // RD1
+uint16_t motor_c_duty = 0;  // RD2
+uint16_t motor_d_duty = 0;  // RD3
+static uint16_t pwm_counter = 0;
+
+// Inicializa os 4 canais PWM para controle dos motores (todos em PORTD)
 void pwm_init(void)
 {
-    TRISCbits.RC2 = 0;      // Pino RC2 como saída
+    // --- Configura TODOS os 4 motores como sa?das digitais ---
+    // Conforme esquem?tico: PORTD pinos 19-22 (RD0, RD1, RD2, RD3)
+    TRISDbits.RD0 = 0;      // Motor A (pino 19)
+    TRISDbits.RD1 = 0;      // Motor B (pino 20)
+    TRISDbits.RD2 = 0;      // Motor C (pino 21)
+    TRISDbits.RD3 = 0;      // Motor D (pino 22)
     
-    PR2 = 124;              // Define o período do PWM
+    // Inicializa LEDs em estado desligado (PWM controlar�)
+    LATDbits.LATD0 = 0;
+    LATDbits.LATD1 = 0;
+    LATDbits.LATD2 = 0;
+    LATDbits.LATD3 = 0;
     
-    CCPR1L = 0;             // Inicia duty cycle em 0
-    CCP1CONbits.DC1B = 0;
+    // Inicializa duty cycles em 50% para teste
+    motor_a_duty = 512;
+    motor_b_duty = 512;
+    motor_c_duty = 512;
+    motor_d_duty = 512;
     
-    T2CONbits.T2CKPS = 0b10; // Prescaler do Timer2 para 1:16
-    T2CONbits.TMR2ON = 1;    // Liga o Timer2
+    // --- Configura Timer1 para gerar PWM por software ---
+    T1CONbits.TMR1CS = 0;   // Clock interno (Fosc/4)
+    T1CONbits.T1CKPS = 0b00; // Prescaler 1:1
+    T1CONbits.RD16 = 1;     // Modo 16 bits
+    TMR1 = 0;               // Zera o contador
     
-    CCP1CONbits.CCP1M = 0b1100; // Configura modo PWM
+    // Habilita interrup??o do Timer1
+    PIE1bits.TMR1IE = 1;    // Habilita interrup??o Timer1
+    PIR1bits.TMR1IF = 0;    // Limpa flag
+    
+    T1CONbits.TMR1ON = 1;   // Liga Timer1
 }
 
-// Define o ciclo de trabalho (duty cycle) do PWM
-void pwm_set_duty_cycle(uint16_t duty_cycle)
+// MOTOR A (RD0): Define o duty cycle
+void pwm_set_duty_cycle_motor1(uint16_t duty_cycle)
 {
-    // Separa o valor de 10 bits do duty cycle
-    CCPR1L = (duty_cycle >> 2);
-    CCP1CONbits.DC1B = (duty_cycle & 0x03);
+    if (duty_cycle > 1023) duty_cycle = 1023;
+    motor_a_duty = duty_cycle;
 }
 
+// MOTOR B (RD1): Define o duty cycle
+void pwm_set_duty_cycle_motor2(uint16_t duty_cycle)
+{
+    if (duty_cycle > 1023) duty_cycle = 1023;
+    motor_b_duty = duty_cycle;
+}
 
-// --- Funções de Interrupção Externa ---
+// MOTOR C (RD2): Define o duty cycle
+void pwm_set_duty_cycle_motor3(uint16_t duty_cycle)
+{
+    if (duty_cycle > 1023) duty_cycle = 1023;
+    motor_c_duty = duty_cycle;
+}
 
-// Inicializa a interrupção externa INT0 no pino RB0
+// MOTOR D (RD3): Define o duty cycle
+void pwm_set_duty_cycle_motor4(uint16_t duty_cycle)
+{
+    if (duty_cycle > 1023) duty_cycle = 1023;
+    motor_d_duty = duty_cycle;
+}
+
+// FUN��O N�O UTILIZADA - PWM controlado por ISR em hardware.c
+// void pwm_software_isr(void)
+// {
+//     // C�digo movido para hardware.c ISR_TIMER_0()
+// }
+
+
+// --- Fun??es de Interrup??o Externa ---
+
+// Inicializa a interrup??o externa INT0 no pino RB0
 void external_interrupt_init(void)
 {
     TRISBbits.RB0 = 1;          // Pino RB0 como entrada
     
-    INTCONbits.INT0IE = 1;      // Habilita a interrupção INT0
+    INTCONbits.INT0IE = 1;      // Habilita a interrup??o INT0
     INTCONbits.INT0IF = 0;      // Limpa a flag da INT0
-    INTCON2bits.INTEDG0 = 1;    // Interrupção na borda de subida
+    INTCON2bits.INTEDG0 = 1;    // Interrup??o na borda de subida
     
-    RCONbits.IPEN = 1;          // Habilita níveis de prioridade
-    INTCONbits.GIEH = 1;        // Habilita interrupções globais
+    RCONbits.IPEN = 1;          // Habilita n?veis de prioridade
+    INTCONbits.GIEH = 1;        // Habilita interrup??es globais
     INTCONbits.GIEL = 1;
 }

@@ -1,9 +1,9 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3417 `(v ~T0 @X0 0 tf ]
-[v F3420 `(v ~T0 @X0 0 tf ]
+[v F3416 `(v ~T0 @X0 0 tf ]
+[v F3419 `(v ~T0 @X0 0 tf ]
 [v F3355 `(v ~T0 @X0 0 tf ]
-"11 syscall.c
-[; ;syscall.c: 11:     tcb_t new_task;
+"9 syscall.c
+[; ;syscall.c: 9:     tcb_t new_task;
 [c E3346 0 1 2 3 .. ]
 [n E3346 . READY RUNNING WAITING WAITING_SEM  ]
 "20 ./types.h
@@ -14,8 +14,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./types.h: 35: typedef struct f_aptos {
 [s S392 `S391 -> 5 `i `uc 1 `*S391 1 ]
 [n S392 f_aptos readyQueue readyQueueSize taskRunning ]
-"7 syscall.c
-[; ;syscall.c: 7: extern f_aptos_t readyQueue;
+"9 ./kernel.h
+[; ;./kernel.h: 9: extern f_aptos_t readyQueue;
 [v _readyQueue `S392 ~T0 @X0 0 e ]
 "8586 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8586:     struct {
@@ -51,8 +51,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8792
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8792: extern volatile unsigned char STKPTR __attribute__((address(0xFFC)));
 [v _STKPTR `Vuc ~T0 @X0 0 e@4092 ]
-"15 ./scheduler.h
-[; ;./scheduler.h: 15: void scheduler(void);
+"13 ./scheduler.h
+[; ;./scheduler.h: 13: void scheduler(void);
 [v _scheduler `(v ~T0 @X0 0 ef ]
 "52 C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 52: __asm("SPPDATA equ 0F62h");
@@ -564,35 +564,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8891
 [; ;C:/Users/Alisson/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4550.h: 8891: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 syscall.c
-[; ;syscall.c: 9: void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior)
-[v _os_create_task `(v ~T0 @X0 1 ef3`uc`*F3417`uc ]
-"10
-[; ;syscall.c: 10: {
+"7 syscall.c
+[; ;syscall.c: 7: void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior)
+[v _os_create_task `(v ~T0 @X0 1 ef3`uc`*F3416`uc ]
+"8
+[; ;syscall.c: 8: {
 {
 [e :U _os_create_task ]
-"9
-[; ;syscall.c: 9: void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior)
+"7
+[; ;syscall.c: 7: void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior)
 [v _id `uc ~T0 @X0 1 r1 ]
-[v _task_f `*F3420 ~T0 @X0 1 r2 ]
+[v _task_f `*F3419 ~T0 @X0 1 r2 ]
 [v _prior `uc ~T0 @X0 1 r3 ]
-"10
-[; ;syscall.c: 10: {
+"8
+[; ;syscall.c: 8: {
 [f ]
-"11
-[; ;syscall.c: 11:     tcb_t new_task;
+"9
+[; ;syscall.c: 9:     tcb_t new_task;
 [v _new_task `S391 ~T0 @X0 1 a ]
-"13
-[; ;syscall.c: 13:     new_task.task_id = id;
+"12
+[; ;syscall.c: 12:     new_task.task_id = id;
 [e = . _new_task 0 _id ]
-"14
-[; ;syscall.c: 14:     new_task.task_func = task_f;
+"13
+[; ;syscall.c: 13:     new_task.task_func = task_f;
 [e = . _new_task 1 _task_f ]
-"15
-[; ;syscall.c: 15:     new_task.task_priority = prior;
+"14
+[; ;syscall.c: 14:     new_task.task_priority = prior;
 [e = . _new_task 3 _prior ]
-"16
-[; ;syscall.c: 16:     new_task.task_state = READY;
+"15
+[; ;syscall.c: 15:     new_task.task_state = READY;
 [e = . _new_task 2 . `E3346 0 ]
 "18
 [; ;syscall.c: 18:     new_task.BSR_reg = 0;
@@ -613,27 +613,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;syscall.c: 25: }
 [e :UE 397 ]
 }
-"27
-[; ;syscall.c: 27: void os_delay(uint8_t time)
-[v _os_delay `(v ~T0 @X0 1 ef1`uc ]
 "28
-[; ;syscall.c: 28: {
+[; ;syscall.c: 28: void os_delay(uint8_t time)
+[v _os_delay `(v ~T0 @X0 1 ef1`uc ]
+"29
+[; ;syscall.c: 29: {
 {
 [e :U _os_delay ]
-"27
-[; ;syscall.c: 27: void os_delay(uint8_t time)
-[v _time `uc ~T0 @X0 1 r1 ]
 "28
-[; ;syscall.c: 28: {
-[f ]
+[; ;syscall.c: 28: void os_delay(uint8_t time)
+[v _time `uc ~T0 @X0 1 r1 ]
 "29
-[; ;syscall.c: 29:     (INTCONbits.GIE = 0);
+[; ;syscall.c: 29: {
+[f ]
+"30
+[; ;syscall.c: 30:     (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"31
-[; ;syscall.c: 31:     readyQueue.taskRunning->task_time_to_waiting = time;
-[e = . *U . _readyQueue 2 4 _time ]
 "32
-[; ;syscall.c: 32:     do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = WAITING; } } while (0);;
+[; ;syscall.c: 32:     readyQueue.taskRunning->task_time_to_waiting = time;
+[e = . *U . _readyQueue 2 4 _time ]
+"33
+[; ;syscall.c: 33:     do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = WAITING; } } while (0);;
 [e :U 401 ]
 {
 [e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3346 1 `ui 402  ]
@@ -657,11 +657,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 402 ]
 }
 [e :U 400 ]
-"34
-[; ;syscall.c: 34:     scheduler();
-[e ( _scheduler ..  ]
 "35
-[; ;syscall.c: 35:     do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
+[; ;syscall.c: 35:     scheduler();
+[e ( _scheduler ..  ]
+"37
+[; ;syscall.c: 37:     do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
 [e :U 408 ]
 {
 [e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3346 0 `ui 409  ]
@@ -693,26 +693,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 409 ]
 }
 [e :U 407 ]
-"37
-[; ;syscall.c: 37:     (INTCONbits.GIE = 1);
+"39
+[; ;syscall.c: 39:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"38
-[; ;syscall.c: 38: }
+"40
+[; ;syscall.c: 40: }
 [e :UE 398 ]
 }
-"40
-[; ;syscall.c: 40: void os_yield()
+"43
+[; ;syscall.c: 43: void os_yield()
 [v _os_yield `(v ~T0 @X0 1 ef ]
-"41
-[; ;syscall.c: 41: {
+"44
+[; ;syscall.c: 44: {
 {
 [e :U _os_yield ]
 [f ]
-"42
-[; ;syscall.c: 42:     (INTCONbits.GIE = 0);
+"45
+[; ;syscall.c: 45:     (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"44
-[; ;syscall.c: 44:     do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = READY; } } while (0);;
+"47
+[; ;syscall.c: 47:     do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = READY; } } while (0);;
 [e :U 418 ]
 {
 [e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3346 1 `ui 419  ]
@@ -736,11 +736,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 419 ]
 }
 [e :U 417 ]
-"46
-[; ;syscall.c: 46:     scheduler();
+"49
+[; ;syscall.c: 49:     scheduler();
 [e ( _scheduler ..  ]
-"47
-[; ;syscall.c: 47:     do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
+"51
+[; ;syscall.c: 51:     do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
 [e :U 425 ]
 {
 [e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3346 0 `ui 426  ]
@@ -772,31 +772,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 426 ]
 }
 [e :U 424 ]
-"49
-[; ;syscall.c: 49:     (INTCONbits.GIE = 1);
+"53
+[; ;syscall.c: 53:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"50
-[; ;syscall.c: 50: }
+"54
+[; ;syscall.c: 54: }
 [e :UE 415 ]
 }
-"52
-[; ;syscall.c: 52: void os_change_state(state_t new_state)
+"57
+[; ;syscall.c: 57: void os_change_state(state_t new_state)
 [v _os_change_state `(v ~T0 @X0 1 ef1`E3346 ]
-"53
-[; ;syscall.c: 53: {
+"58
+[; ;syscall.c: 58: {
 {
 [e :U _os_change_state ]
-"52
-[; ;syscall.c: 52: void os_change_state(state_t new_state)
+"57
+[; ;syscall.c: 57: void os_change_state(state_t new_state)
 [v _new_state `E3346 ~T0 @X0 1 r1 ]
-"53
-[; ;syscall.c: 53: {
+"58
+[; ;syscall.c: 58: {
 [f ]
-"54
-[; ;syscall.c: 54:     (INTCONbits.GIE = 0);
+"59
+[; ;syscall.c: 59:     (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"56
-[; ;syscall.c: 56:     do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = new_state; } } while (0);;
+"61
+[; ;syscall.c: 61:     do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = new_state; } } while (0);;
 [e :U 435 ]
 {
 [e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3346 1 `ui 436  ]
@@ -820,11 +820,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 436 ]
 }
 [e :U 434 ]
-"58
-[; ;syscall.c: 58:     scheduler();
+"63
+[; ;syscall.c: 63:     scheduler();
 [e ( _scheduler ..  ]
-"59
-[; ;syscall.c: 59:     do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
+"65
+[; ;syscall.c: 65:     do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
 [e :U 442 ]
 {
 [e $ ! == -> . *U . _readyQueue 2 2 `ui -> . `E3346 0 `ui 443  ]
@@ -856,10 +856,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 443 ]
 }
 [e :U 441 ]
-"61
-[; ;syscall.c: 61:     (INTCONbits.GIE = 1);
+"67
+[; ;syscall.c: 67:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"62
-[; ;syscall.c: 62: }
+"68
+[; ;syscall.c: 68: }
 [e :UE 432 ]
 }

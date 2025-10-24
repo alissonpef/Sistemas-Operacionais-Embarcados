@@ -158,6 +158,7 @@ typedef struct f_aptos {
     tcb_t *taskRunning;
 } f_aptos_t;
 
+
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[5];
@@ -168,6 +169,7 @@ typedef struct semaphore {
 
 typedef sem_t mutex_t;
 
+
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
@@ -176,8 +178,6 @@ typedef struct pipe {
     sem_t pipe_sem_read;
     sem_t pipe_sem_write;
 } pipe_t;
-
-
 
 
 typedef union _SALLOC
@@ -191,12 +191,17 @@ typedef union _SALLOC
 }SALLOC;
 # 5 "./pipe.h" 2
 
+
 void create_pipe(pipe_t *p, uint8_t size);
 
+
 void read_pipe(pipe_t *p, void *buffer, uint8_t size);
+
+
 void write_pipe(pipe_t *p, void *buffer, uint8_t size);
 # 2 "pipe.c" 2
 # 1 "./sync.h" 1
+
 
 
 
@@ -218,11 +223,16 @@ void mutex_unlock(mutex_t *m);
 
 
 
-
 unsigned char * SRAMalloc(unsigned char nBytes);
+
+
 void SRAMfree(unsigned char *pSRAM);
+
+
 void SRAMInitHeap(void);
-     unsigned char _SRAMmerge(SALLOC * pSegA);
+
+
+unsigned char _SRAMmerge(SALLOC * pSegA);
 # 4 "pipe.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
@@ -6027,6 +6037,7 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 5 "pipe.c" 2
+
 
 
 void create_pipe(pipe_t *p, uint8_t size)

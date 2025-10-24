@@ -4,9 +4,7 @@ user_app.h  \
 types.h  \
 os_config.h  \
 syscall.h  \
-kernel.h  \
-hardware.h  \
-mem.h  \
 sync.h  \
 pipe.h  \
+mem.h  \
 io.h 

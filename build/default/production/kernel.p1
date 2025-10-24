@@ -13,8 +13,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S2 `S1 -> 5 `i `uc 1 `*S1 1 ]
 [n S2 f_aptos readyQueue readyQueueSize taskRunning ]
 [v F86 `(v ~T0 @X0 0 tf ]
-"7 ./syscall.h
-[; ;./syscall.h: 7: void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
+"8 ./syscall.h
+[; ;./syscall.h: 8: void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
 [v _os_create_task `(v ~T0 @X0 0 ef3`uc`*F86`uc ]
 "13 ./kernel.h
 [; ;./kernel.h: 13: void os_idle_task(void);
@@ -22,11 +22,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./hardware.h
 [; ;./hardware.h: 7: void conf_interrupts(void);
 [v _conf_interrupts `(v ~T0 @X0 0 ef ]
-"10 ./mem.h
-[; ;./mem.h: 10: void SRAMInitHeap(void);
+"13 ./mem.h
+[; ;./mem.h: 13: void SRAMInitHeap(void);
 [v _SRAMInitHeap `(v ~T0 @X0 0 ef ]
-"28 ./user_app.h
-[; ;./user_app.h: 28: void config_app(void);
+"27 ./user_app.h
+[; ;./user_app.h: 27: void config_app(void);
 [v _config_app `(v ~T0 @X0 0 ef ]
 "6 ./hardware.h
 [; ;./hardware.h: 6: void conf_timer_0(void);
@@ -614,175 +614,175 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10 kernel.c
 [; ;kernel.c: 10: f_aptos_t readyQueue;
 [v _readyQueue `S2 ~T0 @X0 1 e ]
-"12
-[; ;kernel.c: 12: void os_config(void)
-[v _os_config `(v ~T0 @X0 1 ef ]
 "13
-[; ;kernel.c: 13: {
+[; ;kernel.c: 13: void os_config(void)
+[v _os_config `(v ~T0 @X0 1 ef ]
+"14
+[; ;kernel.c: 14: {
 {
 [e :U _os_config ]
 [f ]
-"14
-[; ;kernel.c: 14:     readyQueue.readyQueueSize = 0;
-[e = . _readyQueue 1 -> -> 0 `i `uc ]
 "15
-[; ;kernel.c: 15:     readyQueue.taskRunning = 0;
+[; ;kernel.c: 15:     readyQueue.readyQueueSize = 0;
+[e = . _readyQueue 1 -> -> 0 `i `uc ]
+"16
+[; ;kernel.c: 16:     readyQueue.taskRunning = 0;
 [e = . _readyQueue 2 -> -> 0 `i `*S1 ]
-"18
-[; ;kernel.c: 18:     os_create_task(0, os_idle_task, 1);
+"19
+[; ;kernel.c: 19:     os_create_task(0, os_idle_task, 1);
 [e ( _os_create_task (3 , , -> -> 0 `i `uc &U _os_idle_task -> -> 1 `i `uc ]
-"20
-[; ;kernel.c: 20:     __asm("GLOBAL _os_idle_task");
+"22
+[; ;kernel.c: 22:     __asm("GLOBAL _os_idle_task");
 [; <" GLOBAL _os_idle_task ;# ">
-"21
-[; ;kernel.c: 21: }
+"23
+[; ;kernel.c: 23: }
 [e :UE 399 ]
 }
-"23
-[; ;kernel.c: 23: void os_start(void)
+"26
+[; ;kernel.c: 26: void os_start(void)
 [v _os_start `(v ~T0 @X0 1 ef ]
-"24
-[; ;kernel.c: 24: {
+"27
+[; ;kernel.c: 27: {
 {
 [e :U _os_start ]
 [f ]
-"26
-[; ;kernel.c: 26:     conf_interrupts();
+"29
+[; ;kernel.c: 29:     conf_interrupts();
 [e ( _conf_interrupts ..  ]
-"30
-[; ;kernel.c: 30:     SRAMInitHeap();
+"33
+[; ;kernel.c: 33:     SRAMInitHeap();
 [e ( _SRAMInitHeap ..  ]
-"34
-[; ;kernel.c: 34:     config_app();
+"37
+[; ;kernel.c: 37:     config_app();
 [e ( _config_app ..  ]
-"36
-[; ;kernel.c: 36:     conf_timer_0();
-[e ( _conf_timer_0 ..  ]
-"39
-[; ;kernel.c: 39:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "40
-[; ;kernel.c: 40: }
+[; ;kernel.c: 40:     conf_timer_0();
+[e ( _conf_timer_0 ..  ]
+"43
+[; ;kernel.c: 43:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"44
+[; ;kernel.c: 44: }
 [e :UE 400 ]
 }
-"43
-[; ;kernel.c: 43: void os_idle_task(void)
+"47
+[; ;kernel.c: 47: void os_idle_task(void)
 [v _os_idle_task `(v ~T0 @X0 1 ef ]
-"44
-[; ;kernel.c: 44: {
+"48
+[; ;kernel.c: 48: {
 {
 [e :U _os_idle_task ]
 [f ]
-"45
-[; ;kernel.c: 45:     TRISDbits.RD3 = 0;
-[e = . . _TRISDbits 1 3 -> -> 0 `i `uc ]
-"47
-[; ;kernel.c: 47:     while (1) {
+"51
+[; ;kernel.c: 51:     TRISDbits.RD4 = 0;
+[e = . . _TRISDbits 1 4 -> -> 0 `i `uc ]
+"53
+[; ;kernel.c: 53:     while (1) {
 [e :U 403 ]
 {
-"49
-[; ;kernel.c: 49:         LATDbits.LD3 = ~PORTDbits.RD3;
-[e = . . _LATDbits 1 3 -> ~ -> . . _PORTDbits 0 3 `i `uc ]
-"50
-[; ;kernel.c: 50:     }
+"55
+[; ;kernel.c: 55:         LATDbits.LATD4 = ~PORTDbits.RD4;
+[e = . . _LATDbits 0 4 -> ~ -> . . _PORTDbits 0 4 `i `uc ]
+"56
+[; ;kernel.c: 56:     }
 }
 [e :U 402 ]
 [e $U 403  ]
 [e :U 404 ]
-"51
-[; ;kernel.c: 51: }
+"57
+[; ;kernel.c: 57: }
 [e :UE 401 ]
 }
-"53
-[; ;kernel.c: 53: uint8_t os_task_pos(f_ptr task)
+"60
+[; ;kernel.c: 60: uint8_t os_task_pos(f_ptr task)
 [v _os_task_pos `(uc ~T0 @X0 1 ef1`*F3443 ]
-"54
-[; ;kernel.c: 54: {
+"61
+[; ;kernel.c: 61: {
 {
 [e :U _os_task_pos ]
-"53
-[; ;kernel.c: 53: uint8_t os_task_pos(f_ptr task)
+"60
+[; ;kernel.c: 60: uint8_t os_task_pos(f_ptr task)
 [v _task `*F3445 ~T0 @X0 1 r1 ]
-"54
-[; ;kernel.c: 54: {
+"61
+[; ;kernel.c: 61: {
 [f ]
-"55
-[; ;kernel.c: 55:     for (uint8_t i = 0; i < readyQueue.readyQueueSize; i++) {
+"62
+[; ;kernel.c: 62:     for (uint8_t i = 0; i < readyQueue.readyQueueSize; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $U 409  ]
 [e :U 406 ]
 {
-"56
-[; ;kernel.c: 56:         if (readyQueue.readyQueue[i].task_func == task) return i;
+"63
+[; ;kernel.c: 63:         if (readyQueue.readyQueue[i].task_func == task) return i;
 [e $ ! == . *U + &U . _readyQueue 0 * -> _i `ux -> -> # *U &U . _readyQueue 0 `ui `ux 1 _task 410  ]
 [e ) _i ]
 [e $UE 405  ]
 [e :U 410 ]
-"57
-[; ;kernel.c: 57:     }
+"64
+[; ;kernel.c: 64:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 409 ]
 [e $ < -> _i `i -> . _readyQueue 1 `i 406  ]
 [e :U 407 ]
 }
-"59
-[; ;kernel.c: 59:     return 0;
+"66
+[; ;kernel.c: 66:     return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 405  ]
-"60
-[; ;kernel.c: 60: }
+"67
+[; ;kernel.c: 67: }
 [e :UE 405 ]
 }
-"62
-[; ;kernel.c: 62: void os_task_time_decrease()
+"70
+[; ;kernel.c: 70: void os_task_time_decrease()
 [v _os_task_time_decrease `(v ~T0 @X0 1 ef ]
-"63
-[; ;kernel.c: 63: {
+"71
+[; ;kernel.c: 71: {
 {
 [e :U _os_task_time_decrease ]
 [f ]
-"64
-[; ;kernel.c: 64:     for (uint8_t i = 1; i < readyQueue.readyQueueSize; i++) {
+"73
+[; ;kernel.c: 73:     for (uint8_t i = 1; i < readyQueue.readyQueueSize; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `uc ]
 [e $U 415  ]
 [e :U 412 ]
 {
-"65
-[; ;kernel.c: 65:         if (readyQueue.readyQueue[i].task_state == WAITING) {
+"74
+[; ;kernel.c: 74:         if (readyQueue.readyQueue[i].task_state == WAITING) {
 [e $ ! == -> . *U + &U . _readyQueue 0 * -> _i `ux -> -> # *U &U . _readyQueue 0 `ui `ux 2 `ui -> . `E39 2 `ui 416  ]
 {
-"66
-[; ;kernel.c: 66:             readyQueue.readyQueue[i].task_time_to_waiting--;
+"75
+[; ;kernel.c: 75:             readyQueue.readyQueue[i].task_time_to_waiting--;
 [e -- . *U + &U . _readyQueue 0 * -> _i `ux -> -> # *U &U . _readyQueue 0 `ui `ux 4 -> -> 1 `i `uc ]
-"67
-[; ;kernel.c: 67:             if (readyQueue.readyQueue[i].task_time_to_waiting == 0) {
+"76
+[; ;kernel.c: 76:             if (readyQueue.readyQueue[i].task_time_to_waiting == 0) {
 [e $ ! == -> . *U + &U . _readyQueue 0 * -> _i `ux -> -> # *U &U . _readyQueue 0 `ui `ux 4 `i -> 0 `i 417  ]
 {
-"69
-[; ;kernel.c: 69:                 readyQueue.readyQueue[i].task_state = READY;
+"78
+[; ;kernel.c: 78:                 readyQueue.readyQueue[i].task_state = READY;
 [e = . *U + &U . _readyQueue 0 * -> _i `ux -> -> # *U &U . _readyQueue 0 `ui `ux 2 . `E39 0 ]
-"70
-[; ;kernel.c: 70:             }
+"79
+[; ;kernel.c: 79:             }
 }
 [e :U 417 ]
-"71
-[; ;kernel.c: 71:         }
+"80
+[; ;kernel.c: 80:         }
 }
 [e :U 416 ]
-"72
-[; ;kernel.c: 72:     }
+"81
+[; ;kernel.c: 81:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 415 ]
 [e $ < -> _i `i -> . _readyQueue 1 `i 412  ]
 [e :U 413 ]
 }
-"73
-[; ;kernel.c: 73: }
+"82
+[; ;kernel.c: 82: }
 [e :UE 411 ]
 }

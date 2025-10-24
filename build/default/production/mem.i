@@ -7,7 +7,6 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "mem.c" 2
-# 106 "mem.c"
 # 1 "./mem.h" 1
 
 
@@ -159,6 +158,7 @@ typedef struct f_aptos {
     tcb_t *taskRunning;
 } f_aptos_t;
 
+
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[5];
@@ -169,6 +169,7 @@ typedef struct semaphore {
 
 typedef sem_t mutex_t;
 
+
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
@@ -177,8 +178,6 @@ typedef struct pipe {
     sem_t pipe_sem_read;
     sem_t pipe_sem_write;
 } pipe_t;
-
-
 
 
 typedef union _SALLOC
@@ -193,28 +192,33 @@ typedef union _SALLOC
 # 5 "./mem.h" 2
 
 
-
 unsigned char * SRAMalloc(unsigned char nBytes);
+
+
 void SRAMfree(unsigned char *pSRAM);
+
+
 void SRAMInitHeap(void);
-     unsigned char _SRAMmerge(SALLOC * pSegA);
-# 107 "mem.c" 2
-# 119 "mem.c"
-#pragma udata _SRAM_ALLOC_HEAP
+
+
+unsigned char _SRAMmerge(SALLOC * pSegA);
+# 2 "mem.c" 2
+
+
+
+
+
+
 unsigned char _uDynamicHeap[0x200];
 
 
 
-
-
-#pragma udata access _SRAM_ALLOC
-# 154 "mem.c"
-unsigned char * SRAMalloc( unsigned char nBytes)
+unsigned char * SRAMalloc(unsigned char nBytes)
 {
  SALLOC * pHeap;
  SALLOC * temp;
-      SALLOC segHeader;
-      unsigned char segLen;
+ SALLOC segHeader;
+ unsigned char segLen;
 
 
  if (nBytes > (0x7F - 1)) return (0);
@@ -224,10 +228,7 @@ unsigned char * SRAMalloc( unsigned char nBytes)
 
  while (1)
  {
-
   segHeader = *pHeap;
-
-
   segLen = segHeader.bits.count - 1;
 
 
@@ -239,42 +240,24 @@ unsigned char * SRAMalloc( unsigned char nBytes)
 
    if (nBytes > segLen)
    {
-
     if (!(_SRAMmerge(pHeap))) pHeap += segHeader.bits.count;
    }
-   else
 
-
-
-   if (nBytes == segLen)
+   else if (nBytes == segLen)
    {
-
     (*pHeap).bits.alloc = 1;
-
-
     return ((unsigned char *)(pHeap + 1));
    }
 
-
    else
    {
-
     (*pHeap).byte = nBytes + 0x81;
-
-
     temp = pHeap + 1;
-
-
     pHeap += (nBytes + 1);
-
-
     (*pHeap).byte = segLen - nBytes;
-
-
     return ((unsigned char *) temp);
    }
   }
-
 
   else
   {
@@ -282,29 +265,33 @@ unsigned char * SRAMalloc( unsigned char nBytes)
   }
  }
 }
-# 250 "mem.c"
+
+
 void SRAMfree(unsigned char * pSRAM)
 {
 
  (*(SALLOC *)(pSRAM - 1)).bits.alloc = 0;
 }
-# 276 "mem.c"
+
+
 void SRAMInitHeap(void)
 {
  unsigned char * pHeap;
-      unsigned int count;
+ unsigned int count;
 
  pHeap = _uDynamicHeap;
- count = 0x200 -1;
+ count = (0x200 - 1);
 
  while (1)
  {
+
   if (count > 0x7F)
   {
    *pHeap = 0x7F;
    pHeap += 0x7F;
    count = count - 0x7F;
   }
+
   else
   {
    *pHeap = count;
@@ -313,34 +300,24 @@ void SRAMInitHeap(void)
   }
  }
 }
-# 322 "mem.c"
-     unsigned char _SRAMmerge(SALLOC * pSegA)
+
+
+unsigned char _SRAMmerge(SALLOC * pSegA)
 {
  SALLOC * pSegB;
-      SALLOC uSegA, uSegB, uSum;
-
-
+ SALLOC uSegA, uSegB, uSum;
 
  pSegB = pSegA + (*pSegA).byte;
-
 
  uSegA = *pSegA;
  uSegB = *pSegB;
 
 
  if (uSegB.byte == 0) return (0);
-
-
  if (uSegA.bits.alloc || uSegB.bits.alloc) return (0);
-
-
  if (uSegA.bits.count == 0x7F) return (0);
 
-
  uSum.byte = uSegA.byte + uSegB.byte;
-
-
-
 
 
  if ((uSum.byte) > 0x7F)
@@ -352,7 +329,6 @@ void SRAMInitHeap(void)
 
   return (0x7F);
  }
-
 
  else
  {

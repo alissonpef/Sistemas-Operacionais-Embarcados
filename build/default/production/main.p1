@@ -4,20 +4,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./kernel.h: 11: void os_config(void);
 [v _os_config `(v ~T0 @X0 0 ef ]
 [v F3393 `(v ~T0 @X0 0 tf ]
-"7 ./syscall.h
-[; ;./syscall.h: 7: void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
+"8 ./syscall.h
+[; ;./syscall.h: 8: void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
 [v _os_create_task `(v ~T0 @X0 0 ef3`uc`*F3393`uc ]
-"31 ./user_app.h
-[; ;./user_app.h: 31: TASK tarefa_controle_central(void);
+"30 ./user_app.h
+[; ;./user_app.h: 30: TASK tarefa_controle_central(void);
 [v _tarefa_controle_central `(v ~T0 @X0 0 ef ]
-"32
-[; ;./user_app.h: 32: TASK tarefa_controle_motores(void);
+"31
+[; ;./user_app.h: 31: TASK tarefa_controle_motores(void);
 [v _tarefa_controle_motores `(v ~T0 @X0 0 ef ]
-"33
-[; ;./user_app.h: 33: TASK tarefa_leitura_sensores(void);
+"32
+[; ;./user_app.h: 32: TASK tarefa_leitura_sensores(void);
 [v _tarefa_leitura_sensores `(v ~T0 @X0 0 ef ]
-"34
-[; ;./user_app.h: 34: TASK tarefa_monitoramento_bateria(void);
+"33
+[; ;./user_app.h: 33: TASK tarefa_monitoramento_bateria(void);
 [v _tarefa_monitoramento_bateria `(v ~T0 @X0 0 ef ]
 "12 ./kernel.h
 [; ;./kernel.h: 12: void os_start(void);
@@ -541,35 +541,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-"9
-[; ;main.c: 9:     os_config();
+"10
+[; ;main.c: 10:     os_config();
 [e ( _os_config ..  ]
-"13
-[; ;main.c: 13:     os_create_task(100, tarefa_controle_central, 5);
+"15
+[; ;main.c: 15:     os_create_task(100, tarefa_controle_central, 5);
 [e ( _os_create_task (3 , , -> -> 100 `i `uc &U _tarefa_controle_central -> -> 5 `i `uc ]
-"16
-[; ;main.c: 16:     os_create_task(101, tarefa_controle_motores, 4);
+"18
+[; ;main.c: 18:     os_create_task(101, tarefa_controle_motores, 4);
 [e ( _os_create_task (3 , , -> -> 101 `i `uc &U _tarefa_controle_motores -> -> 4 `i `uc ]
-"19
-[; ;main.c: 19:     os_create_task(102, tarefa_leitura_sensores, 3);
+"21
+[; ;main.c: 21:     os_create_task(102, tarefa_leitura_sensores, 3);
 [e ( _os_create_task (3 , , -> -> 102 `i `uc &U _tarefa_leitura_sensores -> -> 3 `i `uc ]
-"22
-[; ;main.c: 22:     os_create_task(103, tarefa_monitoramento_bateria, 2);
+"24
+[; ;main.c: 24:     os_create_task(103, tarefa_monitoramento_bateria, 2);
 [e ( _os_create_task (3 , , -> -> 103 `i `uc &U _tarefa_monitoramento_bateria -> -> 2 `i `uc ]
-"26
-[; ;main.c: 26:     os_start();
+"29
+[; ;main.c: 29:     os_start();
 [e ( _os_start ..  ]
-"28
-[; ;main.c: 28:     while (1);
+"32
+[; ;main.c: 32:     while (1);
 [e :U 401 ]
 [e :U 400 ]
 [e $U 401  ]
 [e :U 402 ]
-"30
-[; ;main.c: 30:     return 0;
+"34
+[; ;main.c: 34:     return 0;
 [e ) -> 0 `i ]
 [e $UE 399  ]
-"31
-[; ;main.c: 31: }
+"35
+[; ;main.c: 35: }
 [e :UE 399 ]
 }

@@ -4,7 +4,7 @@
 #include <xc.h>
 #include <stdint.h>
 
-// Tipos de dados para configuração do ADC
+// Tipos de dados para configura??o do ADC
 
 typedef enum {CHANNEL_0     = 0b0000, 
               CHANNEL_1     = 0b0001,
@@ -53,18 +53,22 @@ typedef enum {FRC1      = 0b111,
               FOSC8     = 0b001,
               FOSC2     = 0b000} conversion_clock_t;              
 
-// --- Funções do ADC ---
+// --- Fun??es do ADC ---
 void set_channel(channel_t channel);
 void set_port(port_conf_t port);
 void config_adc(tad_t tad, conversion_clock_t cclk);
 void adc_go(int go_done);
 int adc_read();
 
-// --- Funções do PWM ---
+// --- Fun??es do PWM ---
 void pwm_init(void);
-void pwm_set_duty_cycle(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor1(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor2(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor3(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor4(uint16_t duty_cycle);
+void pwm_software_isr(void);  // ISR do PWM por software
 
-// --- Funções de Interrupção Externa (usando INT0 no pino RB0) ---
+// --- Fun??es de Interrup??o Externa (usando INT0 no pino RB0) ---
 void external_interrupt_init(void);
 
 

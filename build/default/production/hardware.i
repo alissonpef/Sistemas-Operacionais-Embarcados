@@ -5966,6 +5966,7 @@ typedef struct f_aptos {
     tcb_t *taskRunning;
 } f_aptos_t;
 
+
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[5];
@@ -5976,6 +5977,7 @@ typedef struct semaphore {
 
 typedef sem_t mutex_t;
 
+
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
@@ -5984,8 +5986,6 @@ typedef struct pipe {
     sem_t pipe_sem_read;
     sem_t pipe_sem_write;
 } pipe_t;
-
-
 
 
 typedef union _SALLOC
@@ -6009,13 +6009,98 @@ uint8_t os_task_pos(f_ptr task);
 void os_task_time_decrease(void);
 # 3 "hardware.c" 2
 # 1 "./scheduler.h" 1
-# 13 "./scheduler.h"
+
+
+
+
+
+
 tcb_t *rr_scheduler(void);
+
+
 tcb_t *priority_scheduler(void);
+
+
 void scheduler(void);
 # 4 "hardware.c" 2
+# 1 "./io.h" 1
 
 
+
+
+
+
+
+
+typedef enum {CHANNEL_0 = 0b0000,
+              CHANNEL_1 = 0b0001,
+              CHANNEL_2 = 0b0010,
+              CHANNEL_3 = 0b0011,
+              CHANNEL_4 = 0b0100,
+              CHANNEL_5 = 0b0101,
+              CHANNEL_6 = 0b0110,
+              CHANNEL_7 = 0b0111,
+              CHANNEL_8 = 0b1000,
+              CHANNEL_9 = 0b1001,
+              CHANNEL_10 = 0b1010,
+              CHANNEL_11 = 0b1011,
+              CHANNEL_12 = 0b1100 } channel_t;
+
+typedef enum {AN12 = 0b0000,
+              AN11 = 0b0011,
+              AN10 = 0b0100,
+              AN09 = 0b0101,
+              AN08 = 0b0110,
+              AN07 = 0b0111,
+              AN06 = 0b1000,
+              AN05 = 0b1001,
+              AN04 = 0b1010,
+              AN03 = 0b1011,
+              AN02 = 0b1100,
+              AN01 = 0b1101,
+              AN00 = 0b1110,
+              DISABLE = 0b1111} port_conf_t;
+
+typedef enum {TAD20 = 0b111,
+              TAD16 = 0b110,
+              TAD12 = 0b101,
+              TAD8 = 0b100,
+              TAD6 = 0b011,
+              TAD4 = 0b010,
+              TAD2 = 0b001,
+              TAD0 = 0b000} tad_t;
+
+typedef enum {FRC1 = 0b111,
+              FOSC64 = 0b110,
+              FOSC16 = 0b101,
+              FOSC4 = 0b100,
+              FRC2 = 0b011,
+              FOSC32 = 0b010,
+              FOSC8 = 0b001,
+              FOSC2 = 0b000} conversion_clock_t;
+
+
+void set_channel(channel_t channel);
+void set_port(port_conf_t port);
+void config_adc(tad_t tad, conversion_clock_t cclk);
+void adc_go(int go_done);
+int adc_read();
+
+
+void pwm_init(void);
+void pwm_set_duty_cycle_motor1(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor2(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor3(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor4(uint16_t duty_cycle);
+void pwm_software_isr(void);
+
+
+void external_interrupt_init(void);
+# 5 "hardware.c" 2
+
+
+
+extern uint16_t motor_a_duty, motor_b_duty, motor_c_duty, motor_d_duty;
 
 void conf_timer_0(void)
 {
@@ -6037,18 +6122,35 @@ void conf_interrupts(void)
 
 void __attribute__((picinterrupt(("")))) ISR_TIMER_0(void)
 {
-    (INTCONbits.GIE = 0);
+
+
+    if (PIR1bits.TMR1IF == 1) {
+        PIR1bits.TMR1IF = 0;
+        TMR1 = 65535 - 500;
+
+        static uint16_t pwm_cnt = 0;
+        pwm_cnt++;
+        if (pwm_cnt >= 1024) pwm_cnt = 0;
+
+
+        LATDbits.LATD0 = (pwm_cnt < motor_a_duty) ? 1 : 0;
+        LATDbits.LATD1 = (pwm_cnt < motor_b_duty) ? 1 : 0;
+        LATDbits.LATD2 = (pwm_cnt < motor_c_duty) ? 1 : 0;
+        LATDbits.LATD3 = (pwm_cnt < motor_d_duty) ? 1 : 0;
+    }
+
 
     if (INTCONbits.TMR0IF == 1) {
         INTCONbits.TMR0IF = 0;
 
+        (INTCONbits.GIE = 0);
 
         os_task_time_decrease();
 
         do { if (readyQueue.taskRunning->task_state == RUNNING) { readyQueue.taskRunning->BSR_reg = BSR; readyQueue.taskRunning->STATUS_reg = STATUS; readyQueue.taskRunning->WORK_reg = WREG; readyQueue.taskRunning->task_sp = 0; while (STKPTR) { readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp] = TOS; readyQueue.taskRunning->task_sp++; __asm("POP"); } readyQueue.taskRunning->task_state = READY; } } while (0);;
         scheduler();
         do { if (readyQueue.taskRunning->task_state == READY) { BSR = readyQueue.taskRunning->BSR_reg; STATUS = readyQueue.taskRunning->STATUS_reg; WREG = readyQueue.taskRunning->WORK_reg; STKPTR = 0; if (readyQueue.taskRunning->task_sp == 0) { __asm("PUSH"); TOS = (uint24_t)readyQueue.taskRunning->task_func; } else { do { __asm("PUSH"); readyQueue.taskRunning->task_sp--; TOS = readyQueue.taskRunning->STACK[readyQueue.taskRunning->task_sp]; } while (readyQueue.taskRunning->task_sp != 0); } readyQueue.taskRunning->task_state = RUNNING; } } while (0);;
-    }
 
-    (INTCONbits.GIE = 1);
+        (INTCONbits.GIE = 1);
+    }
 }

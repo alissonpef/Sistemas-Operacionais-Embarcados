@@ -8,7 +8,9 @@
 # 2 "<built-in>" 2
 # 1 "scheduler.c" 2
 # 1 "./scheduler.h" 1
-# 11 "./scheduler.h"
+
+
+
 # 1 "./types.h" 1
 
 
@@ -156,6 +158,7 @@ typedef struct f_aptos {
     tcb_t *taskRunning;
 } f_aptos_t;
 
+
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[5];
@@ -165,6 +168,7 @@ typedef struct semaphore {
 
 
 typedef sem_t mutex_t;
+
 
 typedef struct pipe {
     uint8_t pipe_pos_read;
@@ -176,8 +180,6 @@ typedef struct pipe {
 } pipe_t;
 
 
-
-
 typedef union _SALLOC
 {
  unsigned char byte;
@@ -187,10 +189,15 @@ typedef union _SALLOC
   unsigned alloc:1;
  } bits;
 }SALLOC;
-# 12 "./scheduler.h" 2
+# 5 "./scheduler.h" 2
+
 
 tcb_t *rr_scheduler(void);
+
+
 tcb_t *priority_scheduler(void);
+
+
 void scheduler(void);
 # 2 "scheduler.c" 2
 
@@ -201,9 +208,16 @@ void scheduler(void);
 
 
 
+
 void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
+
+
 void os_delay(uint8_t time);
+
+
 void os_yield();
+
+
 void os_change_state(state_t new_state);
 # 4 "scheduler.c" 2
 # 1 "./kernel.h" 1
@@ -6026,163 +6040,6 @@ uint8_t os_task_pos(f_ptr task);
 void os_task_time_decrease(void);
 # 5 "scheduler.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 143 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __int24 ssize_t;
-# 255 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-
-
-
-
-
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-
-
-
-
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 7 "scheduler.c" 2
-
-
-extern f_aptos_t readyQueue;
-
 
 tcb_t *rr_scheduler()
 {
@@ -6190,7 +6047,9 @@ tcb_t *rr_scheduler()
     uint8_t idle_selected = 0;
 
     do {
-        pos_task_running = (pos_task_running+1) % readyQueue.readyQueueSize;
+        pos_task_running = (pos_task_running + 1) % readyQueue.readyQueueSize;
+
+
         if (readyQueue.readyQueue[pos_task_running].task_func == os_idle_task) {
             idle_selected++;
             if (idle_selected > 1) return &readyQueue.readyQueue[0];
@@ -6202,16 +6061,16 @@ tcb_t *rr_scheduler()
     return &readyQueue.readyQueue[pos_task_running];
 }
 
+
 tcb_t *priority_scheduler()
 {
+
     tcb_t *next_task = &readyQueue.readyQueue[0];
     uint8_t highest_priority = 0;
 
 
     for (uint8_t i = 1; i < readyQueue.readyQueueSize; i++) {
-
         if (readyQueue.readyQueue[i].task_state == READY) {
-
             if (readyQueue.readyQueue[i].task_priority > highest_priority) {
                 highest_priority = readyQueue.readyQueue[i].task_priority;
                 next_task = &readyQueue.readyQueue[i];
@@ -6222,11 +6081,13 @@ tcb_t *priority_scheduler()
     return next_task;
 }
 
+
 void scheduler()
 {
 
 
 
-    readyQueue.taskRunning = priority_scheduler();
+
+        readyQueue.taskRunning = priority_scheduler();
 
 }

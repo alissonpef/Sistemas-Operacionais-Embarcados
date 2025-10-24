@@ -5907,7 +5907,6 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 2 "user_app.c" 2
-
 # 1 "./user_app.h" 1
 
 
@@ -5954,6 +5953,7 @@ typedef struct f_aptos {
     tcb_t *taskRunning;
 } f_aptos_t;
 
+
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[5];
@@ -5964,6 +5964,7 @@ typedef struct semaphore {
 
 typedef sem_t mutex_t;
 
+
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
@@ -5972,8 +5973,6 @@ typedef struct pipe {
     sem_t pipe_sem_read;
     sem_t pipe_sem_write;
 } pipe_t;
-
-
 
 
 typedef union _SALLOC
@@ -5986,62 +5985,8 @@ typedef union _SALLOC
  } bits;
 }SALLOC;
 # 5 "./user_app.h" 2
-# 1 "./syscall.h" 1
 
 
-
-
-
-
-void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
-void os_delay(uint8_t time);
-void os_yield();
-void os_change_state(state_t new_state);
-# 6 "./user_app.h" 2
-# 1 "./kernel.h" 1
-
-
-
-
-
-
-
-
-extern f_aptos_t readyQueue;
-
-void os_config(void);
-void os_start(void);
-void os_idle_task(void);
-uint8_t os_task_pos(f_ptr task);
-void os_task_time_decrease(void);
-# 7 "./user_app.h" 2
-# 1 "./hardware.h" 1
-
-
-
-
-
-void conf_timer_0(void);
-void conf_interrupts(void);
-
-
-void __attribute__((picinterrupt(("")))) ISR_TIMER_0(void);
-# 8 "./user_app.h" 2
-# 1 "./user_app.h" 1
-# 9 "./user_app.h" 2
-# 1 "./mem.h" 1
-
-
-
-
-
-
-
-unsigned char * SRAMalloc(unsigned char nBytes);
-void SRAMfree(unsigned char *pSRAM);
-void SRAMInitHeap(void);
-     unsigned char _SRAMmerge(SALLOC * pSegA);
-# 10 "./user_app.h" 2
 
 
 
@@ -6060,6 +6005,8 @@ typedef struct {
 
 
 
+
+
 void config_app(void);
 
 
@@ -6067,9 +6014,28 @@ TASK tarefa_controle_central(void);
 TASK tarefa_controle_motores(void);
 TASK tarefa_leitura_sensores(void);
 TASK tarefa_monitoramento_bateria(void);
-# 4 "user_app.c" 2
+# 3 "user_app.c" 2
+# 1 "./syscall.h" 1
 
+
+
+
+
+
+
+void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
+
+
+void os_delay(uint8_t time);
+
+
+void os_yield();
+
+
+void os_change_state(state_t new_state);
+# 4 "user_app.c" 2
 # 1 "./sync.h" 1
+
 
 
 
@@ -6083,8 +6049,9 @@ void sem_post(sem_t *s);
 void mutex_init(mutex_t *m);
 void mutex_lock(mutex_t *m);
 void mutex_unlock(mutex_t *m);
-# 6 "user_app.c" 2
+# 5 "user_app.c" 2
 # 1 "./pipe.h" 1
+
 
 
 
@@ -6092,11 +6059,33 @@ void mutex_unlock(mutex_t *m);
 
 void create_pipe(pipe_t *p, uint8_t size);
 
-void read_pipe(pipe_t *p, void *buffer, uint8_t size);
-void write_pipe(pipe_t *p, void *buffer, uint8_t size);
-# 7 "user_app.c" 2
 
+void read_pipe(pipe_t *p, void *buffer, uint8_t size);
+
+
+void write_pipe(pipe_t *p, void *buffer, uint8_t size);
+# 6 "user_app.c" 2
+# 1 "./mem.h" 1
+
+
+
+
+
+
+unsigned char * SRAMalloc(unsigned char nBytes);
+
+
+void SRAMfree(unsigned char *pSRAM);
+
+
+void SRAMInitHeap(void);
+
+
+unsigned char _SRAMmerge(SALLOC * pSegA);
+# 7 "user_app.c" 2
 # 1 "./io.h" 1
+
+
 
 
 
@@ -6150,37 +6139,46 @@ typedef enum {FRC1 = 0b111,
               FOSC8 = 0b001,
               FOSC2 = 0b000} conversion_clock_t;
 
+
 void set_channel(channel_t channel);
 void set_port(port_conf_t port);
 void config_adc(tad_t tad, conversion_clock_t cclk);
 void adc_go(int go_done);
 int adc_read();
 
+
 void pwm_init(void);
-void pwm_set_duty_cycle(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor1(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor2(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor3(uint16_t duty_cycle);
+void pwm_set_duty_cycle_motor4(uint16_t duty_cycle);
+void pwm_software_isr(void);
 
 
 void external_interrupt_init(void);
-# 9 "user_app.c" 2
-
+# 8 "user_app.c" 2
 
 
 pipe_t pipe_sensores;
 pipe_t pipe_bateria;
+mutex_t mutex_motores;
+
 
 motor_speeds_t velocidade_motores;
-mutex_t mutex_motores;
+
 
 
 void config_app(void)
 {
 
 
+    ADCON1 = 0x0F;
+
+
     set_channel(CHANNEL_0);
     set_port(AN03);
     config_adc(TAD12, FOSC4);
     adc_go(1);
-
 
     pwm_init();
 
@@ -6190,11 +6188,14 @@ void config_app(void)
     create_pipe(&pipe_bateria, sizeof(int));
 
 
+    velocidade_motores.motor1_speed = 512;
+    velocidade_motores.motor2_speed = 512;
+    velocidade_motores.motor3_speed = 512;
+    velocidade_motores.motor4_speed = 512;
+
+
     __asm("GLOBAL _tarefa_controle_central, _tarefa_controle_motores, _tarefa_leitura_sensores, _tarefa_monitoramento_bateria");
 }
-
-
-
 
 
 TASK tarefa_controle_central(void)
@@ -6207,52 +6208,48 @@ TASK tarefa_controle_central(void)
         read_pipe(&pipe_sensores, &dados_sensores, sizeof(sensor_data_t));
         read_pipe(&pipe_bateria, &nivel_bateria, sizeof(int));
 
+
+
+        mutex_lock(&mutex_motores);
+
+
         if (nivel_bateria < 200) {
-            velocidade_motores.motor1_speed = 50;
-            velocidade_motores.motor2_speed = 50;
-            velocidade_motores.motor3_speed = 50;
-            velocidade_motores.motor4_speed = 50;
+
+            velocidade_motores.motor1_speed = 100;
+            velocidade_motores.motor2_speed = 100;
+            velocidade_motores.motor3_speed = 100;
+            velocidade_motores.motor4_speed = 100;
         } else {
 
-            uint16_t base_speed = (uint16_t)dados_sensores.acelerometro / 4;
+            uint16_t base_speed = (uint16_t)dados_sensores.acelerometro;
             velocidade_motores.motor1_speed = base_speed;
             velocidade_motores.motor2_speed = base_speed;
             velocidade_motores.motor3_speed = base_speed;
             velocidade_motores.motor4_speed = base_speed;
         }
 
-        mutex_lock(&mutex_motores);
+
         mutex_unlock(&mutex_motores);
+
 
         os_delay(100);
     }
 }
 
 
-
-
-
 TASK tarefa_controle_motores(void)
 {
-    motor_speeds_t velocidades_locais;
-
     while (1) {
 
-        mutex_lock(&mutex_motores);
-        velocidades_locais = velocidade_motores;
-        mutex_unlock(&mutex_motores);
 
+        pwm_set_duty_cycle_motor1(velocidade_motores.motor1_speed);
+        pwm_set_duty_cycle_motor2(velocidade_motores.motor2_speed);
+        pwm_set_duty_cycle_motor3(velocidade_motores.motor3_speed);
+        pwm_set_duty_cycle_motor4(velocidade_motores.motor4_speed);
 
-
-        pwm_set_duty_cycle(velocidades_locais.motor1_speed);
-
-
-        os_delay(50);
+        os_delay(100);
     }
 }
-
-
-
 
 
 TASK tarefa_leitura_sensores(void)
@@ -6273,6 +6270,7 @@ TASK tarefa_leitura_sensores(void)
     }
 }
 
+
 TASK tarefa_monitoramento_bateria(void)
 {
     int nivel_bateria;
@@ -6283,7 +6281,6 @@ TASK tarefa_monitoramento_bateria(void)
 
 
         write_pipe(&pipe_bateria, &nivel_bateria, sizeof(int));
-
 
 
         os_delay(250);

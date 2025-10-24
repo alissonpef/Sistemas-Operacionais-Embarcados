@@ -154,6 +154,7 @@ typedef struct f_aptos {
     tcb_t *taskRunning;
 } f_aptos_t;
 
+
 typedef struct semaphore {
     int contador;
     tcb_t *sem_queue[5];
@@ -164,6 +165,7 @@ typedef struct semaphore {
 
 typedef sem_t mutex_t;
 
+
 typedef struct pipe {
     uint8_t pipe_pos_read;
     uint8_t pipe_pos_write;
@@ -172,8 +174,6 @@ typedef struct pipe {
     sem_t pipe_sem_read;
     sem_t pipe_sem_write;
 } pipe_t;
-
-
 
 
 typedef union _SALLOC
@@ -193,9 +193,16 @@ typedef union _SALLOC
 
 
 
+
 void os_create_task(uint8_t id, f_ptr task_f, uint8_t prior);
+
+
 void os_delay(uint8_t time);
+
+
 void os_yield();
+
+
 void os_change_state(state_t new_state);
 # 3 "kernel.c" 2
 # 1 "./kernel.h" 1
@@ -6030,31 +6037,7 @@ void conf_interrupts(void);
 void __attribute__((picinterrupt(("")))) ISR_TIMER_0(void);
 # 5 "kernel.c" 2
 # 1 "./user_app.h" 1
-
-
-
-
-
-
-
-# 1 "./user_app.h" 1
-# 9 "./user_app.h" 2
-# 1 "./mem.h" 1
-
-
-
-
-
-
-
-unsigned char * SRAMalloc(unsigned char nBytes);
-void SRAMfree(unsigned char *pSRAM);
-void SRAMInitHeap(void);
-     unsigned char _SRAMmerge(SALLOC * pSegA);
-# 10 "./user_app.h" 2
-
-
-
+# 10 "./user_app.h"
 typedef struct {
     int giroscopio;
     int acelerometro;
@@ -6070,6 +6053,8 @@ typedef struct {
 
 
 
+
+
 void config_app(void);
 
 
@@ -6078,11 +6063,29 @@ TASK tarefa_controle_motores(void);
 TASK tarefa_leitura_sensores(void);
 TASK tarefa_monitoramento_bateria(void);
 # 6 "kernel.c" 2
+# 1 "./mem.h" 1
 
+
+
+
+
+
+unsigned char * SRAMalloc(unsigned char nBytes);
+
+
+void SRAMfree(unsigned char *pSRAM);
+
+
+void SRAMInitHeap(void);
+
+
+unsigned char _SRAMmerge(SALLOC * pSegA);
+# 7 "kernel.c" 2
 
 
 
 f_aptos_t readyQueue;
+
 
 void os_config(void)
 {
@@ -6092,8 +6095,10 @@ void os_config(void)
 
     os_create_task(0, os_idle_task, 1);
 
+
     __asm("GLOBAL _os_idle_task");
 }
+
 
 void os_start(void)
 {
@@ -6108,6 +6113,7 @@ void os_start(void)
 
     config_app();
 
+
     conf_timer_0();
 
 
@@ -6117,13 +6123,16 @@ void os_start(void)
 
 void os_idle_task(void)
 {
-    TRISDbits.RD3 = 0;
+
+
+    TRISDbits.RD4 = 0;
 
     while (1) {
 
-        LATDbits.LD3 = ~PORTDbits.RD3;
+        LATDbits.LATD4 = ~PORTDbits.RD4;
     }
 }
+
 
 uint8_t os_task_pos(f_ptr task)
 {
@@ -6134,8 +6143,10 @@ uint8_t os_task_pos(f_ptr task)
     return 0;
 }
 
+
 void os_task_time_decrease()
 {
+
     for (uint8_t i = 1; i < readyQueue.readyQueueSize; i++) {
         if (readyQueue.readyQueue[i].task_state == WAITING) {
             readyQueue.readyQueue[i].task_time_to_waiting--;
