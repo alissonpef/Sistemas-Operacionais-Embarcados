@@ -62,18 +62,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./user_app.h: 10: typedef struct {
 [s S397 `i 1 `i 1 ]
 [n S397 . giroscopio acelerometro ]
-"10 ./pipe.h
-[; ;./pipe.h: 10: void read_pipe(pipe_t *p, void *buffer, uint8_t size);
-[v _read_pipe `(v ~T0 @X0 0 ef3`*S394`*v`uc ]
-"13 ./sync.h
-[; ;./sync.h: 13: void mutex_lock(mutex_t *m);
-[v _mutex_lock `(v ~T0 @X0 0 ef1`*S393 ]
-"14
-[; ;./sync.h: 14: void mutex_unlock(mutex_t *m);
-[v _mutex_unlock `(v ~T0 @X0 0 ef1`*S393 ]
-"11 ./syscall.h
-[; ;./syscall.h: 11: void os_delay(uint8_t time);
-[v _os_delay `(v ~T0 @X0 0 ef1`uc ]
 "65 ./io.h
 [; ;./io.h: 65: void pwm_set_duty_cycle_motor1(uint16_t duty_cycle);
 [v _pwm_set_duty_cycle_motor1 `(v ~T0 @X0 0 ef1`us ]
@@ -86,7 +74,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "68
 [; ;./io.h: 68: void pwm_set_duty_cycle_motor4(uint16_t duty_cycle);
 [v _pwm_set_duty_cycle_motor4 `(v ~T0 @X0 0 ef1`us ]
-"61
+"10 ./pipe.h
+[; ;./pipe.h: 10: void read_pipe(pipe_t *p, void *buffer, uint8_t size);
+[v _read_pipe `(v ~T0 @X0 0 ef3`*S394`*v`uc ]
+"13 ./sync.h
+[; ;./sync.h: 13: void mutex_lock(mutex_t *m);
+[v _mutex_lock `(v ~T0 @X0 0 ef1`*S393 ]
+"14
+[; ;./sync.h: 14: void mutex_unlock(mutex_t *m);
+[v _mutex_unlock `(v ~T0 @X0 0 ef1`*S393 ]
+"11 ./syscall.h
+[; ;./syscall.h: 11: void os_delay(uint8_t time);
+[v _os_delay `(v ~T0 @X0 0 ef1`uc ]
+"61 ./io.h
 [; ;./io.h: 61: int adc_read();
 [v _adc_read `(i ~T0 @X0 0 e? ]
 "13 ./pipe.h
@@ -662,211 +662,223 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user_app.c: 42:     velocidade_motores.motor4_speed = 512;
 [e = . _velocidade_motores 3 -> -> 512 `i `us ]
 "45
-[; ;user_app.c: 45:     __asm("GLOBAL _tarefa_controle_central, _tarefa_controle_motores, _tarefa_leitura_sensores, _tarefa_monitoramento_bateria");
-[; <" GLOBAL _tarefa_controle_central, _tarefa_controle_motores, _tarefa_leitura_sensores, _tarefa_monitoramento_bateria ;# ">
+[; ;user_app.c: 45:     pwm_set_duty_cycle_motor1(512);
+[e ( _pwm_set_duty_cycle_motor1 (1 -> -> 512 `i `us ]
 "46
-[; ;user_app.c: 46: }
+[; ;user_app.c: 46:     pwm_set_duty_cycle_motor2(512);
+[e ( _pwm_set_duty_cycle_motor2 (1 -> -> 512 `i `us ]
+"47
+[; ;user_app.c: 47:     pwm_set_duty_cycle_motor3(512);
+[e ( _pwm_set_duty_cycle_motor3 (1 -> -> 512 `i `us ]
+"48
+[; ;user_app.c: 48:     pwm_set_duty_cycle_motor4(512);
+[e ( _pwm_set_duty_cycle_motor4 (1 -> -> 512 `i `us ]
+"51
+[; ;user_app.c: 51:     __asm("GLOBAL _tarefa_controle_central, _tarefa_controle_motores, _tarefa_leitura_sensores, _tarefa_monitoramento_bateria");
+[; <" GLOBAL _tarefa_controle_central, _tarefa_controle_motores, _tarefa_leitura_sensores, _tarefa_monitoramento_bateria ;# ">
+"52
+[; ;user_app.c: 52: }
 [e :UE 399 ]
 }
-"49
-[; ;user_app.c: 49: TASK tarefa_controle_central(void)
+"55
+[; ;user_app.c: 55: TASK tarefa_controle_central(void)
 [v _tarefa_controle_central `(v ~T0 @X0 1 ef ]
-"50
-[; ;user_app.c: 50: {
+"56
+[; ;user_app.c: 56: {
 {
 [e :U _tarefa_controle_central ]
 [f ]
-"51
-[; ;user_app.c: 51:     sensor_data_t dados_sensores;
+"57
+[; ;user_app.c: 57:     sensor_data_t dados_sensores;
 [v _dados_sensores `S397 ~T0 @X0 1 a ]
-"52
-[; ;user_app.c: 52:     int nivel_bateria;
+"58
+[; ;user_app.c: 58:     int nivel_bateria;
 [v _nivel_bateria `i ~T0 @X0 1 a ]
-"54
-[; ;user_app.c: 54:     while (1) {
+"60
+[; ;user_app.c: 60:     while (1) {
 [e :U 402 ]
 {
-"56
-[; ;user_app.c: 56:         read_pipe(&pipe_sensores, &dados_sensores, sizeof(sensor_data_t));
+"62
+[; ;user_app.c: 62:         read_pipe(&pipe_sensores, &dados_sensores, sizeof(sensor_data_t));
 [e ( _read_pipe (3 , , &U _pipe_sensores -> &U _dados_sensores `*v -> -> # `S397 `ui `uc ]
-"57
-[; ;user_app.c: 57:         read_pipe(&pipe_bateria, &nivel_bateria, sizeof(int));
+"63
+[; ;user_app.c: 63:         read_pipe(&pipe_bateria, &nivel_bateria, sizeof(int));
 [e ( _read_pipe (3 , , &U _pipe_bateria -> &U _nivel_bateria `*v -> -> # `i `ui `uc ]
-"61
-[; ;user_app.c: 61:         mutex_lock(&mutex_motores);
+"67
+[; ;user_app.c: 67:         mutex_lock(&mutex_motores);
 [e ( _mutex_lock (1 &U _mutex_motores ]
-"64
-[; ;user_app.c: 64:         if (nivel_bateria < 200) {
+"70
+[; ;user_app.c: 70:         if (nivel_bateria < 200) {
 [e $ ! < _nivel_bateria -> 200 `i 404  ]
 {
-"66
-[; ;user_app.c: 66:             velocidade_motores.motor1_speed = 100;
+"72
+[; ;user_app.c: 72:             velocidade_motores.motor1_speed = 100;
 [e = . _velocidade_motores 0 -> -> 100 `i `us ]
-"67
-[; ;user_app.c: 67:             velocidade_motores.motor2_speed = 100;
+"73
+[; ;user_app.c: 73:             velocidade_motores.motor2_speed = 100;
 [e = . _velocidade_motores 1 -> -> 100 `i `us ]
-"68
-[; ;user_app.c: 68:             velocidade_motores.motor3_speed = 100;
+"74
+[; ;user_app.c: 74:             velocidade_motores.motor3_speed = 100;
 [e = . _velocidade_motores 2 -> -> 100 `i `us ]
-"69
-[; ;user_app.c: 69:             velocidade_motores.motor4_speed = 100;
+"75
+[; ;user_app.c: 75:             velocidade_motores.motor4_speed = 100;
 [e = . _velocidade_motores 3 -> -> 100 `i `us ]
-"70
-[; ;user_app.c: 70:         } else {
+"76
+[; ;user_app.c: 76:         } else {
 }
 [e $U 405  ]
 [e :U 404 ]
 {
-"72
-[; ;user_app.c: 72:             uint16_t base_speed = (uint16_t)dados_sensores.acelerometro;
+"78
+[; ;user_app.c: 78:             uint16_t base_speed = (uint16_t)dados_sensores.acelerometro;
 [v _base_speed `us ~T0 @X0 1 a ]
 [e = _base_speed -> . _dados_sensores 1 `us ]
-"73
-[; ;user_app.c: 73:             velocidade_motores.motor1_speed = base_speed;
+"79
+[; ;user_app.c: 79:             velocidade_motores.motor1_speed = base_speed;
 [e = . _velocidade_motores 0 _base_speed ]
-"74
-[; ;user_app.c: 74:             velocidade_motores.motor2_speed = base_speed;
+"80
+[; ;user_app.c: 80:             velocidade_motores.motor2_speed = base_speed;
 [e = . _velocidade_motores 1 _base_speed ]
-"75
-[; ;user_app.c: 75:             velocidade_motores.motor3_speed = base_speed;
+"81
+[; ;user_app.c: 81:             velocidade_motores.motor3_speed = base_speed;
 [e = . _velocidade_motores 2 _base_speed ]
-"76
-[; ;user_app.c: 76:             velocidade_motores.motor4_speed = base_speed;
+"82
+[; ;user_app.c: 82:             velocidade_motores.motor4_speed = base_speed;
 [e = . _velocidade_motores 3 _base_speed ]
-"77
-[; ;user_app.c: 77:         }
+"83
+[; ;user_app.c: 83:         }
 }
 [e :U 405 ]
-"80
-[; ;user_app.c: 80:         mutex_unlock(&mutex_motores);
+"86
+[; ;user_app.c: 86:         mutex_unlock(&mutex_motores);
 [e ( _mutex_unlock (1 &U _mutex_motores ]
-"83
-[; ;user_app.c: 83:         os_delay(100);
+"89
+[; ;user_app.c: 89:         os_delay(100);
 [e ( _os_delay (1 -> -> 100 `i `uc ]
-"84
-[; ;user_app.c: 84:     }
+"90
+[; ;user_app.c: 90:     }
 }
 [e :U 401 ]
 [e $U 402  ]
 [e :U 403 ]
-"85
-[; ;user_app.c: 85: }
+"91
+[; ;user_app.c: 91: }
 [e :UE 400 ]
 }
-"88
-[; ;user_app.c: 88: TASK tarefa_controle_motores(void)
+"94
+[; ;user_app.c: 94: TASK tarefa_controle_motores(void)
 [v _tarefa_controle_motores `(v ~T0 @X0 1 ef ]
-"89
-[; ;user_app.c: 89: {
+"95
+[; ;user_app.c: 95: {
 {
 [e :U _tarefa_controle_motores ]
 [f ]
-"90
-[; ;user_app.c: 90:     while (1) {
+"96
+[; ;user_app.c: 96:     while (1) {
 [e :U 408 ]
 {
-"93
-[; ;user_app.c: 93:         pwm_set_duty_cycle_motor1(velocidade_motores.motor1_speed);
-[e ( _pwm_set_duty_cycle_motor1 (1 . _velocidade_motores 0 ]
-"94
-[; ;user_app.c: 94:         pwm_set_duty_cycle_motor2(velocidade_motores.motor2_speed);
-[e ( _pwm_set_duty_cycle_motor2 (1 . _velocidade_motores 1 ]
-"95
-[; ;user_app.c: 95:         pwm_set_duty_cycle_motor3(velocidade_motores.motor3_speed);
-[e ( _pwm_set_duty_cycle_motor3 (1 . _velocidade_motores 2 ]
-"96
-[; ;user_app.c: 96:         pwm_set_duty_cycle_motor4(velocidade_motores.motor4_speed);
-[e ( _pwm_set_duty_cycle_motor4 (1 . _velocidade_motores 3 ]
-"98
-[; ;user_app.c: 98:         os_delay(100);
-[e ( _os_delay (1 -> -> 100 `i `uc ]
 "99
-[; ;user_app.c: 99:     }
+[; ;user_app.c: 99:         pwm_set_duty_cycle_motor1(velocidade_motores.motor1_speed);
+[e ( _pwm_set_duty_cycle_motor1 (1 . _velocidade_motores 0 ]
+"100
+[; ;user_app.c: 100:         pwm_set_duty_cycle_motor2(velocidade_motores.motor2_speed);
+[e ( _pwm_set_duty_cycle_motor2 (1 . _velocidade_motores 1 ]
+"101
+[; ;user_app.c: 101:         pwm_set_duty_cycle_motor3(velocidade_motores.motor3_speed);
+[e ( _pwm_set_duty_cycle_motor3 (1 . _velocidade_motores 2 ]
+"102
+[; ;user_app.c: 102:         pwm_set_duty_cycle_motor4(velocidade_motores.motor4_speed);
+[e ( _pwm_set_duty_cycle_motor4 (1 . _velocidade_motores 3 ]
+"104
+[; ;user_app.c: 104:         os_delay(100);
+[e ( _os_delay (1 -> -> 100 `i `uc ]
+"105
+[; ;user_app.c: 105:     }
 }
 [e :U 407 ]
 [e $U 408  ]
 [e :U 409 ]
-"100
-[; ;user_app.c: 100: }
+"106
+[; ;user_app.c: 106: }
 [e :UE 406 ]
 }
-"103
-[; ;user_app.c: 103: TASK tarefa_leitura_sensores(void)
+"109
+[; ;user_app.c: 109: TASK tarefa_leitura_sensores(void)
 [v _tarefa_leitura_sensores `(v ~T0 @X0 1 ef ]
-"104
-[; ;user_app.c: 104: {
+"110
+[; ;user_app.c: 110: {
 {
 [e :U _tarefa_leitura_sensores ]
 [f ]
-"105
-[; ;user_app.c: 105:     sensor_data_t dados_sensores;
+"111
+[; ;user_app.c: 111:     sensor_data_t dados_sensores;
 [v _dados_sensores `S397 ~T0 @X0 1 a ]
-"107
-[; ;user_app.c: 107:     while (1) {
+"113
+[; ;user_app.c: 113:     while (1) {
 [e :U 412 ]
 {
-"108
-[; ;user_app.c: 108:         set_channel(CHANNEL_0);
+"114
+[; ;user_app.c: 114:         set_channel(CHANNEL_0);
 [e ( _set_channel (1 . `E3449 0 ]
-"109
-[; ;user_app.c: 109:         dados_sensores.giroscopio = adc_read();
-[e = . _dados_sensores 0 ( _adc_read ..  ]
-"111
-[; ;user_app.c: 111:         set_channel(CHANNEL_1);
-[e ( _set_channel (1 . `E3449 1 ]
-"112
-[; ;user_app.c: 112:         dados_sensores.acelerometro = adc_read();
-[e = . _dados_sensores 1 ( _adc_read ..  ]
 "115
-[; ;user_app.c: 115:         write_pipe(&pipe_sensores, &dados_sensores, sizeof(sensor_data_t));
-[e ( _write_pipe (3 , , &U _pipe_sensores -> &U _dados_sensores `*v -> -> # `S397 `ui `uc ]
+[; ;user_app.c: 115:         dados_sensores.giroscopio = adc_read();
+[e = . _dados_sensores 0 ( _adc_read ..  ]
 "117
-[; ;user_app.c: 117:         os_delay(150);
-[e ( _os_delay (1 -> -> 150 `i `uc ]
+[; ;user_app.c: 117:         set_channel(CHANNEL_1);
+[e ( _set_channel (1 . `E3449 1 ]
 "118
-[; ;user_app.c: 118:     }
+[; ;user_app.c: 118:         dados_sensores.acelerometro = adc_read();
+[e = . _dados_sensores 1 ( _adc_read ..  ]
+"121
+[; ;user_app.c: 121:         write_pipe(&pipe_sensores, &dados_sensores, sizeof(sensor_data_t));
+[e ( _write_pipe (3 , , &U _pipe_sensores -> &U _dados_sensores `*v -> -> # `S397 `ui `uc ]
+"123
+[; ;user_app.c: 123:         os_delay(150);
+[e ( _os_delay (1 -> -> 150 `i `uc ]
+"124
+[; ;user_app.c: 124:     }
 }
 [e :U 411 ]
 [e $U 412  ]
 [e :U 413 ]
-"119
-[; ;user_app.c: 119: }
+"125
+[; ;user_app.c: 125: }
 [e :UE 410 ]
 }
-"122
-[; ;user_app.c: 122: TASK tarefa_monitoramento_bateria(void)
+"128
+[; ;user_app.c: 128: TASK tarefa_monitoramento_bateria(void)
 [v _tarefa_monitoramento_bateria `(v ~T0 @X0 1 ef ]
-"123
-[; ;user_app.c: 123: {
+"129
+[; ;user_app.c: 129: {
 {
 [e :U _tarefa_monitoramento_bateria ]
 [f ]
-"124
-[; ;user_app.c: 124:     int nivel_bateria;
+"130
+[; ;user_app.c: 130:     int nivel_bateria;
 [v _nivel_bateria `i ~T0 @X0 1 a ]
-"126
-[; ;user_app.c: 126:     while (1) {
+"132
+[; ;user_app.c: 132:     while (1) {
 [e :U 416 ]
 {
-"127
-[; ;user_app.c: 127:         set_channel(CHANNEL_2);
+"133
+[; ;user_app.c: 133:         set_channel(CHANNEL_2);
 [e ( _set_channel (1 . `E3449 2 ]
-"128
-[; ;user_app.c: 128:         nivel_bateria = adc_read();
-[e = _nivel_bateria ( _adc_read ..  ]
-"131
-[; ;user_app.c: 131:         write_pipe(&pipe_bateria, &nivel_bateria, sizeof(int));
-[e ( _write_pipe (3 , , &U _pipe_bateria -> &U _nivel_bateria `*v -> -> # `i `ui `uc ]
 "134
-[; ;user_app.c: 134:         os_delay(250);
+[; ;user_app.c: 134:         nivel_bateria = adc_read();
+[e = _nivel_bateria ( _adc_read ..  ]
+"137
+[; ;user_app.c: 137:         write_pipe(&pipe_bateria, &nivel_bateria, sizeof(int));
+[e ( _write_pipe (3 , , &U _pipe_bateria -> &U _nivel_bateria `*v -> -> # `i `ui `uc ]
+"140
+[; ;user_app.c: 140:         os_delay(250);
 [e ( _os_delay (1 -> -> 250 `i `uc ]
-"135
-[; ;user_app.c: 135:     }
+"141
+[; ;user_app.c: 141:     }
 }
 [e :U 415 ]
 [e $U 416  ]
 [e :U 417 ]
-"136
-[; ;user_app.c: 136: }
+"142
+[; ;user_app.c: 142: }
 [e :UE 414 ]
 }

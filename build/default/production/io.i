@@ -6040,16 +6040,16 @@ void pwm_init(void)
     LATDbits.LATD3 = 0;
 
 
-    motor_a_duty = 512;
-    motor_b_duty = 512;
-    motor_c_duty = 512;
-    motor_d_duty = 512;
+    motor_a_duty = 0;
+    motor_b_duty = 0;
+    motor_c_duty = 0;
+    motor_d_duty = 0;
 
 
     T1CONbits.TMR1CS = 0;
     T1CONbits.T1CKPS = 0b00;
     T1CONbits.RD16 = 1;
-    TMR1 = 0;
+    TMR1 = 65535 - 500;
 
 
     PIE1bits.TMR1IE = 1;

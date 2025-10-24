@@ -35,11 +35,17 @@ void config_app(void)
     create_pipe(&pipe_sensores, sizeof(sensor_data_t));
     create_pipe(&pipe_bateria, sizeof(int));
     
-    // 3. Inicializa velocidades dos motores (teste inicial)
-    velocidade_motores.motor1_speed = 512;  // 50% inicialmente
+    // 3. Inicializa velocidades dos motores em 50% (espera sensores)
+    velocidade_motores.motor1_speed = 512;
     velocidade_motores.motor2_speed = 512;
     velocidade_motores.motor3_speed = 512;
     velocidade_motores.motor4_speed = 512;
+    
+    // 3.1 Aplica velocidades iniciais aos motores (50% inicial)
+    pwm_set_duty_cycle_motor1(512);
+    pwm_set_duty_cycle_motor2(512);
+    pwm_set_duty_cycle_motor3(512);
+    pwm_set_duty_cycle_motor4(512);
     
     // 4. Torna as tarefas vis?veis para o linker
     asm("GLOBAL _tarefa_controle_central, _tarefa_controle_motores, _tarefa_leitura_sensores, _tarefa_monitoramento_bateria");
@@ -84,11 +90,11 @@ TASK tarefa_controle_central(void)
     }
 }
 
-// Tarefa de atuação: lê a variável de velocidade e aciona os motores via PWM
+// Tarefa de atuaï¿½ï¿½o: lï¿½ a variï¿½vel de velocidade e aciona os motores via PWM
 TASK tarefa_controle_motores(void)
 {
     while (1) {
-        // Lê diretamente sem mutex (risco controlado - apenas leitura)
+        // Lï¿½ diretamente sem mutex (risco controlado - apenas leitura)
         // Isso economiza tempo de CPU e evita overhead
         pwm_set_duty_cycle_motor1(velocidade_motores.motor1_speed);
         pwm_set_duty_cycle_motor2(velocidade_motores.motor2_speed);

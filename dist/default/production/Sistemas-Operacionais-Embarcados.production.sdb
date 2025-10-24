@@ -661,13 +661,13 @@ FOSC2 0
 [v _os_delay os_delay `R(v  1 e 1 0 ]
 "19 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _config_app config_app `R(v  1 e 1 0 ]
-"49
+"55
 [v _tarefa_controle_central tarefa_controle_central `R(v  1 e 1 0 ]
-"88
+"94
 [v _tarefa_controle_motores tarefa_controle_motores `R(v  1 e 1 0 ]
-"103
+"109
 [v _tarefa_leitura_sensores tarefa_leitura_sensores `R(v  1 e 1 0 ]
-"122
+"128
 [v _tarefa_monitoramento_bateria tarefa_monitoramento_bateria `R(v  1 e 1 0 ]
 [s S162 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
@@ -947,7 +947,7 @@ FOSC2 0
 "19 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _config_app config_app `R(v  1 e 1 0 ]
 {
-"46
+"52
 } 0
 "12 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\io.c
 [v _set_port set_port `R(v  1 e 1 0 ]
@@ -960,6 +960,30 @@ FOSC2 0
 {
 [v _channel channel `E3343  1 p 1 btemp28 ]
 "10
+} 0
+"102
+[v _pwm_set_duty_cycle_motor4 pwm_set_duty_cycle_motor4 `R(v  1 e 1 0 ]
+{
+[v _duty_cycle duty_cycle `us  1 p 2 wtemp14 ]
+"106
+} 0
+"95
+[v _pwm_set_duty_cycle_motor3 pwm_set_duty_cycle_motor3 `R(v  1 e 1 0 ]
+{
+[v _duty_cycle duty_cycle `us  1 p 2 wtemp14 ]
+"99
+} 0
+"88
+[v _pwm_set_duty_cycle_motor2 pwm_set_duty_cycle_motor2 `R(v  1 e 1 0 ]
+{
+[v _duty_cycle duty_cycle `us  1 p 2 wtemp14 ]
+"92
+} 0
+"81
+[v _pwm_set_duty_cycle_motor1 pwm_set_duty_cycle_motor1 `R(v  1 e 1 0 ]
+{
+[v _duty_cycle duty_cycle `us  1 p 2 wtemp14 ]
+"85
 } 0
 "46
 [v _pwm_init pwm_init `R(v  1 e 1 0 ]
@@ -1085,15 +1109,15 @@ FOSC2 0
 {
 "57
 } 0
-"49 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
+"55 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _tarefa_controle_central tarefa_controle_central `R(v  1 e 1 0 ]
 {
 [s S455 . 4 `i 1 giroscopio 2 0 `i 1 acelerometro 2 2 ]
-"51
+"57
 [v _dados_sensores dados_sensores `S455  1 a 4 0 ]
-"52
+"58
 [v _nivel_bateria nivel_bateria `i  1 a 2 4 ]
-"85
+"91
 } 6
 "21 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\pipe.c
 [v _read_pipe read_pipe `R(v  1 e 1 0 ]
@@ -1184,42 +1208,18 @@ FOSC2 0
 "31
 "34
 } 1
-"88 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
+"94 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _tarefa_controle_motores tarefa_controle_motores `R(v  1 e 1 0 ]
 {
-"100
-} 0
-"102 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\io.c
-[v _pwm_set_duty_cycle_motor4 pwm_set_duty_cycle_motor4 `R(v  1 e 1 0 ]
-{
-[v _duty_cycle duty_cycle `us  1 p 2 wtemp6 ]
 "106
 } 0
-"95
-[v _pwm_set_duty_cycle_motor3 pwm_set_duty_cycle_motor3 `R(v  1 e 1 0 ]
-{
-[v _duty_cycle duty_cycle `us  1 p 2 wtemp6 ]
-"99
-} 0
-"88
-[v _pwm_set_duty_cycle_motor2 pwm_set_duty_cycle_motor2 `R(v  1 e 1 0 ]
-{
-[v _duty_cycle duty_cycle `us  1 p 2 wtemp6 ]
-"92
-} 0
-"81
-[v _pwm_set_duty_cycle_motor1 pwm_set_duty_cycle_motor1 `R(v  1 e 1 0 ]
-{
-[v _duty_cycle duty_cycle `us  1 p 2 wtemp6 ]
-"85
-} 0
-"103 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
+"109
 [v _tarefa_leitura_sensores tarefa_leitura_sensores `R(v  1 e 1 0 ]
 {
 [s S455 . 4 `i 1 giroscopio 2 0 `i 1 acelerometro 2 2 ]
-"105
+"111
 [v _dados_sensores dados_sensores `S455  1 a 4 0 ]
-"119
+"125
 } 4
 "35 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\pipe.c
 [v _write_pipe write_pipe `R(v  1 e 1 0 ]
@@ -1246,12 +1246,12 @@ FOSC2 0
 {
 "34
 } 0
-"122 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
+"128 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\user_app.c
 [v _tarefa_monitoramento_bateria tarefa_monitoramento_bateria `R(v  1 e 1 0 ]
 {
-"124
+"130
 [v _nivel_bateria nivel_bateria `i  1 a 2 0 ]
-"136
+"142
 } 2
 "28 C:\Users\Alisson\Desktop\Alisson\Materias\2025.2 Sistemas Operacionais Embarcados\Sistemas-Operacionais-Embarcados\hardware.c
 [v _ISR_TIMER_0 ISR_TIMER_0 `IIH(v  1 e 1 0 ]

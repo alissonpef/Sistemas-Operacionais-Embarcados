@@ -52,23 +52,23 @@ void pwm_init(void)
     TRISDbits.RD2 = 0;      // Motor C (pino 21)
     TRISDbits.RD3 = 0;      // Motor D (pino 22)
     
-    // Inicializa LEDs em estado desligado (PWM controlará)
+    // Inicializa LEDs em estado desligado (PWM controlar?)
     LATDbits.LATD0 = 0;
     LATDbits.LATD1 = 0;
     LATDbits.LATD2 = 0;
     LATDbits.LATD3 = 0;
     
-    // Inicializa duty cycles em 50% para teste
-    motor_a_duty = 512;
-    motor_b_duty = 512;
-    motor_c_duty = 512;
-    motor_d_duty = 512;
+    // Inicializa duty cycles em 0 (desligados no início)
+    motor_a_duty = 0;
+    motor_b_duty = 0;
+    motor_c_duty = 0;
+    motor_d_duty = 0;
     
     // --- Configura Timer1 para gerar PWM por software ---
     T1CONbits.TMR1CS = 0;   // Clock interno (Fosc/4)
     T1CONbits.T1CKPS = 0b00; // Prescaler 1:1
     T1CONbits.RD16 = 1;     // Modo 16 bits
-    TMR1 = 0;               // Zera o contador
+    TMR1 = 65535 - 500;     // Carrega valor inicial (mesmo da ISR)
     
     // Habilita interrup??o do Timer1
     PIE1bits.TMR1IE = 1;    // Habilita interrup??o Timer1
@@ -105,10 +105,10 @@ void pwm_set_duty_cycle_motor4(uint16_t duty_cycle)
     motor_d_duty = duty_cycle;
 }
 
-// FUNÇÃO NÃO UTILIZADA - PWM controlado por ISR em hardware.c
+// FUN??O N?O UTILIZADA - PWM controlado por ISR em hardware.c
 // void pwm_software_isr(void)
 // {
-//     // Código movido para hardware.c ISR_TIMER_0()
+//     // C?digo movido para hardware.c ISR_TIMER_0()
 // }
 
 

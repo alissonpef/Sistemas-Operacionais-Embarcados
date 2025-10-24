@@ -953,17 +953,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;io.c: 59:     LATDbits.LATD3 = 0;
 [e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
 "62
-[; ;io.c: 62:     motor_a_duty = 512;
-[e = _motor_a_duty -> -> 512 `i `us ]
+[; ;io.c: 62:     motor_a_duty = 0;
+[e = _motor_a_duty -> -> 0 `i `us ]
 "63
-[; ;io.c: 63:     motor_b_duty = 512;
-[e = _motor_b_duty -> -> 512 `i `us ]
+[; ;io.c: 63:     motor_b_duty = 0;
+[e = _motor_b_duty -> -> 0 `i `us ]
 "64
-[; ;io.c: 64:     motor_c_duty = 512;
-[e = _motor_c_duty -> -> 512 `i `us ]
+[; ;io.c: 64:     motor_c_duty = 0;
+[e = _motor_c_duty -> -> 0 `i `us ]
 "65
-[; ;io.c: 65:     motor_d_duty = 512;
-[e = _motor_d_duty -> -> 512 `i `us ]
+[; ;io.c: 65:     motor_d_duty = 0;
+[e = _motor_d_duty -> -> 0 `i `us ]
 "68
 [; ;io.c: 68:     T1CONbits.TMR1CS = 0;
 [e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
@@ -974,8 +974,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;io.c: 70:     T1CONbits.RD16 = 1;
 [e = . . _T1CONbits 1 6 -> -> 1 `i `uc ]
 "71
-[; ;io.c: 71:     TMR1 = 0;
-[e = _TMR1 -> -> 0 `i `us ]
+[; ;io.c: 71:     TMR1 = 65535 - 500;
+[e = _TMR1 -> - -> 65535 `l -> -> 500 `i `l `us ]
 "74
 [; ;io.c: 74:     PIE1bits.TMR1IE = 1;
 [e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]

@@ -6194,6 +6194,12 @@ void config_app(void)
     velocidade_motores.motor4_speed = 512;
 
 
+    pwm_set_duty_cycle_motor1(512);
+    pwm_set_duty_cycle_motor2(512);
+    pwm_set_duty_cycle_motor3(512);
+    pwm_set_duty_cycle_motor4(512);
+
+
     __asm("GLOBAL _tarefa_controle_central, _tarefa_controle_motores, _tarefa_leitura_sensores, _tarefa_monitoramento_bateria");
 }
 
